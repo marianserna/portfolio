@@ -1,0 +1,14 @@
+@import "admin/_nav";
+
+html, body {
+  height : 100%;
+}
+
+#admin-container {
+  display: flex;
+  height: 100%
+}
+
+.admin-main {
+  flex-grow: 1;
+}

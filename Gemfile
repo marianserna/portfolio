@@ -31,6 +31,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'paperclip', '~> 4.3', '>= 4.3.5'
 # For generating html
 gem 'haml', '~> 4.0', '>= 4.0.7'
+# For generating forms
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+# Bootstrap
+gem 'bootstrap', '~> 4.0.0.alpha3'
 
 
 group :development, :test do

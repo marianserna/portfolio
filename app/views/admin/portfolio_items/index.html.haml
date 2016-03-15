@@ -1,0 +1,16 @@
+%h2 Portfolio Items
+
+= link_to "New Item", new_admin_portfolio_item_url, class: "btn btn-primary"
+
+%table.table
+  %tr
+    %th ID
+    %th Title
+    %th Category
+    %th Actions
+  - @portfolio_items.each do |item|
+    %tr
+      %td= item.id
+      %td= item.title
+      %td= item.category_name
+      %td= link_to("Edit", edit_admin_portfolio_item_url(item))

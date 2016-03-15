@@ -1,0 +1,18 @@
+!!! 5
+%html
+  %head
+    %title Portfolio
+    = csrf_meta_tags
+    = action_cable_meta_tag
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+
+  %body
+    #admin-container
+      .admin-nav
+        %ul
+          %li= link_to "Portfolio Items", admin_portfolio_items_url
+      .admin-main
+        .container-fluid
+          = yield
