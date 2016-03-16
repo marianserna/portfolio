@@ -1,0 +1,18 @@
+%h2 Blogs
+
+= link_to "New Item", new_admin_blog_url, class: "btn btn-primary"
+
+%table.table
+  %tr
+    %th ID
+    %th Title
+    %th Category
+    %th Actions
+  - @blogs.each do |blog|
+    %tr
+      %td= blog.id
+      %td= blog.title
+      %td= blog.category_name
+      %td
+        = link_to("Edit", edit_admin_blog_url(blog), class: 'btn btn-secondary')
+        = link_to("Delete", admin_blog_url(blog), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger')

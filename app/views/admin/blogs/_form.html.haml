@@ -1,0 +1,15 @@
+= simple_form_for(@blog, url: [:admin, @blog]) do |f|
+  = f.input :title
+  = f.input :slug
+  = f.input :category, as: :select, collection: Blog.categories_for_select, include_blank: false
+  = f.input :body
+  = f.input :summary
+
+  - if @blog.image.present?
+    = image_tag @blog.image.url(:thumb)
+
+  = f.input :image, as: :file
+
+  .form-group
+    = f.submit class: "btn btn-primary"
+    = link_to "Cancel", admin_blogs_url, class: "btn btn-secondary"

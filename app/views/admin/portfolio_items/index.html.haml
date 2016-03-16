@@ -13,4 +13,6 @@
       %td= item.id
       %td= item.title
       %td= item.category_name
-      %td= link_to("Edit", edit_admin_portfolio_item_url(item))
+      %td
+        = link_to("Edit", edit_admin_portfolio_item_url(item), class: 'btn btn-secondary')
+        = link_to("Delete", admin_portfolio_item_url(item), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger')

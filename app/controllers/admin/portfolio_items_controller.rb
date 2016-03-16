@@ -1,4 +1,4 @@
-class Admin::PortfolioItemsController < ApplicationController
+class Admin::PortfolioItemsController < Admin::BaseController
   def index
     @portfolio_items = PortfolioItem.all
   end
@@ -29,6 +29,11 @@ class Admin::PortfolioItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @portfolio_item = PortfolioItem.find(params[:id])
+    @portfolio_item.destroy
+    redirect_to admin_portfolio_items_url
+  end
 
   private
 

@@ -1,4 +1,4 @@
-class PortfolioItem < ApplicationRecord
+class Blog < ApplicationRecord
   CATEGORIES = {
     'animation' => 'Animation',
     'web_design' => 'Web Design',
@@ -7,10 +7,10 @@ class PortfolioItem < ApplicationRecord
   }
 
 
-  has_attached_file :background_image, styles: { thumb: "200x200>" }
-  validates_attachment_content_type :background_image, content_type: /\Aimage\/.*\Z/
+  has_attached_file :image, styles: { thumb: "200x200>" }
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  validates :title, :description, :category, presence: true
+  validates :title, :body, :category, :slug, presence: true
 
   def self.categories_for_select
     CATEGORIES.invert
