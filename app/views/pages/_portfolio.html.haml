@@ -9,6 +9,8 @@
         .description
           %p= item.category_name
           %p= item.description
+          - if item.technologies.present?
+            %p= item.technologies
           -if item.item_url.present?
             %p
               %a{href: item.item_url}= item.item_url
