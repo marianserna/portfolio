@@ -37,12 +37,12 @@ $(function() {
     // if active, we want to slide back in (-200 pixels to the right)
     if (active) {
       active = false;
-      trigger.animate({"right": '-=200'});
-      nav.animate({"right": '-=200'});
+      trigger.animate({"right": '-=130'});
+      nav.animate({"right": '-=130'});
     } else {
       active = true;
-      trigger.animate({"right": '+=200'});
-      nav.animate({"right": '+=200'});
+      trigger.animate({"right": '+=130'});
+      nav.animate({"right": '+=130'});
     }
   });
 });
