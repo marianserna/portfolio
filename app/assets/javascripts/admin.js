@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require codemirror
+//= require codemirror/modes/xml
+//= require codemirror/modes/css
+//= require codemirror/modes/htmlmixed
+//= require_tree ./admin

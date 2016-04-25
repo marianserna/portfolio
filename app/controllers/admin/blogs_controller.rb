@@ -4,11 +4,11 @@ class Admin::BlogsController < Admin::BaseController
   end
 
   def edit
-    @blog = Blog.find(params[:id])
+    @blog = Blog.find_by!(slug: params[:id])
   end
 
   def update
-    @blog = Blog.find(params[:id])
+    @blog = Blog.find_by!(slug: params[:id])
     if @blog.update(blog_params)
       redirect_to admin_blogs_url
     else

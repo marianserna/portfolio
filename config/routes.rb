@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#home'
+  resources :contacts, only: [:create]
+  resources :blogs, only: [:show]
 
   namespace :admin do
     root 'blogs#index'

@@ -38,6 +38,8 @@ class Admin::PortfolioItemsController < Admin::BaseController
   private
 
   def portfolio_params
-    params.require(:portfolio_item).permit(:title, :description, :category, :item_url, :background_image)
+    params.require(:portfolio_item).permit(:title, :description, :category, :item_url,
+      :background_image, :vimeo_url
+    )
   end
 end

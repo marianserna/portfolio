@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315024437) do
+ActiveRecord::Schema.define(version: 20160424183427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,16 +32,19 @@ ActiveRecord::Schema.define(version: 20160315024437) do
   end
 
   create_table "portfolio_items", force: :cascade do |t|
-    t.string   "title",                         null: false
-    t.string   "category",                      null: false
-    t.text     "description",                   null: false
+    t.string   "title",                                        null: false
+    t.string   "category",                                     null: false
+    t.text     "description",                                  null: false
     t.string   "item_url"
     t.string   "background_image_file_name"
     t.string   "background_image_content_type"
     t.integer  "background_image_file_size"
     t.datetime "background_image_updated_at"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.text     "style_settings"
+    t.boolean  "featured",                      default: true, null: false
+    t.string   "vimeo_url"
   end
 
 end

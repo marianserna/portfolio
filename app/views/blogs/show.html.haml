@@ -1,0 +1,8 @@
+= link_to root_url, class: 'home-link' do
+  %i.fa.fa-home
+
+%header.blog-header{style: "background-image: url('#{@blog.image.url}')"}
+  %h1= @blog.title
+
+%section.blog-body
+  ~ @blog.to_html

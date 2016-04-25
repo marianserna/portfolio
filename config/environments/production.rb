@@ -84,4 +84,28 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Action Mailer settings
+  config.action_mailer.default_url_options = { host: "www.marianserna.com" }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "in-v3.mailjet.com",
+    port: 587,
+    domain: "www.marianserna.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV.fetch('SMTP_USER'),
+    password: ENV.fetch('SMTP_PASSWORD')
+  }
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['S3_BUCKET_NAME'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    },
+    :s3_protocol => :https
+  }
 end

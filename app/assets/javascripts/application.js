@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require underscore
+//= require ScrollMagic.min
+//= require animation.gsap.min
+//= require debug.addIndicators.min
+//= require jquery.ScrollMagic.min
+//= require jquery.nivo.slider.pack
+//= require featherlight
+//= require_tree ./application

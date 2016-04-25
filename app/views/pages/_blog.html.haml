@@ -1,0 +1,9 @@
+%section#blog
+  %h2 Blog
+
+  .blog-container
+    - @blogs.each do |blog|
+      .blog-summary
+        %h3= blog.title
+        ~ blog.summary
+        = link_to('Read More', blog_url(blog))

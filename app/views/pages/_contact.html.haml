@@ -1,0 +1,23 @@
+%section#contact
+  %h2 Contact
+
+  #map
+
+  .form-overlay
+  #form-container.icon.fa.fa-pencil
+    %span#form-close.icon.fa.fa-close
+    #form-content
+      #form-head
+        %h1.pre Get in touch
+        %h1.post Thanks!
+        %p.post I'll be in touch ASAP
+      %form
+        %input.input.name#contact_name{type: "text", name: "contact[name]", placeholder: "Your name please"}
+        %input.input.email#contact_email{type: "text", name: "contact[email]", placeholder: "A contact email"}
+        %select.input.select#contact_subject{name: "contact[subject]"}
+          %option{disabled: true} What shall we talk about?
+          %option{selected: true} About a new project
+          %option About a job opportunity
+          %option Let's do this over a coffee
+        %textarea.input.message#contact_message{name: "contact[message]", placeholder: "How can I help?"}
+        %input.input.submit{type: "submit", value: "Send Message"}

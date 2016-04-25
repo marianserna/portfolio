@@ -13,19 +13,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5.x'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # For image uploading
 gem 'paperclip', '~> 4.3', '>= 4.3.5'
@@ -36,11 +26,20 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 # Bootstrap
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
+gem 'underscore-rails', '~> 1.8', '>= 1.8.3'
+gem 'featherlight', '~> 1.3', '>= 1.3.5'
+gem 'font-awesome-rails', '~> 4.6', '>= 4.6.1.0'
+
+# Markdown processing
+gem 'redcarpet', '~> 3.3', '>= 3.3.4'
+
+gem 'codemirror-rails', '~> 5.11'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails', '3.5.0.beta1'
+  gem 'pry', '~> 0.10.3'
 end
 
 group :development do

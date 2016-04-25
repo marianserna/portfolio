@@ -19,4 +19,13 @@ class Blog < ApplicationRecord
   def category_name
     CATEGORIES.fetch(category)
   end
+
+  def to_param
+    slug.parameterize
+  end
+
+  def to_html
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true, fenced_code_blocks: true)
+    markdown.render(body).html_safe
+  end
 end

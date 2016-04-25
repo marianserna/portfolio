@@ -1,0 +1,28 @@
+.animation-intro-container {
+  position: relative;
+
+  video {
+    position: aboslute;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+  }
+
+  .animation-intro {
+    position: absolute;
+    left: 0;
+    right:0;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  h3 {
+    text-align: center;
+    color: #fff;
+  }
+
+  p {
+    text-align: center;
+  }
+}

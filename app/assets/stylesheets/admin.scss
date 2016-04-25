@@ -1,4 +1,5 @@
 @import 'bootstrap';
+@import "codemirror";
 @import "admin/_nav";
 
 html, body {
@@ -12,4 +13,8 @@ html, body {
 
 .admin-main {
   flex-grow: 1;
+}
+
+.CodeMirror {
+  width: 75vw;
 }

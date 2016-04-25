@@ -1,0 +1,43 @@
+.menu-trigger {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  padding: 2px;
+  background-color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 20;
+}
+
+.bar {
+  height: 5px;
+  width: 28px;
+  margin: 5px;
+  background-color: #fff;
+}
+
+nav {
+  position: fixed;
+  top: 0px;
+  right: -200px;
+  width: 200px;
+  background-color: rgba(96, 96, 96, 0.9);
+  color: #fff;
+  z-index: 20;
+  height: 100vh;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav a {
+  display: inline-block;
+  font-family: 'Handlee', cursive;
+  color: #fff;
+  font-size: 15px;
+  margin: 10px 20px;
+  text-decoration: none;
+}

@@ -4,16 +4,15 @@
     %title Portfolio
     = csrf_meta_tags
     = action_cable_meta_tag
+    %meta{name: 'viewport', content: 'initial-scale=1.0'}
+    %meta{charset: 'utf-8'}
 
+    %link{rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/solarized-dark.min.css'}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
+
+    %source{src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.3/TweenMax.min.js'}
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+    %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js'}
 
   %body
-    #admin-container
-      .admin-nav
-        %ul
-          %li= link_to "Portfolio Items", admin_portfolio_items_url
-          %li= link_to "Blogs", admin_blogs_url
-      .admin-main
-        .container-fluid
-          = yield
+    = yield

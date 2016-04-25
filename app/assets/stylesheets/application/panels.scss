@@ -1,0 +1,79 @@
+.panel {
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 100px;
+}
+
+.inner {
+  position: relative;
+  min-height: 100vh;
+}
+
+.panel img {
+  display: none;
+  width: 100%;
+  margin-bottom: -3px;
+}
+
+.panel h3 {
+  position: absolute;
+  width: 100%;
+  font-size: 2em;
+  color: white;
+  padding: 1em;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.panel .description {
+  padding: 2em 1em;
+  background-color: rgba(0,0,0,0.7);
+  font-size: 1.2em;
+  color: white;
+  position: absolute;
+  top: 6em;
+}
+
+#after {
+  background-color: white;
+  min-height: 100vh;
+}
+
+.js-video {
+  height: 0;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.js-video.widescreen {
+  padding-bottom: 56.34%;
+}
+.js-video embed, .js-video iframe, .js-video object, .js-video video {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+@media (max-width: 800px) {
+  .inner {
+    position: static;
+    background-image: image-url('arabesque.png');
+    background-repeat: repeat;
+  }
+  .panel h3 {
+    position: static;
+    padding: 2em 1em;
+    background-color: rgba(0,0,0,1);
+  }
+  .panel img {
+    display: block;
+  }
+  .panel .description {
+    position: static;
+  }
+}

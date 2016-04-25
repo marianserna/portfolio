@@ -1,0 +1,6 @@
+%section
+  %h2 Photography
+  .slider-wrapper.theme-default
+    #slider
+      - @photographs.each do |photo|
+        = image_tag photo.background_image.url
