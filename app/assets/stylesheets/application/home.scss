@@ -2,6 +2,7 @@ h2 {
   text-align: center;
   font-size: 4em;
   padding: 1em;
+  color: #455A64;
 }
 
 @media (max-width: 800px) {
@@ -23,6 +24,8 @@ h2 {
     margin-left: 0.3em;
     margin-bottom: 0.3em;
     font-size: 7em;
+    color: #455A64;
+    text-shadow: 3px 3px 2px #212121;
   }
 
 
@@ -31,10 +34,11 @@ h2 {
     line-height: 1.6em;
     text-align: center;
     opacity: 0;
+    color: #FF5722
   }
 
   img.intro {
-    max-width: 100vw;
+    width: 100vw;
     position: absolute;
     bottom: -100vh;
     opacity: 0;
