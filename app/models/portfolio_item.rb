@@ -62,10 +62,6 @@ class PortfolioItem < ApplicationRecord
   end
 
   def classes
-    "#{details_position_class}"
-  end
-
-  def styles
-    "color: #{color}; background-color: #{background_color};"
+    "item-#{id} #{details_position_class}"
   end
 end

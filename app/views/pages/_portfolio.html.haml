@@ -5,14 +5,21 @@
     %section.panel{style: "background-image: url('#{item.background_image.url}')"}
       .inner
         = image_tag item.background_image.url
-        .description{class: item.classes, style: item.styles}
-          %p.category= item.category_name
+        :css
+          @media (min-width: 800px) {
+            .description.item-#{item.id} {
+              color: #{item.color};
+              background-color: #{item.background_color};
+            }
+          }
+        .description{class: item.classes}
+          %p.category Category: #{item.category_name}
           %p.desc= item.description
           - if item.technologies.present?
-            %p.technologies= item.technologies
+            %p.technologies Software: #{item.technologies}
           -if item.item_url.present?
             %p.link
-              %a{href: item.item_url}= item.item_url
+              %a{href: item.item_url} Visit website
           - if item.vimeo_url.present?
             .js-video.vimeo
               %iframe{src: "https://player.vimeo.com/video/#{item.vimeo_id}", frameborder: "0", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true}

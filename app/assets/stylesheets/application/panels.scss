@@ -29,7 +29,7 @@
   font-size: 1.2em;
   color: white;
   position: absolute;
-  top: 4em;
+  top: 3.5em;
   line-height: 1.3em;
   border-radius: 0;
   border-top-right-radius: 10px;
@@ -44,14 +44,8 @@
   border-bottom-left-radius: 10px;
 }
 
-p.desc {
-  font-size: 1em;
-}
-p.category {
+.description p {
   margin-bottom: 0.75em;
-}
-p.link {
-  margin-top: 0.75em;
 }
 
 #after {
@@ -86,7 +80,7 @@ p.link {
   }
   .inner {
     position: static;
-    background-color: #FFF;
+    background-color: #263238;
     min-height: 0;
   }
   .panel h3 {

@@ -7,6 +7,9 @@
     %meta{name: 'viewport', content: 'initial-scale=1.0'}
     %meta{charset: 'utf-8'}
 
+    /[if lt IE 9]
+      = javascript_include_tag 'html5shiv.min'
+
     %link{rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/solarized-dark.min.css'}
     %link{href: 'https://fonts.googleapis.com/css?family=Muli|Lobster', rel: 'stylesheet'}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
@@ -14,6 +17,8 @@
     %source{src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.3/TweenMax.min.js'}
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js'}
+    %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'}
+    %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js'}
 
   %body
     = yield

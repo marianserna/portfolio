@@ -19,6 +19,10 @@ a {
   color: #FF5722;
 }
 
+a:hover {
+  color: #00BCD4;
+}
+
 @mixin vertical-align($position: relative) {
   position: $position;
   top: 50%;
