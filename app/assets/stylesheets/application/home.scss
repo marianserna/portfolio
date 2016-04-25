@@ -147,6 +147,12 @@ h2 {
     padding: 3em;
   }
 
+  @media (max-width: 800px) {
+    .blog-summary {
+      width: 100%;
+    }
+  }
+
   h3 {
     font-size: 2em;
     margin-bottom: .5em;
