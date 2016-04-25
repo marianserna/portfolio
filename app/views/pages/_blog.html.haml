@@ -5,5 +5,5 @@
     - @blogs.each do |blog|
       .blog-summary
         %h3= blog.title
-        ~ blog.summary
+        %p= blog.summary
         = link_to('Read More', blog_url(blog))
