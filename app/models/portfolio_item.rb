@@ -12,7 +12,9 @@ class PortfolioItem < ApplicationRecord
   }
 
   DEFAULT_STYLE = {
-    details_position_class: 'left'
+    details_position_class: 'left',
+    color: '#FFF',
+    background_color: 'transparent'
   }
 
   ## Attributes
@@ -26,7 +28,7 @@ class PortfolioItem < ApplicationRecord
 
   ## Validations
 
-  validates :title, :description, :category, presence: true
+  validates :category, presence: true
 
   ## Callbacks
 
@@ -57,5 +59,13 @@ class PortfolioItem < ApplicationRecord
         send("#{key}=", DEFAULT_STYLE[key])
       end
     end
+  end
+
+  def classes
+    "#{details_position_class}"
+  end
+
+  def styles
+    "color: #{color}; background-color: #{background_color};"
   end
 end

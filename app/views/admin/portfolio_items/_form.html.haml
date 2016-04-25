@@ -10,6 +10,9 @@
     = image_tag @portfolio_item.background_image.url(:thumb)
 
   = f.input :background_image, as: :file
+  = f.input :details_position_class, as: :string
+  = f.input :color, as: :string
+  = f.input :background_color, as: :string
 
   .form-group
     = f.submit class: "btn btn-primary"

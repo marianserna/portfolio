@@ -4,15 +4,14 @@
   - @portfolio_items.each do |item|
     %section.panel{style: "background-image: url('#{item.background_image.url}')"}
       .inner
-        %h3= item.title
         = image_tag item.background_image.url
-        .description
-          %p= item.category_name
-          %p= item.description
+        .description{class: item.classes, style: item.styles}
+          %p.category= item.category_name
+          %p.desc= item.description
           - if item.technologies.present?
-            %p= item.technologies
+            %p.technologies= item.technologies
           -if item.item_url.present?
-            %p
+            %p.link
               %a{href: item.item_url}= item.item_url
           - if item.vimeo_url.present?
             .js-video.vimeo

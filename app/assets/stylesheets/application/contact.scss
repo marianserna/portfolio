@@ -3,7 +3,6 @@ $col-primary: #ff5722;
 $col-dark: #140228;
 $formElements: 5;
 
-$font-stack: Roboto, sans-serif;
 $easer: cubic-bezier(0.4, 0, 0.2, 1);
 
 #contact {
@@ -112,7 +111,6 @@ $easer: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   #form-content {
-    font-family: $font-stack;
     transform: translateY(150%);
     width: 100%;
     opacity: 0;

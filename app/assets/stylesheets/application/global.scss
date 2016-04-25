@@ -6,6 +6,19 @@
   display: none;
 }
 
+html {
+  font-family: 'Muli', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Lobster', cursive;
+}
+
+a {
+  text-decoration: none;
+  color: #FF5722;
+}
+
 @mixin vertical-align($position: relative) {
   position: $position;
   top: 50%;

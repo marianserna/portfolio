@@ -21,17 +21,37 @@
   width: 100%;
   font-size: 2em;
   color: white;
-  padding: 1em;
-  background-color: rgba(0,0,0,0.7);
+  padding: 1em 3rem;
 }
 
 .panel .description {
-  padding: 2em 1em;
-  background-color: rgba(0,0,0,0.7);
+  padding: 1.5em 3rem;
   font-size: 1.2em;
   color: white;
   position: absolute;
-  top: 6em;
+  top: 4em;
+  line-height: 1.3em;
+  border-radius: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 500px;
+}
+
+.panel .description.right {
+  right: 0px;
+  border-radius: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+p.desc {
+  font-size: 1em;
+}
+p.category {
+  margin-bottom: 0.75em;
+}
+p.link {
+  margin-top: 0.75em;
 }
 
 #after {
@@ -60,10 +80,14 @@
 }
 
 @media (max-width: 800px) {
+  .panel {
+    min-height: 0;
+    margin-bottom: 0;
+  }
   .inner {
     position: static;
-    background-image: image-url('arabesque.png');
-    background-repeat: repeat;
+    background-color: #FFF;
+    min-height: 0;
   }
   .panel h3 {
     position: static;
@@ -75,5 +99,7 @@
   }
   .panel .description {
     position: static;
+    border-radius: 0;
+    width: 100%;
   }
 }

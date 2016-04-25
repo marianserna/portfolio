@@ -4,9 +4,28 @@ h2 {
   padding: 1em;
 }
 
+@media (max-width: 800px) {
+  h2 {
+    font-size: 3em;
+    padding: 0.5em;
+  }
+}
+
 #home {
   video {
     width: 100%;
+  }
+  img {
+    display: none;
+    max-width: 100%;
+  }
+  @media (max-width: 800px) {
+    video {
+      display: none;
+    }
+    img {
+      display: block
+    }
   }
 }
 
@@ -28,9 +47,7 @@ h2 {
   }
 
   li {
-    width: 125px;
-    height: 150px;
-    margin: 1em;
+    padding: 0.5em;
 
     p {
       padding-top: 1em;
@@ -40,8 +57,10 @@ h2 {
   }
 
   .img-container {
-    width: 125px;
-    height: 125px;
+    width: 25vw;
+    height: 25vw;
+    max-width: 125px;
+    max-height: 125px;
 
     img {
       @include vertical-align();
@@ -55,6 +74,10 @@ h2 {
     margin-right: 4em;
     margin-bottom: 4em;
   }
+}
+
+#resume-image img {
+  max-width: 100%;
 }
 
 #blog {
