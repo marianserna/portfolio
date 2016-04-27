@@ -8,7 +8,7 @@ h2 {
 @media (max-width: 800px) {
   h2 {
     font-size: 3em;
-    padding: 0.5em;
+    padding: 1.5em 0.5em;
   }
 }
 
@@ -94,10 +94,10 @@ h2 {
   }
 
   #resume-link {
-    text-align: right;
+    text-align: center;
     display: block;
-    margin-right: 4em;
-    margin-bottom: 4em;
+    font-size: 1.5em;
+    margin-bottom: 3em;
   }
 }
 
@@ -120,6 +120,7 @@ h2 {
     margin: 3em;
     margin-top: 0;
     text-align: center;
+    line-height: 1.5em;
   }
 }
 
