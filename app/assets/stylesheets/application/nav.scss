@@ -40,4 +40,8 @@ nav a {
   font-size: 15px;
   margin: 10px 20px;
   text-decoration: none;
+
+  &:hover {
+    color: #263238;
+  }
 }
