@@ -1,15 +1,35 @@
 h2 {
   text-align: center;
-  font-size: 4em;
+  font-size: 3em;
   padding: 1em;
   color: #455A64;
 }
 
 @media (max-width: 800px) {
   h2 {
-    font-size: 3em;
+    font-size: 2em;
     padding: 1.5em 0.5em;
   }
+}
+
+h3.big {
+  font-size: 2em;
+  padding: 1em;
+  margin-left: 3em;
+}
+
+@media (max-width: 800px) {
+  h3.big {
+    font-size: 1.5em;
+    padding: 1.5em 0.5em;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+p.big {
+  font-size: 1.2em;
+  line-height: 1.5em;
 }
 
 #home {
@@ -51,8 +71,10 @@ h2 {
 }
 
 #about {
-  video {
-    width: 100%;
+  p {
+    width: 80%;
+    margin: 0 auto;
+    line-height: 1.5em;
   }
 }
 
@@ -99,10 +121,6 @@ h2 {
     font-size: 1.5em;
     margin-bottom: 3em;
   }
-}
-
-#resume-image img {
-  max-width: 100%;
 }
 
 .social {

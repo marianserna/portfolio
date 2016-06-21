@@ -8,23 +8,44 @@
     %li Animation
     %li Video Editing
     %li Illustration
-    %li Photography
 
   = image_tag 'introduction.png', class: 'intro'
 
 %section#about
   %h2 About
-  %video{controls: true}
-    %source{src: 'videos/about_me.mp4', type: 'video/mp4'}
-    %source{src: 'videos/about_me.ogg', type: 'video/ogg'}
-    %source{src: 'videos/about_me.webm', type: 'video/webm'}
+
+  %h3.big The Present
+
+  %p.big I am a multimedia designer and web developer currently based in Toronto. How I got here is sort of an interesting story (check it out below!). I’m fairly new to the design and development space but I’m loving it. I’ve finished my first year of Multimedia Design and Development at Humber College and I’ve had the chance to work part-time on a couple development projects. I’m truly looking forward to learn a ton of new and interesting stuff that will help me improve myself as a professional and hopefully as a person as well.
+
+  %br
+
+  %p.big When it comes to this profession, my goal is to become a developer with solid skills, both on the front and back-end, without shying away from being able to work with design, animation, and interactive media.
+
+  %br
+
+  %p.big Other things that I enjoy are traveling, learning about different cultures, hiking, reading, nature, and history.
+
+  %br
+
+  %p.big I’m excited to find a team of creative and fun people to work with!
+
+  %br
+
+
+  %h3.big The past
+
+  %p.big I grew up in a coffee farm in Andes, Colombia. Later on, I moved to Medellin to attend university.
+
+  %br
+
+  %p.big I am a lawyer turned developer. I worked for several years in Colombia as a lawyer and, upon my arrival to Canada, I became a licensed paralegal and practised real estate/appraisal law, which made me realize that law wasn’t what I wanted to be doing for the rest of my life.
 
 = render partial: 'current'
 = render partial: 'skills'
 = render partial: 'portfolio'
 
 #after
-  = render partial: 'photographs'
   = render partial: 'contact'
   = render partial: 'blog'
 
