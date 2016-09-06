@@ -5,9 +5,9 @@ $(function() {
     var template = $('#post-template').html();
     $('.posts').html('');
     // Loop thru posts
-    for(post of posts) {
+    for(var i = 0; i < posts.length; i++) {
       // Fill up template (mustache fields) with post information
-      var html = Mustache.render(template, post);
+      var html = Mustache.render(template, posts[i]);
       $('.posts').append(html);
     }
   });
