@@ -22,4 +22,3 @@
 //= require css3-mediaqueries
 //= require_tree ./application
 //= require mustache
-//= require jquery.mustache
