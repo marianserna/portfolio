@@ -1,23 +1,42 @@
-header.blog-header {
-  font-size: 4em;
-  padding: 2em;
-  background-size: cover;
+.posts {
+  display: flex;
+  width: 100%;
 }
 
-section.blog-body {
-  max-width: 960px;
-  margin: 2em auto;
-  padding: 1em;
+.medium.post_wrapper {
+  width: 33.33%;
+  -webkit-filter: grayscale(100%);
+  text-decoration: none;
 
-  p, pre {
-    margin-top: 1em;
-    margin-bottom: 1em;
+  &:hover {
+    -webkit-filter: none;
+  }
+
+  .post {
+    height: 450px;
+  }
+
+  .background {
+    position: relative;
+    bottom: -150px;
+    background-color: rgba(245,245,245,0.8);
+    margin: 0 15px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    line-height: 2.5em;
   }
 }
 
-.home-link {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  font-size: 2em;
+@media(max-width: 800px) {
+  .posts {
+    display: block;
+  }
+
+  .post {
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 0px;
+  }
 }

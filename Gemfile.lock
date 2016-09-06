@@ -96,6 +96,8 @@ GEM
     mimemagic (0.3.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    mustache-js-rails (2.0.6)
+      railties (>= 3.1, <= 5.1)
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -221,6 +223,7 @@ DEPENDENCIES
   haml (~> 4.0, >= 4.0.7)
   jquery-rails
   listen (~> 3.0.5)
+  mustache-js-rails (~> 2.0, >= 2.0.6)
   paperclip (~> 4.3, >= 4.3.5)
   pg (~> 0.18.4)
   pry (~> 0.10.3)
@@ -238,5 +241,8 @@ DEPENDENCIES
   underscore-rails (~> 1.8, >= 1.8.3)
   web-console (~> 3.0)
 
+RUBY VERSION
+   ruby 2.3.0p0
+
 BUNDLED WITH
-   1.11.2
+   1.12.5

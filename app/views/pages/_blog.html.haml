@@ -1,9 +1,19 @@
 %section#blog
-  %h2 Featured Blog Posts
+  %h2 Latest Posts
+  .posts
+    %img{src: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif'}
 
-  .blog-container
-    - @blogs.each do |blog|
-      .blog-summary
-        %h3= blog.title
-        %p= blog.summary
-        = link_to('Read More', blog_url(blog))
+-# Mustache sytax.
+-# {{}} escaped HTML
+-# {{{}}} display as is.
+
+%script#post-template{type: 'text-html'}
+  %a.post_wrapper{class: :medium, href: '{{{url}}}'}
+    :css
+      .post_{{id}} {
+        background-image: url('{{{image_url}}}');
+      }
+    .post{class: "post_{{id}}"}
+      .background
+        .titles
+          %h2= '{{title}}'
