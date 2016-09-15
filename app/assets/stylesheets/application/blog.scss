@@ -20,9 +20,10 @@
 
   .background {
     position: relative;
-    bottom: -150px;
+    top: 50%;
     background-color: rgba(245,245,245,0.8);
     margin: 0 15px;
+    transform: translateY(-50%);
   }
 
   h2 {
