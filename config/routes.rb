@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
   root 'pages#home'
   resources :contacts, only: [:create]
-  resources :blogs, only: [:show]
 
   namespace :admin do
-    root 'blogs#index'
+    root 'portfolio_items#index'
     resources :portfolio_items
-    resources :blogs
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
