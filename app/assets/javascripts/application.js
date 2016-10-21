@@ -17,8 +17,5 @@
 //= require animation.gsap.min
 //= require debug.addIndicators.min
 //= require jquery.ScrollMagic.min
-//= require jquery.nivo.slider.pack
-//= require featherlight
-//= require css3-mediaqueries
 //= require_tree ./application
 //= require mustache
