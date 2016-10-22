@@ -1,0 +1,75 @@
+#projects {
+
+  .projects_title {
+    padding-top: 150px;
+    padding-right: 20vw;
+    text-align: right;
+    font-family: "Fjalla One", sans-serif;
+    font-size: 8em;
+    color: #AB47BC;
+    text-shadow: 2px 2px #212121;
+  }
+
+  .grid {
+    width: 60vw;
+    margin: -40px auto 0 auto;
+    position: relative;
+    padding-bottom: 150px;
+
+    .grid-item {
+      width: 20vw;
+      min-height: 20vw;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      .grid_content {
+        position: relative;
+        width: 100%;
+        min-height: 20vw;
+
+        .grid_title {
+          position: absolute;
+          bottom: 80px;
+          width: 100%;
+          text-align: center;
+          font-family: $h1-font;
+          font-size: $project-title-size;
+          color: #FF5722;
+          text-shadow: 1px 1px #212121;
+        }
+
+        .grid_links {
+          position: absolute;
+          bottom: 50px;
+          width: 100%;
+          text-align: center;
+          font-family: $h2-font;
+          font-size: $project-links-size;
+          color: #fff;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+          }
+
+          a:hover {
+            color: #9C27B0;
+          }
+        }
+      }
+    }
+
+    .grid-item--case_study {
+      width: 40vw;
+      min-height: 40vw;
+
+      .grid_content {
+        position: relative;
+        min-height: 40vw;
+      }
+    }
+  }
+
+}

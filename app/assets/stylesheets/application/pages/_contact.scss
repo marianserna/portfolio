@@ -1,0 +1,51 @@
+#contact {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #263238;
+
+  .color_div {
+    position: absolute;
+    top: 30vh;
+    left: 20vw;
+    width: 50vw;
+    height: 60vh;
+    background-color: #ecf0f1;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    z-index: 2;
+
+    .contact_text {
+      font-family: $p-font;
+      font-size: 1.1em;
+      color: #080808;
+      z-index: 3;
+      padding: 130px;
+
+      p {
+        width: 100%;
+        text-align: left;
+        line-height: 1.3em;
+        padding-bottom: 1em;
+
+        &.email {
+          font-family: $email-font;
+          font-size: $email-font-size;
+          font-weight: bold;
+          color: #FF7043;
+        }
+      }
+    }
+  }
+
+  .contact_behind {
+    position: absolute;
+    font-family: "Fjalla One", sans-serif;
+    font-size: 8em;
+    color: #FFF176;
+    top: 16vh;
+    left: 10vw;
+    z-index: 4;
+    text-shadow: 2px 2px #212121;
+  }
+
+}

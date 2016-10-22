@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  resources :contacts, only: [:create]
+  resources :portfolio_items, only: :show
 
   namespace :admin do
     root 'portfolio_items#index'

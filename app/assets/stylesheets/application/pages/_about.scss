@@ -1,8 +1,3 @@
-// .color_div
-//
-// %p.name_behind MARIAN
-//
-// .about_text
 #about {
   position: relative;
   width: 100vw;
@@ -27,16 +22,16 @@
     color: #fff;
     top: 16vh;
     left: 10vw;
-    z-index: 1;
+    z-index: 4;
     text-shadow: 2px 2px #212121;
   }
 
   .about_text {
     position: absolute;
     top: 18vh;
-    left: 50vw;
+    left: 45vw;
     font-family: $p-font;
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: #080808;
     width: 30vw;
     z-index: 3;

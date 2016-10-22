@@ -23,7 +23,7 @@ class PortfolioItem < ApplicationRecord
 
   ## Extensions
 
-  has_attached_file :background_image, styles: { thumb: "200x200>" }
+  has_attached_file :background_image, styles: { thumb: "200x200>", grid_thumb: "800x800>" }
   validates_attachment_content_type :background_image, content_type: /\Aimage\/.*\Z/
 
   ## Validations
