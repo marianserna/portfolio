@@ -1,0 +1,39 @@
+%section#home
+
+  .name
+    %h1 Marian Serna
+    .line
+    .title
+      %h2 Front End Developer
+
+  .social_bar
+    .icons
+      .icon
+        %a{href: 'https://github.com/marianserna'}
+          %i.fa.fa-github-alt
+      .icon
+        %a{href: 'https://www.linkedin.com/in/marian-serna-1762337b'}
+          %i.fa.fa-linkedin
+
+  .intro
+    .intro_image
+
+    %nav
+      %ul.navigation
+        %li
+          %a{href: '#home'} 01. Home
+        %li
+          %a{href: '#about'} 02. About
+        %li
+          %a{href: '#current'} 03. Projects
+        %li
+          %a{href: '#contact'} 04. Contact
+
+    %p#year &#8226; #{Date.today.year} &#8226;
+
+  .scrolling_nav
+    .scrolling_nav_wrapper
+      .page_number 01
+      .vertical_line.top_half
+      %a.next{href: '#'} NEXT
+      .vertical_line.bottom_half

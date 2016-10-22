@@ -1,0 +1,124 @@
+#home {
+  height: 100vh;
+  display: flex;
+
+  .name {
+    position: absolute;
+    z-index: 10;
+    margin: 40px;
+
+    h1 {
+      font-family: $h1-font;
+      font-size: $h1-size;
+      color: #D500F9;
+      text-shadow: 2px 2px #212121;
+    }
+
+    .line {
+      border-top: 1px solid grey;
+      margin: 10px 0;
+    }
+
+    .title {
+      padding: 5px;
+    }
+
+    h2 {
+      font-family: $h2-font;
+      font-size: 2em;
+      color: #BDBDBD;
+      line-height: 1.1em;
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+
+  .social_bar {
+    background-color: #fff;
+    width: 10vw;
+    position: relative;
+
+    .icons {
+      position: absolute;
+      bottom: 50px;
+      width: 100%;
+
+      .icon {
+        text-align: center;
+        font-size: 2em;
+        padding-bottom: 20px;
+
+        a {
+          color: #212121;
+        }
+
+        a:hover {
+          color: #00B8D4;
+        }
+      }
+    }
+  }
+
+  .intro {
+    flex-grow: 1;
+    width: 90vw;
+    position: relative;
+    overflow: hidden;
+
+    nav {
+      position: absolute;
+      top: 30%;
+      left: 15%;
+      font-family: $nav-font;
+      font-size: $nav-size;
+
+      ul  {
+
+        li {
+          padding-top: 20px;
+
+          a {
+            color: #fff;
+            text-decoration: none;
+          }
+
+          a:hover {
+            transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+            color: #00B8D4;
+          }
+        }
+      }
+
+    }
+
+    #year {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      bottom: 10vh;
+      font-family: $p-font;
+      font-size: $h2-size;
+      color: #fff;
+    }
+  }
+
+  .intro_image {
+    animation: 60s normal forwards zoomin ease-in;
+    background-image: image-url('bruce.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    content: " ";
+    height: 100%;
+    position: absolute;
+    transform-origin: center center 0;
+    width: 100%;
+    transform: scale(2);
+    // opacity: 0.9;
+    // filter: grayscale(80%);
+  }
+
+  @keyframes zoomin {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.5); }
+  }
+}

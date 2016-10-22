@@ -1,0 +1,55 @@
+// .color_div
+//
+// %p.name_behind MARIAN
+//
+// .about_text
+#about {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #26C6DA;
+
+  .color_div {
+    position: absolute;
+    top: 30vh;
+    left: 20vw;
+    width: 50vw;
+    height: 60vh;
+    background-color: #ecf0f1;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    z-index: 2;
+  }
+
+  .about_behind {
+    position: absolute;
+    font-family: "Fjalla One", sans-serif;
+    font-size: 8em;
+    color: #fff;
+    top: 16vh;
+    left: 10vw;
+    z-index: 1;
+    text-shadow: 2px 2px #212121;
+  }
+
+  .about_text {
+    position: absolute;
+    top: 18vh;
+    left: 50vw;
+    font-family: $p-font;
+    font-size: 1.3em;
+    color: #080808;
+    width: 30vw;
+    z-index: 3;
+    text-align: left;
+
+    p {
+      padding: 10px;
+      line-height: 1.3em;
+
+      em {
+        font-weight: bold;
+      }
+    }
+  }
+
+}

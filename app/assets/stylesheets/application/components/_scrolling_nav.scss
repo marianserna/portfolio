@@ -1,0 +1,48 @@
+.scrolling_nav {
+  width: 10vw;
+  position: absolute;
+  right: 0;
+  height: 100vh;
+}
+
+.scrolling_nav_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .page_number {
+    position: absolute;
+    margin: 40px;
+    font-family: $h2-font;
+    font-size: $number-size;
+    text-decoration: underline;
+  }
+
+  .vertical_line {
+    border-right: 1px solid #fff;
+    width: 50%;
+    position: absolute;
+  }
+
+  .top_half {
+    top: 20vh;
+    height: calc(30vh - 2em);
+  }
+
+  .bottom_half {
+    bottom: 20vh;
+    height: calc(30vh - 2em);
+  }
+
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    font-family: $nav-font;
+    font-size: $right-nav-size;
+    text-decoration: none;
+    color: #000;
+  }
+}
