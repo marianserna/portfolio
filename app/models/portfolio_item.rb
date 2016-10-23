@@ -32,15 +32,7 @@ class PortfolioItem < ApplicationRecord
 
   ## Class Methods
 
-  def self.categories_for_select
-    CATEGORIES.invert
-  end
-
   ## Instance Methods
-
-  def category_name
-    CATEGORIES.fetch(category)
-  end
 
   def vimeo_id
     return nil unless vimeo_url.present?
@@ -54,9 +46,5 @@ class PortfolioItem < ApplicationRecord
         send("#{key}=", DEFAULT_STYLE[key])
       end
     end
-  end
-
-  def classes
-    "item-#{id} #{details_position_class}"
   end
 end
