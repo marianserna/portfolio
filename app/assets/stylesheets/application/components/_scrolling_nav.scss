@@ -1,5 +1,5 @@
 .scrolling_nav {
-  width: 10vw;
+  width: 125px;
   position: absolute;
   right: 0;
   height: 100vh;
@@ -24,25 +24,71 @@
     position: absolute;
   }
 
-  .top_half {
-    top: 20vh;
-    height: calc(30vh - 2em);
-  }
-
-  .bottom_half {
-    bottom: 20vh;
-    height: calc(30vh - 2em);
-  }
-
-  .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  .next, .previous {
     width: 100%;
     text-align: center;
     font-family: $nav-font;
     font-size: $right-nav-size;
     text-decoration: none;
     color: #000;
+    line-height: 1.5em;
+    cursor: pointer;
+
+    &:hover {
+      color: #D500F9;
+    }
+  }
+
+  .scroll_links {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+
+  &.single {
+    .top {
+      top: 20vh;
+      height: calc(30vh - 1.5em);
+    }
+    .bottom {
+      top: calc(50vh + 1.5em);
+      height: calc(30vh - 1.5em);
+    }
+  }
+
+  &.double {
+    .top {
+      top: 20vh;
+      height: calc(30vh - 3em);
+    }
+    .bottom {
+      top: calc(50vh + 3em);
+      height: calc(30vh - 3em);
+    }
+  }
+
+  .fa.fa-home {
+    position: absolute;
+    font-size: 4em;
+    bottom: 0.5em;
+    right: 0.5em;
+    color: #7986CB;
+  }
+}
+
+@media (max-width: 576px) {
+  .scrolling_nav {
+    width: 90px;
+  }
+
+  .scrolling_nav_wrapper {
+    .next, .previous {
+      font-size: 20px;
+    }
+  }
+  .page_number {
+    display: none;
   }
 }

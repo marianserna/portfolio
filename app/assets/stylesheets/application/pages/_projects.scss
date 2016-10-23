@@ -1,4 +1,69 @@
 #projects {
+  background-color: #212121;
+  position: relative;
+  min-height: 100vh;
+
+  .filter_trigger {
+    cursor: pointer;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50vh;
+    transform: translate(0, 0);
+    z-index: 5;
+    transition: transform 2s;
+
+    &.open {
+      transform: translate(200px, 0);
+    }
+
+    .filter_content {
+      position: relative;
+      width: 100px;
+      height: 100px;
+
+      .filter_line {
+        border-bottom: 1px solid #fff;
+        width: 65px;
+        position: absolute;
+        top: 50%;
+      }
+
+      .filter {
+        display: block;
+        transform: translate3d(0px, 0px, 0px) rotate(-90deg);
+        color: white;
+        font-family: $email-font;
+        padding-top: 80px;
+      }
+    }
+  }
+
+  nav.projects {
+    position: absolute;
+    top: 50vh;
+    transform: translate(-100%, -40px);
+    transition: transform 2s;
+
+    &.open {
+      transform: translate(0px, -40px);
+    }
+
+    ul.navigation {
+      font-family: $categories-font;
+      font-size: $categories-size;
+      color: #f44336;
+
+      li {
+        padding: 5px;
+        cursor: pointer;
+
+        a:hover {
+          color: #26C6DA;
+        }
+      }
+    }
+  }
 
   .projects_title {
     padding-top: 150px;
@@ -6,7 +71,7 @@
     text-align: right;
     font-family: "Fjalla One", sans-serif;
     font-size: 8em;
-    color: #AB47BC;
+    color: #FFF176;
     text-shadow: 2px 2px #212121;
   }
 
@@ -71,5 +136,70 @@
       }
     }
   }
+}
 
+@media (max-width: 576px) {
+  #projects {
+    .projects_title {
+      font-size: 70px;
+    }
+
+    .filter_trigger {
+      width: 50px;
+      // height: 50px;
+      top: 50vh;
+
+      &.open {
+        transform: translate(200px, 0);
+      }
+
+      .filter_content {
+        position: relative;
+        width: 50px;
+        height: 50px;
+
+        .filter_line {
+          display: none;
+        }
+
+        .filter {
+          padding-top: 10px;
+        }
+      }
+    }
+
+    nav.projects {
+      background-color: #212121;
+      z-index: 5;
+    }
+
+    .grid {
+      margin-top: -20px;
+
+      .grid-item--case_study {
+        width: 100%;
+
+        .grid_content {
+          width: 100%;
+        }
+      }
+
+      .grid-item {
+        width: 100%;
+        min-height: 40vw;
+
+        .grid_content {
+          padding-top: 50px;
+
+          .grid_title {
+            position: static;
+          }
+
+          .grid_links {
+            position: static;
+          }
+        }
+      }
+    }
+  }
 }

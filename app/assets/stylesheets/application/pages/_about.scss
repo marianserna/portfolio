@@ -1,7 +1,7 @@
 #about {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #26C6DA;
 
   .color_div {
@@ -47,4 +47,25 @@
     }
   }
 
+}
+
+@media (max-width: 768px) {
+  #about {
+    .about_behind {
+      font-size: 85px;
+    }
+
+    .color_div {
+      left: 15vw;
+      width: 60vw;
+      top: 23vh;
+    }
+
+    .about_text {
+      top: 31vh;
+      left: 19vw;
+      font-size: 12px;
+      width: 55vw;
+    }
+  }
 }

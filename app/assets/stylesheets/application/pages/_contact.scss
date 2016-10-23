@@ -1,8 +1,8 @@
 #contact {
   position: relative;
   width: 100vw;
-  height: 100vh;
-  background-color: #263238;
+  min-height: 100vh;
+  background-color: #F5F5F5;
 
   .color_div {
     position: absolute;
@@ -41,11 +41,45 @@
     position: absolute;
     font-family: "Fjalla One", sans-serif;
     font-size: 8em;
-    color: #FFF176;
+    color: #AB47BC;
     top: 16vh;
     left: 10vw;
     z-index: 4;
     text-shadow: 2px 2px #212121;
   }
+}
 
+@media (max-width: 768px) {
+  #contact {
+    .contact_behind {
+      font-size: 85px;
+    }
+
+    .color_div {
+      top: 23vh;
+      left: 16vw;
+
+      .contact_text {
+        padding: 100px 30px;
+
+        p.email {
+          font-size: 20px;
+          // margin-left: -30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  #contact {
+
+    .color_div {
+      .contact_text {
+        p.email {
+          margin-left: -60px;
+        }
+      }
+    }
+  }
 }

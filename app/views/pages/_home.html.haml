@@ -25,15 +25,16 @@
         %li
           %a{href: '#about'} 02. About
         %li
-          %a{href: '#current'} 03. Projects
+          %a{href: '#projects'} 03. Projects
         %li
           %a{href: '#contact'} 04. Contact
 
     %p#year &#8226; #{Date.today.year} &#8226;
 
   .scrolling_nav
-    .scrolling_nav_wrapper
+    .scrolling_nav_wrapper.single
       .page_number 01
-      .vertical_line.top_half
-      %a.next{href: '#'} NEXT
-      .vertical_line.bottom_half
+      .vertical_line.top
+      .scroll_links
+        %a.next{href: '#about'} NEXT
+      .vertical_line.bottom

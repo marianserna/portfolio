@@ -1,4 +1,4 @@
-.project
-
-  .project_title{style: "background-image: url('#{@portfolio_item.background_image.url(:grid_thumb)}')"}
-    %h2= @portfolio_item.title
+- if @portfolio_item.case_study?
+  = render partial: 'case_study'
+- else
+  = render partial: 'normal'

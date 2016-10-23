@@ -1,4 +1,7 @@
 @import "reset";
+* {
+  box-sizing: border-box;
+}
 @import "font-awesome";
 
 @import "application/variables";

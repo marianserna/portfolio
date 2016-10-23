@@ -1,8 +1,11 @@
 = simple_form_for(@portfolio_item, url: [:admin, @portfolio_item]) do |f|
   = f.input :position
   = f.input :title
-  = f.input :category, as: :select, collection: PortfolioItem.categories_for_select, include_blank: false
-  = f.input :description
+  = f.input :case_study
+  = f.input :category
+  = f.input :project
+  = f.input :approach
+  = f.input :takeout
   = f.input :technologies
   = f.input :item_url
   = f.input :vimeo_url

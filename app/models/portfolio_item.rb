@@ -2,15 +2,6 @@ class PortfolioItem < ApplicationRecord
 
   ## Constants
 
-  CATEGORIES = {
-    'animation' => 'Animation & 3d',
-    'web_design' => 'Design',
-    'photography' => "Photography",
-    'web_dev' => 'Development',
-    'video' => 'Video',
-    'illustrator' => 'Illustration'
-  }
-
   DEFAULT_STYLE = {
     details_position_class: 'left',
     color: '#FFF',
@@ -23,7 +14,11 @@ class PortfolioItem < ApplicationRecord
 
   ## Extensions
 
-  has_attached_file :background_image, styles: { thumb: "200x200>", grid_thumb: "800x800>" }
+  has_attached_file :background_image, styles: {
+    thumb: "200x200>",
+    grid_thumb: "800x800>",
+    hero: "1441x800>"
+  }
   validates_attachment_content_type :background_image, content_type: /\Aimage\/.*\Z/
 
   ## Validations

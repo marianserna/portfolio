@@ -1,0 +1,22 @@
+.normal_project
+
+  .scrolling_nav
+    .scrolling_nav_wrapper.double
+      .vertical_line.top
+      .scroll_links
+        %a.previous{href: root_url(anchor: 'home')} HOME
+        %br
+        %a.next{href: root_url(anchor: 'projects')} PROJECTS
+      .vertical_line.bottom
+
+  .normal_project_title
+    %h2= @portfolio_item.title
+
+  .normal_project_container
+    .the_project
+      %h3 - THE TASK -
+      %p= @portfolio_item.project.to_s.html_safe
+
+    .the_approach
+      %h3 - THE APPROACH -
+      %p= @portfolio_item.approach.to_s.html_safe

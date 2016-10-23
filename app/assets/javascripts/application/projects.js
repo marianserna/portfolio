@@ -14,3 +14,10 @@ function filterGrid(selector) {
     filter: selector
   });
 }
+
+function toggleFilter() {
+  var filter_nav = document.querySelector('nav.projects');
+  filter_nav.classList.toggle('open');
+  var trigger = document.querySelector('.filter_trigger');
+  trigger.classList.toggle('open');
+}

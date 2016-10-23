@@ -1,6 +1,11 @@
 %section#projects
 
-  %nav
+  .filter_trigger{onclick: 'toggleFilter();'}
+    .filter_content
+      .filter_line
+      %a.filter CATEGORIES
+
+  %nav.projects
     %ul.navigation
       %li
         %a{onclick: 'filterGrid(".frontend"); return false;'} 01. Front End
@@ -13,6 +18,15 @@
       %li
         %a{onclick: 'filterGrid("*"); return false;'} 05. See All
 
+  .scrolling_nav
+    .scrolling_nav_wrapper.double
+      .page_number 03
+      .vertical_line.top
+      .scroll_links
+        %a.previous{href: '#about'} PREV
+        %br
+        %a.next{href: '#contact'} NEXT
+      .vertical_line.bottom
 
   .projects_title PROJECTS
   .grid

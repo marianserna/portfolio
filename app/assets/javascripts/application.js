@@ -20,4 +20,4 @@
 //= require_tree ./application
 //= require mustache
 //= require isotope.pkgd.min
-//= require jump.min
+//= require zenscroll.min
