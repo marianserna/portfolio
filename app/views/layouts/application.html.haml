@@ -13,10 +13,6 @@
     %link{href:'https://fonts.googleapis.com/css?family=Fjalla+One|Playfair+Display|Poppins:300', rel: 'stylesheet'}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
 
-    %source{src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.3/TweenMax.min.js'}
-    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
-    %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'}
-    %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js'}
-
   %body
     = yield
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'

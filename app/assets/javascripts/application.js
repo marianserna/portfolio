@@ -12,12 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require underscore
-//= require ScrollMagic.min
-//= require animation.gsap.min
-//= require debug.addIndicators.min
-//= require jquery.ScrollMagic.min
-//= require_tree ./application
 //= require mustache
 //= require isotope.pkgd.min
 //= require zenscroll.min
+//= require_tree ./application

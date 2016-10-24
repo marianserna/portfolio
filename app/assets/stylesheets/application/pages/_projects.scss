@@ -2,6 +2,7 @@
   background-color: #212121;
   position: relative;
   min-height: 100vh;
+  width: 100%;
 
   .filter_trigger {
     cursor: pointer;
@@ -11,10 +12,10 @@
     top: 50vh;
     transform: translate(0, 0);
     z-index: 5;
-    transition: transform 2s;
+    transition: transform 1s;
 
     &.open {
-      transform: translate(200px, 0);
+      transform: translate(185px, 0);
     }
 
     .filter_content {
@@ -43,7 +44,7 @@
     position: absolute;
     top: 50vh;
     transform: translate(-100%, -40px);
-    transition: transform 2s;
+    transition: transform 1s;
 
     &.open {
       transform: translate(0px, -40px);
@@ -53,6 +54,7 @@
       font-family: $categories-font;
       font-size: $categories-size;
       color: #f44336;
+      padding: 5px;
 
       li {
         padding: 5px;
@@ -112,6 +114,7 @@
           font-family: $h2-font;
           font-size: $project-links-size;
           color: #fff;
+          padding-top: 10px;
 
           a {
             text-decoration: none;
@@ -147,11 +150,10 @@
 
     .filter_trigger {
       width: 50px;
-      // height: 50px;
       top: 50vh;
 
       &.open {
-        transform: translate(200px, 0);
+        transform: translate(185px, 0);
       }
 
       .filter_content {

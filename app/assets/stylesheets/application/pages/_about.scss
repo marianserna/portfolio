@@ -1,41 +1,38 @@
 #about {
   position: relative;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background-color: #26C6DA;
-
-  .color_div {
-    position: absolute;
-    top: 30vh;
-    left: 20vw;
-    width: 50vw;
-    height: 60vh;
-    background-color: #ecf0f1;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-    z-index: 2;
-  }
 
   .about_behind {
     position: absolute;
     font-family: "Fjalla One", sans-serif;
     font-size: 8em;
     color: #fff;
-    top: 16vh;
+    top: 30vh;
+    margin-top: -60px;
     left: 10vw;
     z-index: 4;
     text-shadow: 2px 2px #212121;
   }
 
-  .about_text {
+  .color_div {
     position: absolute;
-    top: 18vh;
-    left: 45vw;
+    top: 30vh;
+    left: 20vw;
+    width: 50vw;
+    background-color: #ecf0f1;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    z-index: 2;
+  }
+
+  .about_text {
     font-family: $p-font;
     font-size: 1.1em;
     color: #080808;
-    width: 30vw;
     z-index: 3;
     text-align: left;
+    padding: 70px;
 
     p {
       padding: 10px;
@@ -53,19 +50,18 @@
   #about {
     .about_behind {
       font-size: 85px;
-    }
-
-    .color_div {
-      left: 15vw;
-      width: 60vw;
       top: 23vh;
     }
 
+    .color_div {
+      top: 23vh;
+      left: 15vw;
+      width: 60vw;
+    }
+
     .about_text {
-      top: 31vh;
-      left: 19vw;
       font-size: 12px;
-      width: 55vw;
+      padding: 20px;
     }
   }
 }

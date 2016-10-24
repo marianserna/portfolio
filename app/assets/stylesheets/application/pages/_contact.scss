@@ -1,8 +1,20 @@
 #contact {
   position: relative;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background-color: #F5F5F5;
+
+  .contact_behind {
+    position: absolute;
+    font-family: "Fjalla One", sans-serif;
+    font-size: 8em;
+    color: #AB47BC;
+    top: 30vh;
+    left: 10vw;
+    z-index: 4;
+    margin-top: -60px;
+    text-shadow: 2px 2px #212121;
+  }
 
   .color_div {
     position: absolute;
@@ -13,59 +25,49 @@
     background-color: #ecf0f1;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     z-index: 2;
-
-    .contact_text {
-      font-family: $p-font;
-      font-size: 1.1em;
-      color: #080808;
-      z-index: 3;
-      padding: 130px;
-
-      p {
-        width: 100%;
-        text-align: left;
-        line-height: 1.3em;
-        padding-bottom: 1em;
-
-        &.email {
-          font-family: $email-font;
-          font-size: $email-font-size;
-          font-weight: bold;
-          color: #FF7043;
-        }
-      }
-    }
   }
 
-  .contact_behind {
-    position: absolute;
-    font-family: "Fjalla One", sans-serif;
-    font-size: 8em;
-    color: #AB47BC;
-    top: 16vh;
-    left: 10vw;
-    z-index: 4;
-    text-shadow: 2px 2px #212121;
+  .contact_text {
+    font-family: $p-font;
+    font-size: 1.1em;
+    color: #080808;
+    z-index: 3;
+    padding: 130px;
+
+    p {
+      width: 100%;
+      text-align: left;
+      line-height: 1.3em;
+      padding-bottom: 1em;
+
+      &.email {
+        font-family: $email-font;
+        font-size: $email-font-size;
+        font-weight: bold;
+        color: #FF7043;
+      }
+    }
   }
 }
 
 @media (max-width: 768px) {
   #contact {
     .contact_behind {
+      top: 23vh;
       font-size: 85px;
     }
 
     .color_div {
       top: 23vh;
       left: 16vw;
+      width: 60vw;
+    }
 
-      .contact_text {
-        padding: 100px 30px;
+    .contact_text {
+      padding: 100px 30px;
 
-        p.email {
-          font-size: 20px;
-          // margin-left: -30px;
-        }
+      p.email {
+        font-size: 20px;
       }
     }
   }
@@ -73,12 +75,9 @@
 
 @media (max-width: 576px) {
   #contact {
-
-    .color_div {
-      .contact_text {
-        p.email {
-          margin-left: -60px;
-        }
+    .contact_text {
+      p.email {
+        margin-left: -60px;
       }
     }
   }

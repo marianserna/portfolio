@@ -1,11 +1,12 @@
 #home {
+  width: 100%;
   min-height: 100vh;
   display: flex;
 
   .name {
     position: absolute;
     z-index: 10;
-    margin: 40px;
+    padding: 40px;
 
     h1 {
       font-family: $h1-font;
@@ -80,11 +81,32 @@
           a {
             color: #fff;
             text-decoration: none;
+            position: relative;
+            height: 45px;
+            min-width: 250px;
+            display: block;
           }
 
           a:hover {
+            .under {
+              width: 100%;
+            }
+          }
+
+          .over {
+            position: absolute;
+            height: 45px;
+            padding: 5px 0px;
+          }
+          .under {
+            position: absolute;
+            height: 45px;
             transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
-            color: #00B8D4;
+            color: #FFF176;
+            white-space: nowrap;
+            width: 0%;
+            overflow: hidden;
+            padding: 5px 0px;
           }
         }
       }
