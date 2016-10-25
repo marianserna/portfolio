@@ -1,24 +1,14 @@
 ## README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to my portfolio!
 
-Things you may want to cover:
+You can visit the website at www.marianserna.com
 
-* Ruby version
+A bit about it...
+This portfolio is a small Rails CMS. It allows me to upload projects and give them a consistent look.
 
-* System dependencies
+Recently, I fully changed the front-end. I tried to design a visual look that was simpler yet more effective than the previous version. I used less JavaScript which allows the site to load faster. This change happened over a weekend, since I had very limited time, I quickly designed and implemented the website over the back-end I already had, making only some smaller changes to it.
 
-* Configuration
+In the admin, I upload the information that is shown in the 'About' page for each project. It has an option for case studies that I haven't been able to use given the time I had for the project.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+xoxo!
