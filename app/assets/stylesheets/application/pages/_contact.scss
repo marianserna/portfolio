@@ -16,12 +16,14 @@
     text-shadow: 2px 2px #212121;
   }
 
+  .color_wrapper {
+    padding: 30vh 0;
+  }
+
   .color_div {
-    position: absolute;
-    top: 30vh;
-    left: 20vw;
+    margin: 0 auto;
     width: 50vw;
-    height: 60vh;
+    min-height: 60vh;
     background-color: #ecf0f1;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     z-index: 2;
@@ -32,7 +34,7 @@
     font-size: 1.1em;
     color: #080808;
     z-index: 3;
-    padding: 130px;
+    // padding: 130px;
 
     p {
       width: 100%;
@@ -40,7 +42,17 @@
       line-height: 1.3em;
       padding-bottom: 1em;
 
+      &.first {
+        padding: 130px 130px 0 130px;
+      }
+
+      &.second {
+        padding-left: 130px;
+        padding-right: 130px;
+      }
+
       &.email {
+        text-align: center;
         font-family: $email-font;
         font-size: $email-font-size;
         font-weight: bold;
@@ -57,27 +69,51 @@
       font-size: 85px;
     }
 
+    .color_wrapper {
+      padding: 23vh 0;
+    }
+
     .color_div {
-      top: 23vh;
-      left: 16vw;
       width: 60vw;
     }
 
     .contact_text {
-      padding: 100px 30px;
+      p.first {
+        padding: 90px 40px 0 40px;
+      }
+
+      p.second {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
 
       p.email {
         font-size: 20px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 569px) {
   #contact {
     .contact_text {
+      p.first {
+        padding: 90px 40px 0 40px;
+      }
+
+      p.second {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
       p.email {
-        margin-left: -60px;
+        font-size: 16px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }

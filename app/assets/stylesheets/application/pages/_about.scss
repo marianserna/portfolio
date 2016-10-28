@@ -16,10 +16,12 @@
     text-shadow: 2px 2px #212121;
   }
 
+  .color_wrapper {
+    padding: 30vh 0;
+  }
+
   .color_div {
-    position: absolute;
-    top: 30vh;
-    left: 20vw;
+    margin: 0 auto;
     width: 50vw;
     background-color: #ecf0f1;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
@@ -53,9 +55,11 @@
       top: 23vh;
     }
 
+    .color_wrapper {
+      padding: 23vh 0;
+    }
+
     .color_div {
-      top: 23vh;
-      left: 15vw;
       width: 60vw;
     }
 
