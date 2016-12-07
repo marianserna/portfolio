@@ -1,12 +1,19 @@
 %section#home
-
-  .name
-    %h1 Marian Serna
-    .line
-    .title
-      %h2 Front End Developer
-
   .social_bar
+    %nav
+      %ul.navigation
+        %li
+          %a{href: '#home'} Home
+
+        %li
+          %a{href: '#projects'} Projects
+
+        %li
+          %a{href: '#about'} About
+
+        %li
+          %a{href: '#contact'} Contact
+
     .icons
       .icon
         %a{href: 'https://github.com/marianserna'}
@@ -16,28 +23,14 @@
           %i.fa.fa-linkedin
 
   .intro
-    .intro_image
+    %img.name{src: image_url('name.png')}
 
-    %nav
-      %ul.navigation
-        %li
-          %a{href: '#home'}
-            .over 01. Home
-            .under 01. Home
-        %li
-          %a{href: '#projects'}
-            .over 02. Projects
-            .under 02. Projects
-        %li
-          %a{href: '#about'}
-            .over 03. About
-            .under 03. About
-        %li
-          %a{href: '#contact'}
-            .over 04. Contact
-            .under 04. Contact
-
-    %p#year &#8226; #{Date.today.year} &#8226;
+    %ul#scene
+      %li.layer{data: {depth: 0.0}, style: "background-image: url('#{image_url('sky.png')}')"}
+      %li.layer{data: {depth: 0.2}, style: "background-image: url('#{image_url('mountain4.png')}')"}
+      %li.layer{data: {depth: 0.3}, style: "background-image: url('#{image_url('mountain3.png')}')"}
+      %li.layer{data: {depth: 0.4}, style: "background-image: url('#{image_url('mountain2.png')}')"}
+      %li.layer{data: {depth: 0.5}, style: "background-image: url('#{image_url('mountain1.png')}')"}
 
   .scrolling_nav
     .scrolling_nav_wrapper.single

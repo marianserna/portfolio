@@ -9,11 +9,13 @@
     font-family: "Fjalla One", sans-serif;
     font-size: 8em;
     color: #fff;
-    top: 30vh;
-    margin-top: -60px;
+    top: 85vh;
     left: 10vw;
     z-index: 4;
     text-shadow: 2px 2px #212121;
+    color: #FFF176;
+    transform: rotate(-90deg);
+  	transform-origin: left top 0;
   }
 
   .color_wrapper {
@@ -23,15 +25,13 @@
   .color_div {
     margin: 0 auto;
     width: 50vw;
-    background-color: #ecf0f1;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     z-index: 2;
   }
 
   .about_text {
     font-family: $p-font;
     font-size: 1.1em;
-    color: #080808;
+    color: #fff;
     z-index: 3;
     text-align: left;
     padding: 70px;
@@ -51,7 +51,8 @@
   #about {
     .about_behind {
       font-size: 85px;
-      top: 23vh;
+      top: 60vh;
+      left: 2vw;
     }
 
     .color_wrapper {

@@ -15,4 +15,5 @@
 //= require mustache
 //= require zenscroll.min
 //= require scrollreveal.min
+//= require parallax.min
 //= require_tree ./application

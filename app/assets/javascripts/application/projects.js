@@ -22,3 +22,8 @@ sr.reveal('.grid-item', {
   duration: 1000,
   delay: 500
 }, 250);
+
+sr.reveal('.about_text', {
+  duration: 1000,
+  delay: 250
+});
