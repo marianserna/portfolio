@@ -13,6 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require mustache
-//= require isotope.pkgd.min
 //= require zenscroll.min
+//= require scrollreveal.min
 //= require_tree ./application

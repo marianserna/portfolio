@@ -1,9 +1,9 @@
 module ApplicationHelper
-  def item_classes(item)
+  def item_classes(item, index)
     classes = []
     classes.push(item.category)
-    if item.case_study?
-      classes.push('grid-item--case_study')
+    if (index % 3) != 0
+      classes.push('grid-item--half')
     end
     classes.join(' ')
   end

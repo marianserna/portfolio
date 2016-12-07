@@ -8,15 +8,13 @@
   %nav.projects
     %ul.navigation
       %li
-        %a{onclick: 'filterGrid(".frontend"); return false;'} 01. Front End
+        %a{onclick: 'filterGrid("frontend"); return false;'} 01. Front End
       %li
-        %a{onclick: 'filterGrid(".design"); return false;'} 02. Design
+        %a{onclick: 'filterGrid("backend"); return false;'} 02. Back End
       %li
-        %a{onclick: 'filterGrid(".backend"); return false;'} 03. Back End
-      -# %li
-      -#   %a{onclick: 'filterGrid(".inprogress"); return false;'} 04. In Progress
+        %a{onclick: 'filterGrid("prototyping"); return false;'} 03. Prototyping
       %li
-        %a{onclick: 'filterGrid("*"); return false;'} 04. See All
+        %a{onclick: 'filterGrid("grid-item"); return false;'} 04. See All
 
   .scrolling_nav
     .scrolling_nav_wrapper.double
@@ -30,8 +28,8 @@
 
   .projects_title PROJECTS
   .grid
-    - @portfolio_items.each do |item|
-      .grid-item{class: item_classes(item), style: "background-image: url('#{item.background_image.url(:grid_thumb)}')"}
+    - @portfolio_items.each_with_index do |item, i|
+      .grid-item{class: item_classes(item, i), style: "background-image: url('#{item.background_image.url(:grid_thumb)}')"}
         .grid_content
           %h3.grid_title= item.title
           .grid_links
