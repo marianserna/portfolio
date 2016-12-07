@@ -18,21 +18,17 @@
 
   .scrolling_nav
     .scrolling_nav_wrapper.double
-      .page_number 03
+      .page_number 02
       .vertical_line.top
       .scroll_links
-        %a.previous{href: '#about'} PREV
+        %a.previous{href: '#home'} PREV
         %br
-        %a.next{href: '#contact'} NEXT
+        %a.next{href: '#about'} NEXT
       .vertical_line.bottom
 
   .projects_title PROJECTS
   .grid
     - @portfolio_items.each_with_index do |item, i|
       .grid-item{class: item_classes(item, i), style: "background-image: url('#{item.background_image.url(:grid_thumb)}')"}
-        .grid_content
+        %a.grid_content{href: portfolio_item_url(item)}
           %h3.grid_title= item.title
-          .grid_links
-            %a.grid_link{href: portfolio_item_url(item)} About
-            &#8226
-            %a.grid_link{href: item.item_url} Website

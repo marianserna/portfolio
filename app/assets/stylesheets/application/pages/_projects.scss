@@ -20,22 +20,28 @@
 
     .filter_content {
       position: relative;
-      width: 100px;
+      width: 80px;
       height: 100px;
+      padding: 10px;
+      margin: 0;
 
       .filter_line {
         border-bottom: 1px solid #fff;
-        width: 65px;
+        width: 45px;
         position: absolute;
-        top: 50%;
+        top: 30%;
       }
 
       .filter {
         display: block;
-        transform: translate3d(0px, 0px, 0px) rotate(-90deg);
+        transform-origin: right;
+        transform: rotate(-90deg);
         color: white;
         font-family: $email-font;
-        padding-top: 80px;
+
+        &:hover {
+          color: #ff1744;
+        }
       }
     }
   }
@@ -94,9 +100,19 @@
       background-position: center;
 
       .grid_content {
+        display: block;
         position: relative;
         width: 100%;
         min-height: 20vw;
+        opacity: 0;
+        transition: opacity 1s ease, background-color 1s ease;
+        background-color: none;
+
+        &:hover {
+          opacity: 1;
+          background-color:  rgba(0, 0, 0, 0.5);
+          cursor: pointer;
+        }
 
         .grid_title {
           position: absolute;
