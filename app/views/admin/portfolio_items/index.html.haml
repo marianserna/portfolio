@@ -4,13 +4,13 @@
 
 %table.table
   %tr
-    %th ID
+    %th Position
     %th Title
     %th Category
     %th Actions
   - @portfolio_items.each do |item|
     %tr
-      %td= item.id
+      %td= item.position
       %td= item.title
       %td= item.category
       %td
