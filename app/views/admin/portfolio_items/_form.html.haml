@@ -13,6 +13,7 @@
 
   - if @portfolio_item.background_image.present?
     = image_tag @portfolio_item.background_image.url(:thumb)
+    = link_to 'Original', @portfolio_item.background_image.url
 
   = f.input :background_image, as: :file
   = f.input :details_position_class, as: :string
