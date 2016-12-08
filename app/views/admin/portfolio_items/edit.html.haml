@@ -1,3 +1,4 @@
 %h2= "Editing #{@portfolio_item.title}"
+= link_to 'View', portfolio_item_url(@portfolio_item), target: '_blank'
 
 = render partial: 'form'

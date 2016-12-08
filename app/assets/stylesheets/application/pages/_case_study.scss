@@ -1,77 +1,311 @@
-.project {
-  width: 100%;
-
-  .project_title {
-    width: 100%;
-    height: 50vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-
-    h2 {
-      font-family: $case_study_title_font;
-      font-size: $case_study_title_size;
-      color: #26C6DA;
-      text-shadow: 2px 2px #212121;
-      text-align: center;
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-      transform: translateY(50%);
-    }
-  }
-
-  .project_container {
+.project_container {
+  * {
     box-sizing: border-box;
-    max-width: 50vw;
-    margin: 150px auto;
-    padding: 100px;
-    background-color: #EEEEEE;
-    border-radius: 10px;
-
-    h3, p {
-      font-family: $email-font;
-      font-size: $email-font-size;
-      color: #080808;
-    }
-
-    h3 {
-      margin-top: 50px;
-      text-align: left;
-      color: #f44336;
-    }
-
-    p {
-      font-family: $p-font;
-      font-size: $p-size;
-      padding: 1.2em;
-      line-height: 1.5em;
-    }
+    margin: 0;
+    padding: 0;
   }
 
-  .vertical_line {
-    border-right: 1px solid #000 !important;
+  img {
+    max-width: 100%;
   }
-}
 
-@media (max-width: 768px) {
-  .project {
-    .project_container {
-      max-width: 70vw;
-      margin: 70px auto 70px 25px;
-      padding: 50px 25px;
+  h1, h2, h3 {
+    font-family: $h1-font;
+    color: #26C6DA;
+    font-size: 2.5em;
+  }
 
-      h3 {
-        margin-top: 25px;
-        font-size: 17px;
+  h2 {
+    font-size: 1.8em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-family: $p-font;
+    font-size: $p-size;
+    color: #212121;
+    line-height: 2em;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ff1744;
+  }
+
+  .caseHero {
+    width: 100vw;
+    // min-height: 100vh;
+    display: flex;
+    margin-bottom: 100px;
+
+    .image, .brief {
+      width: 50vw;
+    }
+
+    .brief {
+      h1, p {
+        padding: 50px 200px 50px 50px;
+        text-align: left;
+      }
+
+      h1 {
+        margin-top: 15vh;
+        padding-bottom: 0;
+        line-height: 1.5em;
       }
 
       p {
-        font-size: 11px;
-        padding: 15px;
-        line-height: 20px;
+        text-align: left;
+      }
+
+      .websiteLink {
+        display: block;
+        color: #9C27B0;
+        text-align: center;
+        font-family: $p-font;
+        font-weight: bold;
+        font-size: 1.5em;
+
+        &:hover {
+          color: #FF5722;
+        }
+      }
+    }
+
+    @media(max-width: 950px) {
+      display: block;
+      margin-bottom: 0px;
+
+      .image, .brief {
+        width: 80vw;
+      }
+
+      .brief {
+        width: 90%;
+        padding: 50px;
+        text-align: center;
+
+
+        h1, p {
+          margin: 0;
+          padding: 50px;
+        }
+
+        h1 {
+          padding-bottom: 0px;
+        }
+
+        .websiteLink  {
+          text-align: left;
+          padding-left: 50px;
+        }
       }
     }
   }
+
+  .information {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+
+    .innerContainer {
+      margin: 100px 200px;
+      padding: 30px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      width: 60%;
+      border: 1px solid #E0E0E0;
+    }
+
+    @media(max-width: 950px) {
+
+      .innerContainer {
+        margin: 25px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .type, .role,
+        .software, .when {
+          padding-bottom: 25px;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .fullWidthImage {
+    width: 100vw;
+
+    h3 {
+      padding: 50px;
+      line-height: 3em;
+      text-align: center;
+    }
+
+    iframe {
+      display: flex;
+      justify-content: center;
+      width: 80vw;
+    }
+  }
+
+  .challengeInnerContainer {
+    width: 85vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 200px;
+    margin-bottom: 200px;
+
+    .challengeText {
+      width: 45%;
+      padding: 50px 100px 50px 50px;
+      text-align: left;
+
+      h3 {
+        padding-top: 0;
+        padding-bottom: 50px;
+      }
+    }
+
+    .processFirst {
+      width: 45%;
+    }
+
+    @media(max-width: 950px) {
+      flex-wrap: wrap;
+      margin: 0 auto;
+      margin-top: 100px;
+
+      .challengeText {
+        width: 100%;
+        padding: 100px 50px;
+      }
+
+      .processFirst {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 100px;
+      }
+    }
+  }
+
+  .videos {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+
+    .videosInnerContainer {
+      width: 90vw;
+      display: flex;
+      justify-content: center;
+    }
+
+    .videoLeft, .videoRight {
+      h3 {
+        padding-bottom: 50px;
+      }
+
+      iframe {
+        max-width: 90%;
+      }
+    }
+
+    @media(max-width: 950px) {
+      display: block;
+      min-height: 100vh;
+
+      .videosInnerContainer {
+        display: block;
+        margin: 0px auto;
+      }
+
+      .videoLeft, .videoRight {
+        h3 {
+          padding-top: 50px;
+        }
+        iframe {
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+
+    }
+  }
+
+  .result {
+    width: 100vw;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .resultInnerContainer {
+      margin: 100px 200px;
+      padding: 30px;
+      width: 60%;
+      border: 1px solid #E0E0E0
+    }
+
+    h3 {
+      padding-bottom: 50px;
+      width: 100%;
+    }
+
+    @media(max-width: 950px) {
+      display: block;
+      margin: 0 auto;
+
+      .resultInnerContainer {
+        margin: 0 auto;
+        margin-top: 100px;
+        width: 90%;
+      }
+    }
+  }
+
+  .wireframes {
+    margin-top: 200px;
+    width: 100vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+    .wireframesInnerContainer {
+      width: 90%;
+
+      .lowFi, .hiFi {
+        margin: 0 auto;
+        h3 {
+          text-align: center;
+          padding-bottom: 50px;
+          width: 100%;
+          font-size: 1.8em;
+        }
+
+        img {
+          padding: 50px;
+
+          @media(max-width: 950px) {
+            width: 100vw;
+            padding: 0;
+          }
+        }
+      }
+
+      .lowFi {
+        margin-bottom: 200px;
+      }
+    }
+  }
+
 }

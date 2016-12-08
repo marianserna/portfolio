@@ -10,7 +10,7 @@ class Admin::PortfolioItemsController < Admin::BaseController
   def update
     @portfolio_item = PortfolioItem.find(params[:id])
     if @portfolio_item.update(portfolio_params)
-      redirect_to admin_portfolio_items_url
+      redirect_to edit_admin_portfolio_item_url(@portfolio_item)
     else
       render :edit
     end

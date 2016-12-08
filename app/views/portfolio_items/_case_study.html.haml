@@ -1,8 +1,5 @@
 .project
 
-  .project_title{style: "background-image: url('#{@portfolio_item.background_image.url(:hero)}')"}
-    %h2= @portfolio_item.title
-
   .scrolling_nav
     .scrolling_nav_wrapper.double
       .vertical_line.top
@@ -13,18 +10,4 @@
       .vertical_line.bottom
 
   .project_container
-    .technologies
-      %h3 - THE TOOLS -
-      %p= @portfolio_item.technologies.to_s.html_safe
-
-    .the_project
-      %h3 - THE TASK -
-      %p= @portfolio_item.project.to_s.html_safe
-
-    .the_approach
-      %h3 - THE APPROACH -
-      %p= @portfolio_item.approach.to_s.html_safe
-
-    .the_takeout
-      %h3 - THE TAKEOUT -
-      %p= @portfolio_item.takeout.to_s.html_safe
+    = @portfolio_item.project.to_s.html_safe
