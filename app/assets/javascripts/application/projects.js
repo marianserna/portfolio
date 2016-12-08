@@ -20,10 +20,15 @@ function toggleFilter() {
 window.sr = ScrollReveal();
 sr.reveal('.grid-item', {
   duration: 1000,
-  delay: 500
-}, 250);
+  delay: 250
+});
 
 sr.reveal('.about_text', {
   duration: 1000,
+  delay: 250
+});
+
+sr.reveal('.caseHero, .information, .fullWidthImage, .challengeInnerContainer, .videos, .result, .wireframes img', {
+  duration: 500,
   delay: 250
 });

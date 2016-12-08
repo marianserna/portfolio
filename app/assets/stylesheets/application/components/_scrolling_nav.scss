@@ -3,6 +3,7 @@
   position: absolute;
   right: 0;
   height: 100vh;
+  z-index: 500;
 }
 
 .scrolling_nav_wrapper {
@@ -68,14 +69,14 @@
       height: calc(30vh - 3em);
     }
   }
+}
 
-  .fa.fa-home {
-    position: absolute;
-    font-size: 4em;
-    bottom: 0.5em;
-    right: 0.5em;
-    color: #7986CB;
-  }
+.fa.fa-home {
+  position:absolute;
+  font-size: 3em;
+  bottom: 0em;
+  right: 1em;
+  color: #7986CB;
 }
 
 @media (max-width: 576px) {

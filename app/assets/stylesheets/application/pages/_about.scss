@@ -4,6 +4,16 @@
   min-height: 100vh;
   background-color: #26C6DA;
 
+  .websiteLink {
+    color: #fff;
+    text-align: left;
+    font-size: 1.3em;
+
+    &:hover {
+      color: #212121;
+    }
+  }
+
   .about_behind {
     position: absolute;
     font-family: "Fjalla One", sans-serif;

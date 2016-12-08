@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161023014907) do
+ActiveRecord::Schema.define(version: 20161208004248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20161023014907) do
     t.boolean  "case_study",                    default: false, null: false
     t.text     "approach"
     t.text     "takeout"
+    t.string   "subtitle"
   end
 
 end

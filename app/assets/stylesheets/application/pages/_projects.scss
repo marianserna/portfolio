@@ -125,6 +125,17 @@
           text-shadow: 1px 1px #212121;
         }
 
+        .grid_subtitle {
+          position: absolute;
+          bottom: 50px;
+          width: 100%;
+          text-align: center;
+          font-family: $p-font;
+          font-size: 1.2em;
+          color: #FFF;
+          text-shadow: 1px 1px #212121;
+        }
+
         .grid_links {
           position: absolute;
           bottom: 50px;

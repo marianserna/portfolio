@@ -1,4 +1,5 @@
 .project
+  #top
 
   .scrolling_nav
     .scrolling_nav_wrapper.double
@@ -11,3 +12,6 @@
 
   .project_container
     = @portfolio_item.project.to_s.html_safe
+
+  %a.house{href: '#top'}
+    %i.fa.fa-home

@@ -1,6 +1,7 @@
 = simple_form_for(@portfolio_item, url: [:admin, @portfolio_item]) do |f|
   = f.input :position
   = f.input :title
+  = f.input :subtitle
   = f.input :case_study
   = f.input :category
   ~ f.input :project, input_html: {class: 'codemirror'}

@@ -17,15 +17,12 @@
   }
 
   .color_wrapper {
-    padding: 30vh 0;
+    padding: 30vh 0 0 0;
   }
 
   .color_div {
     margin: 0 auto;
     width: 50vw;
-    min-height: 60vh;
-    background-color: #ecf0f1;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     z-index: 2;
   }
 
@@ -34,7 +31,6 @@
     font-size: 1.1em;
     color: #080808;
     z-index: 3;
-    // padding: 130px;
 
     p {
       width: 100%;
@@ -42,21 +38,13 @@
       line-height: 1.3em;
       padding-bottom: 1em;
 
-      &.first {
-        padding: 130px 130px 0 130px;
-      }
-
-      &.second {
-        padding-left: 130px;
-        padding-right: 130px;
-      }
-
       &.email {
         text-align: center;
         font-family: $email-font;
         font-size: $email-font-size;
         font-weight: bold;
         color: #FF7043;
+        margin-top: 200px;
       }
     }
   }
@@ -66,7 +54,7 @@
   #contact {
     .contact_behind {
       top: 23vh;
-      font-size: 85px;
+      font-size: 75px;
     }
 
     .color_wrapper {
@@ -78,15 +66,6 @@
     }
 
     .contact_text {
-      p.first {
-        padding: 90px 40px 0 40px;
-      }
-
-      p.second {
-        padding-left: 40px;
-        padding-right: 40px;
-      }
-
       p.email {
         font-size: 20px;
         position: relative;

@@ -1,3 +1,7 @@
+.project {
+  position: relative;
+}
+
 .project_container {
   * {
     box-sizing: border-box;
@@ -37,7 +41,6 @@
 
   .caseHero {
     width: 100vw;
-    // min-height: 100vh;
     display: flex;
     margin-bottom: 100px;
 
@@ -59,19 +62,6 @@
 
       p {
         text-align: left;
-      }
-
-      .websiteLink {
-        display: block;
-        color: #9C27B0;
-        text-align: center;
-        font-family: $p-font;
-        font-weight: bold;
-        font-size: 1.5em;
-
-        &:hover {
-          color: #FF5722;
-        }
       }
     }
 

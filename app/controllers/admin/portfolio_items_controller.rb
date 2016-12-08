@@ -1,6 +1,6 @@
 class Admin::PortfolioItemsController < Admin::BaseController
   def index
-    @portfolio_items = PortfolioItem.all
+    @portfolio_items = PortfolioItem.order(:position)
   end
 
   def edit
@@ -38,7 +38,7 @@ class Admin::PortfolioItemsController < Admin::BaseController
   private
 
   def portfolio_params
-    params.require(:portfolio_item).permit(:title, :project, :category, :item_url,
+    params.require(:portfolio_item).permit(:title, :subtitle, :project, :category, :item_url,
       :background_image, :vimeo_url, :technologies, :details_position_class, :color,
       :background_color, :position, :case_study, :takeout, :approach
     )
