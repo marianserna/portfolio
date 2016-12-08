@@ -203,27 +203,21 @@
     .grid {
       margin-top: -20px;
 
-      .grid-item--case_study {
-        width: 100%;
-
-        .grid_content {
-          width: 100%;
-        }
-      }
-
       .grid-item {
         width: 100%;
-        min-height: 40vw;
+        height: 40vh;
 
         .grid_content {
-          padding-top: 50px;
+          opacity: 1;
+          height: 100%;
 
           .grid_title {
-            position: static;
+            font-size: 1em;
+            font-family: $p-font;
+            bottom: 50px;
           }
-
-          .grid_links {
-            position: static;
+          .grid_subtitle {
+            display: none;
           }
         }
       }
