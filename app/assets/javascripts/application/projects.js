@@ -8,6 +8,8 @@ function filterGrid(selector) {
     }
     gridItems[i].classList.remove('grid-item--half');
   }
+  // trigger scroll reveal (video wasn't showing right away)
+  window.scrollBy(0, 2);
 }
 
 function toggleFilter() {
