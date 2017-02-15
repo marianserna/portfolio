@@ -11,6 +11,7 @@ export default class Butterfly extends THREE.Group {
     const rWingMaterial = new THREE.MeshPhongMaterial({
       map: new THREE.TextureLoader().load('/wing-right.png'),
       transparent: true,
+      // opacity: 0.8,
       side: THREE.DoubleSide
     });
 
@@ -25,6 +26,7 @@ export default class Butterfly extends THREE.Group {
     const lWingMaterial = new THREE.MeshPhongMaterial({
       map: new THREE.TextureLoader().load('/wing-left.png'),
       transparent: true,
+      // opacity: 0.8,
       side: THREE.DoubleSide
     });
 
