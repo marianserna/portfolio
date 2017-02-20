@@ -33,7 +33,7 @@ export default class Flying {
 
   init() {
     this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(50, this.width() / this.height(), 10, 10000);
+    this.camera = new THREE.PerspectiveCamera(50, this.width() / this.height(), 0.1, 2000);
     this.camera.position.set(0, 0, 450);
     this.camera.lookAt(new THREE.Vector3(0, 0, 0));
 
@@ -48,7 +48,6 @@ export default class Flying {
 
     // Create clock to keep track of how many milisecons between each render
     this.clock = new THREE.Clock();
-    this.lastMove = 0;
   }
 
   addLights() {
@@ -69,9 +68,6 @@ export default class Flying {
       boid.position.x = Math.random() * 400 - 200;
       boid.position.y = Math.random() * 400 - 200;
       boid.position.z = Math.random() * 400 - 200;
-      // boid.velocity.x = Math.random() * 2 - 1;
-      // boid.velocity.y = Math.random() * 2 - 1;
-      // boid.velocity.z = Math.random() * 2 - 1;
       boid.setAvoidWalls( true );
       boid.setWorldSize( this.width() / 2, 500, 200 );
       this.boids.push(boid);
@@ -94,6 +90,7 @@ export default class Flying {
   render() {
     // get delta: how long between renders
     const delta = this.clock.getDelta();
+
     for (let i = 0; i < this.butterflies.length; i++) {
       if (Date.now() - this.lastMove > 3000) {
         this.boids[i].setGoal(null);
