@@ -59,7 +59,7 @@ export default class Flying {
     this.butterflies = [];
     this.boids = [];
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) {
       const butterfly = new Butterfly();
       this.scene.add(butterfly);
       this.butterflies.push(butterfly);
