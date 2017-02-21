@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import Flying from './Flying';
+import Particles from './Particles';
 
 export default class Landing extends React.Component {
   static propTypes = {};
@@ -15,11 +16,14 @@ export default class Landing extends React.Component {
 
   componentDidMount() {
     this.flying = new Flying(this.flyingContainer);
+    this.particles = new Particles(this.particlesContainer);
   }
 
   render() {
     return (
-      <div id="flying" ref={(div) => this.flyingContainer = div}>
+      <div id="landing">
+        <div className="flying" ref={(div) => this.flyingContainer = div}></div>
+        <div className="particles" ref={(div) => this.particlesContainer = div}></div>
       </div>
     );
   }

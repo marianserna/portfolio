@@ -5,7 +5,7 @@ export default class Butterfly extends THREE.Group {
     super();
 
     this.cycle = 0;
-    this.width = Math.random() * 5 + 10;
+    this.width = Math.random() * 5 + 20;
     this.height = this.width * 2;
 
     const rWingMaterial = new THREE.MeshPhongMaterial({

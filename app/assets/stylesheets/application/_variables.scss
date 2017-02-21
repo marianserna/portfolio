@@ -1,19 +1,11 @@
-$h1-font: 'Fjalla One', sans-serif;
-$h1-size: 4em;
-$h2-font: 'Poppins', sans-serif;
-$h2-size: 1.2em;
-$p-font: 'Poppins', sans-serif;
-$p-size: 1em;
-$nav-font: 'Fjalla One', sans-serif;
-$nav-size: 1.2em;
-$number-size: 4em;
-$right-nav-size: 2em;
-$project-title-size: 2em;
-$project-links-size: 1.1em;
-$email-font: 'Poppins', sans-serif;
-$email-font-size: 1.5em;
-$categories-font: 'Poppins', sans-serif;
-$categories-size: 1.7em;
+#landing {
+  .particles, .flying {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+  }
 
-$case_study_title_font: 'Fjalla One', sans-serif;
-$case_study_title_size: 7em;
+  .particles {
+    z-index: 2;
+  }
+}
