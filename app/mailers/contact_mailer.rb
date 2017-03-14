@@ -3,7 +3,7 @@ class ContactMailer < ApplicationMailer
     @params = params
     mail(
       to: 'marianhalliday@gmail.com',
-      subject: params[:subject],
+      subject: 'New Message',
       reply_to: params[:email]
     )
   end

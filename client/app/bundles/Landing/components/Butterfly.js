@@ -68,14 +68,14 @@ export default class Butterfly extends THREE.Group {
     this.add(this.rWingJoint);
 
     let triangle = new RightTriangle();
-    let triangleMaterial = new THREE.MeshPhongMaterial({side: THREE.DoubleSide, color: 0x9068BE});
+    let triangleMaterial = new THREE.MeshBasicMaterial({side: THREE.DoubleSide, color: 0xF2C640});
     let triangleMesh = new THREE.Mesh(triangle, triangleMaterial);
     let point = new THREE.Object3D();
     point.add(triangleMesh);
     this.rWingJoint.add(point);
 
     triangle = new RightTriangle();
-    triangleMaterial = new THREE.MeshBasicMaterial({side: THREE.DoubleSide, color: 0xDCAE1D});
+    triangleMaterial = new THREE.MeshBasicMaterial({side: THREE.DoubleSide, color: 0xEFEEE9});
     triangleMesh = new THREE.Mesh(triangle, triangleMaterial);
     point = new THREE.Object3D();
     point.rotation.z += Math.PI / 4;
@@ -83,7 +83,7 @@ export default class Butterfly extends THREE.Group {
     this.rWingJoint.add(point);
 
     triangle = new RightTriangle();
-    triangleMaterial = new THREE.MeshBasicMaterial({side: THREE.DoubleSide, color: 0xDCAE1D});
+    triangleMaterial = new THREE.MeshBasicMaterial({side: THREE.DoubleSide, color: 0xEFEEE9});
     triangleMesh = new THREE.Mesh(triangle, triangleMaterial);
     point = new THREE.Object3D();
     point.rotation.z -= Math.PI / 4;
@@ -96,14 +96,14 @@ export default class Butterfly extends THREE.Group {
     this.add(this.lWingJoint);
 
     let triangle = new LeftTriangle();
-    let triangleMaterial = new THREE.MeshBasicMaterial({side: THREE.DoubleSide, color: 0x9068BE});
+    let triangleMaterial = new THREE.MeshBasicMaterial({side: THREE.DoubleSide, color: 0xFB2A27});
     let triangleMesh = new THREE.Mesh(triangle, triangleMaterial);
     let point = new THREE.Object3D();
     point.add(triangleMesh);
     this.lWingJoint.add(point);
 
     triangle = new LeftTriangle();
-    triangleMaterial = new THREE.MeshBasicMaterial({side: THREE.DoubleSide, color: 0xDCAE1D});
+    triangleMaterial = new THREE.MeshBasicMaterial({side: THREE.DoubleSide, color: 0xE9E581});
     triangleMesh = new THREE.Mesh(triangle, triangleMaterial);
     point = new THREE.Object3D();
     point.rotation.z += Math.PI / 4;
@@ -111,7 +111,7 @@ export default class Butterfly extends THREE.Group {
     this.lWingJoint.add(point);
 
     triangle = new LeftTriangle();
-    triangleMaterial = new THREE.MeshBasicMaterial({side: THREE.DoubleSide, color: 0xDCAE1D});
+    triangleMaterial = new THREE.MeshBasicMaterial({side: THREE.DoubleSide, color: 0xE9E581});
     triangleMesh = new THREE.Mesh(triangle, triangleMaterial);
     point = new THREE.Object3D();
     point.rotation.z -= Math.PI / 4;

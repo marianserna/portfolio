@@ -10,9 +10,23 @@
     /[if lt IE 9]
       = javascript_include_tag 'html5shiv.min'
 
-    %link{href:'https://fonts.googleapis.com/css?family=Fjalla+One|Playfair+Display|Poppins:300', rel: 'stylesheet'}
+    -# %link{href:'https://fonts.googleapis.com/css?family=Fjalla+One|Playfair+Display|Poppins:300', rel: 'stylesheet'}
+    %link{href:'https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat:200', rel: 'stylesheet'}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
 
   %body
+    %nav.menu
+      %ul
+        %li
+          %a{href: '/'} Home
+        %li
+          %a{href: '/'} Work
+        %li
+          %a{href: '/'} About
+        %li
+          %a{href: '/'} Posts
+        %li
+          %a{href: '/contact'} Contact
+
     = yield
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'

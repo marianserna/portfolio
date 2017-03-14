@@ -1,0 +1,51 @@
+#landing {
+  .particles, .flying {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    // background-color: #fff;
+  }
+
+  .particles {
+    z-index: 2;
+  }
+
+  .name {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-family: 'Dawning of a New Day', cursive;
+      font-size: 3rem;
+      color: #9A9FB6;
+    }
+
+    h3 {
+      font-family: 'Unna', serif;
+      color: #333333;
+      padding-top: 15px;
+    }
+  }
+
+  .navigate-voice {
+    position: absolute;
+    width: 100vw;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Unna', serif;
+    font-size: 0.8rem;
+    color: #3A405A;
+
+    #micro {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

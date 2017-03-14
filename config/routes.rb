@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'hello_world', to: 'hello_world#index'
   root 'pages#home'
+  # Resources gives you portfolio_items/show
   resources :portfolio_items, only: :show
+
+  # Custom routing: when you go to /contact, contacts#new handles the request
+  get '/contact', to: 'contacts#new'
+  post '/contacts', to: 'contacts#create'
 
   namespace :admin do
     root 'portfolio_items#index'

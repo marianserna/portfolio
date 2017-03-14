@@ -1,12 +1,15 @@
 class ContactsController < ApplicationController
   def create
     ContactMailer.contact(contact_params).deliver_now
-    head :ok
+    render json: {status: 'sent'}
+  end
+
+  def new
   end
 
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :email, :subject, :message)
+    params.require(:contact).permit(:name, :email, :message)
   end
 end

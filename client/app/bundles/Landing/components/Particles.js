@@ -54,7 +54,7 @@ export default class Particles {
     // available particles
     this.pool = [];
     this.max_particles = 100;
-    this.colours = ['#1F2B40', '#9A9FB6', '#F2C640'];
+    this.colours = ['#1F2B40', '#9A9FB6', '#F2C640', '#1FDA9A', '#9068BE'];
 
     this.sketch = Sketch.create({
       container: this.container,
