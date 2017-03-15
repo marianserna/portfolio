@@ -2,6 +2,7 @@ import React from 'react';
 import SphereScene from './SphereScene'
 import {TweenMax} from 'gsap';
 import './DrawSVGPlugin';
+import FontAwesome from 'react-fontawesome';
 
 export default class Sphere extends React.Component {
   constructor(props, _railsContext) {
@@ -39,9 +40,27 @@ export default class Sphere extends React.Component {
     return(
       <div id="landingSphere">
         <div id="sphere" ref={(div) => this.sphereContainer = div}></div>
-        <div className="particles" ref={(div) => this.particlesContainer = div}></div>
         <h1>Marian Serna</h1>
         <h3>Interactive Developer</h3>
+
+        <div className="social">
+          <a className="github" href="https://github.com/marianserna?tab=repositories">
+            <FontAwesome
+              className='fa-icon'
+              name='github'
+              size='2x'
+            />
+            GITHUB
+          </a>
+          <a className="linkedin" href="https://www.linkedin.com/in/marian-serna-1762337b/">
+            <FontAwesome
+              className='fa-icon'
+              name='linkedin'
+              size='2x'
+            />
+            LINKEDIN
+          </a>
+        </div>
 
         <div className={['details', this.state.detailsClass].join(' ')}>
 
