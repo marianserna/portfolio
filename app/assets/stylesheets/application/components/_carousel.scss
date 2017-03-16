@@ -1,0 +1,202 @@
+#carouselBg {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e1eded;
+  position: absolute;
+}
+
+.carousel-container {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.carousel {
+  perspective: 1000px;
+  position: relative;
+  margin: 100px auto;
+  width: 650px;
+  height: 50vh;
+  transform: translateX(-40px);
+
+  .itemShowcase {
+    position: absolute;
+    width: 650px;
+    height: 50vh;
+    border: 1.2px dotted rgba(255, 255, 255, 0.8);
+    // transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: all 0.5s ease-in-out;
+    user-select: none;
+    cursor: grab;
+    -webkit-user-drag: none;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    img.floatPhoneTopLeft {
+      position: absolute;
+      z-index: -20;
+      top: 10%;
+      left: 15%;
+      width: 50%;
+    }
+
+    .floatInfoLeft, .floatInfoRight {
+      p, h3 {
+        margin: 1rem;
+      }
+
+      p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
+        line-height: 1.5rem;
+        color: #183346;
+        font-weight: bolder;
+      }
+    }
+
+    .floatInfoLeft {
+      position: absolute;
+      z-index: -10;
+      bottom: 10%;
+      left: 5%;
+      width: 35%;
+      border: 1px dotted white;
+      padding-right: 25px;
+      height: 50%;
+    }
+
+    .floatInfoRight {
+      position: absolute;
+      z-index: -10;
+      top: 10%;
+      right: 5%;
+      width: 35%;
+      border: 1px dotted white;
+      padding-left: 15px;
+      text-align: left;
+      height: 50%;
+    }
+  }
+
+  .bigLetters {
+    position: absolute;
+    top: -30px;
+    left: 10px;
+    z-index: -8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      font-size: 3rem;
+      color: rgba(255, 215, 0, 1);
+      font-family: 'Abril Fatface', cursive;
+      text-shadow: 2px 2px 4px #333333;
+    }
+  }
+}
+
+.itemOptions {
+  width: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  transform: translateX(-40px);
+
+  .linkButton {
+    width: 32%;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border: 1px dotted #fff;
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1) ease;
+    margin-right: 10px;
+
+    a {
+      position: relative;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: #9068BE;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+
+      &:hover {
+        color: #fff;
+        text-shadow: 1px 1px 1px #333333;
+        transition: text-shadow 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .linkButton a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    transition: all 0.5s;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: -1;
+  }
+
+  .linkButton a:hover::after, .linkButton a:active::after {
+    width: 100%;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.libelula, .music, .llama, .octocat {
+  display: flex;
+  align-items: flex-end;
+
+  .imacToLeft, .imacToRight {
+    display: block;
+    width: 65%;
+  }
+}
+
+.libelula, .llama {
+  justify-content: flex-end;
+
+  h3 {
+    text-align: left;
+  }
+}
+
+.music, .octocat {
+  justify-content: flex-start;
+}
+
+.circleToLeft {
+  position: absolute;
+  z-index: -20;
+  top: 5%;
+  right: 35%;
+  width: 60%;
+}
+
+.circleToRight {
+  position: absolute;
+  z-index: -20;
+  top: 5%;
+  left: 35%;
+  width: 60%;
+}
+
+.dragonfly {
+  width: 80px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}

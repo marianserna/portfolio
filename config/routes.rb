@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  # Resources gives you portfolio_items/show
-  resources :portfolio_items, only: :show
+  # Resources gives you portfolio_items/show and index but overrides the path to 'work'
+  resources :portfolio_items, only: [:show, :index], path: 'work'
 
   # Custom routing: when you go to /contact, contacts#new handles the request
   get '/contact', to: 'contacts#new'
