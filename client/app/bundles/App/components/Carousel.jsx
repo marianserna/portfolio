@@ -19,6 +19,25 @@ export default class Carousel extends React.Component {
   }
 
   componentDidMount() {
+    this.captureMouseWobble();
+    this.captureKeys();
+    this.captureDrag();
+  }
+
+  captureMouseWobble() {
+    document.addEventListener('mousemove', (e) => {
+      const halfWidth = window.innerWidth / 2;
+      const halfHeight = window.innerHeight / 2;
+
+      const mousePosX = e.clientX - halfWidth;
+      const mousePosY = e.clientY - halfHeight;
+
+      this.carousel.style.transform = `rotateY(${mousePosX * 0.01}deg) rotateX(${mousePosY * 0.02}deg)`;
+
+    });
+  }
+
+  captureKeys() {
     document.addEventListener('keydown', (e) => {
       if (this.isDragging) {
         return;
@@ -30,7 +49,6 @@ export default class Carousel extends React.Component {
         this.setState({currentItem: this.state.currentItem + 1});
       }
     });
-    this.captureDrag();
   }
 
   captureDrag() {
@@ -94,14 +112,11 @@ export default class Carousel extends React.Component {
               <img src="dragonfly.png" className="dragonfly" alt="mackBook image"/>
 
               <div className="floatInfoLeft">
-                <p>Cinema4D</p>
-                <p>HTML5</p>
-                <p>CSS</p>
-                <p>JavaScript</p>
-              </div>
-
-              <div className="floatInfoRight">
                 <p>Initial approach to 3D and interactivity</p>
+
+                <p className="tools">
+                  TOOLS: HTML5, CSS, JavaScript, Cinema4D
+                </p>
               </div>
             </figure>
 
@@ -113,15 +128,13 @@ export default class Carousel extends React.Component {
               <img src="musica.svg" className="imacToRight" alt="mackBook image"/>
               <img src="blueToPurple.svg" className="circleToRight" alt="circle"/>
 
-              <div className="floatInfoLeft">
-                <p>React on Rails</p>
-                <p>Amazon Rekognition API</p>
-                <p>Speech Synthesis</p>
-                <p>Speech Recognition</p>
-              </div>
 
-              <div className="floatInfoRight">
-                <p>An app concept for the visually impared</p>
+              <div className="floatInfoRight taller">
+                <p>Create your own playlist and share it with the world</p>
+
+                <p className="tools">
+                  TOOLS: Ruby on Rails, React, Three.js, SoundCloud API
+                </p>
               </div>
             </figure>
 
@@ -155,15 +168,12 @@ export default class Carousel extends React.Component {
               <img src="blueToPurple.svg" className="circleToLeft" alt="circle"/>
 
               <div className="floatInfoLeft">
-                <p>React on Rails</p>
-                <p>Amazon Rekognition API</p>
-                <p>Speech Synthesis</p>
-                <p>Speech Recognition</p>
+                <p>An app concept for the visually impared</p>
+
+                <p>TOOLS:</p>
+
               </div>
 
-              <div className="floatInfoRight">
-                <p>An app concept for the visually impared</p>
-              </div>
             </figure>
 
             <figure className="itemShowcase octocat" style={this.calcTransform(5)} onClick={(e) => this.transitionTo(5)}>
@@ -197,7 +207,7 @@ export default class Carousel extends React.Component {
           </div>
           <div className="linkButton">
             <a href={this.itemInfo[this.state.currentItem - 1].site}>SITE</a>
-          </div>  
+          </div>
         </div>
       </div>
     );

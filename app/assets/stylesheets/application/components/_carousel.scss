@@ -8,6 +8,7 @@
 .carousel-container {
   overflow-x: hidden;
   width: 100%;
+  perspective: 1000px;
 }
 
 .carousel {
@@ -17,6 +18,7 @@
   width: 650px;
   height: 50vh;
   transform: translateX(-40px);
+  transform-style: preserve-3d;
 
   .itemShowcase {
     position: absolute;
@@ -46,7 +48,7 @@
 
     .floatInfoLeft, .floatInfoRight {
       p, h3 {
-        margin: 1rem;
+        margin: 0.5rem;
       }
 
       p {
@@ -63,9 +65,10 @@
       z-index: -10;
       bottom: 10%;
       left: 5%;
-      width: 35%;
+      width: 45%;
       border: 1px dotted white;
-      padding-right: 25px;
+      padding: 15px;
+      padding-right: 13%;
       height: 50%;
     }
 
@@ -74,11 +77,16 @@
       z-index: -10;
       top: 10%;
       right: 5%;
-      width: 35%;
+      width: 45%;
       border: 1px dotted white;
-      padding-left: 15px;
+      padding: 15px;
+      padding-left: 13%;
       text-align: left;
       height: 50%;
+    }
+
+    .taller {
+      height: 65%;
     }
   }
 
@@ -199,4 +207,10 @@
   position: absolute;
   top: 25%;
   left: 25%;
+}
+
+.carousel .itemShowcase .floatInfoLeft p.tools,
+.carousel .itemShowcase .floatInfoRight p.tools  {
+  margin-top: 25px;
+  color: #CC0063;
 }

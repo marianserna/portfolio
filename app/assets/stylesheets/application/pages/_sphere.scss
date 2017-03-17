@@ -5,6 +5,11 @@
   flex-direction: column;
   height: 100vh;
 
+  .name {
+    overflow: hidden;
+    display: block;
+  }
+
   h1 {
     font-family: 'Abril Fatface', cursive;
     font-size: 5rem;
@@ -163,4 +168,8 @@ path.line {
     position: absolute;
     bottom: 280px;
   }
+}
+
+.hidden {
+  opacity: 0;
 }

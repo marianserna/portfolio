@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import {Howl} from 'howler';
+import {TweenLite} from 'gsap';
 
 window.THREE = THREE;
 require('three/examples/js/controls/OrbitControls.js');
@@ -9,6 +10,15 @@ export default class SphereScene {
     this.container = container;
     this.activateInfo = activateInfo;
     this.deactivateInfo = deactivateInfo;
+
+    // currently touching the Icosahedron
+    this.active = false;
+    // time when the current activation has taken place
+    this.activeDate = null;
+    // has it been activated and then deactivated
+    this.prevActivated = false;
+    // multiplier that goes from 0 to 1 causing the animation to move at a normal speed
+    this.activeRate = 0;
 
     this.init();
     this.addSong();
@@ -44,6 +54,8 @@ export default class SphereScene {
     if (!this.active) {
       this.song.play();
       this.activateInfo();
+      this.activeDate = new Date();
+      TweenLite.fromTo(this, 0.5, {activeRate: 0}, {activeRate: 1});
     }
     this.active = true;
   }
@@ -52,6 +64,9 @@ export default class SphereScene {
     if (this.active) {
       this.song.pause();
       this.deactivateInfo();
+      this.activeDate = null;
+      this.prevActivated = true;
+      TweenLite.fromTo(this, 0.5, {activeRate: 1}, {activeRate: 0});
     }
     this.active = false;
   }
@@ -187,6 +202,20 @@ export default class SphereScene {
     return [x, y, z];
   }
 
+  canDance() {
+    if (this.activeRate > 0) {
+      return true;
+    }
+
+    if (!this.active) {
+      return false;
+    }
+
+    const now = new Date();
+    const timeDancing = now.getTime() - this.activeDate.getTime();
+    return timeDancing > 500 || this.prevActivated;
+  }
+
   handleResize() {
     this.renderer.setSize(this.width(), this.height());
     this.camera.aspect = this.width() / this.height();
@@ -202,16 +231,14 @@ export default class SphereScene {
 
   render() {
     // get delta: how long between renders
-    const delta = this.clock.getDelta();
+    const delta = this.clock.getDelta() * this.activeRate;
 
-    if (this.active) {
+    if (this.canDance()) {
       this.distance += delta * 10;
 
       const curve = Math.sin(this.distance) * 0.01;
-      // console.log(curve);
 
       const scale = this.scene.scale.x + curve;
-
       this.scene.scale.set(scale, scale, scale);
       this.scene.rotation.x += delta;
       this.scene.rotation.y += delta;

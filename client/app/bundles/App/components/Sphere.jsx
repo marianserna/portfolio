@@ -1,7 +1,8 @@
 import React from 'react';
 import SphereScene from './SphereScene'
-import {TweenMax} from 'gsap';
+import {TweenMax, TimelineLite} from 'gsap';
 import './DrawSVGPlugin';
+import SplitText from './SplitText';
 import FontAwesome from 'react-fontawesome';
 
 export default class Sphere extends React.Component {
@@ -18,6 +19,21 @@ export default class Sphere extends React.Component {
       // this.particles = new Particles(this.particlesContainer).bind(this),
       this.activateInfo.bind(this),
       this.deactivateInfo.bind(this)
+    );
+
+    TweenMax.fromTo('h1', 1,
+      {css: {y: 100}},
+      {css: {y: 0}, delay: 0.8, ease: Power4.easeOut, onComplete: () => {
+        document.querySelector('h3').classList.remove('hidden');
+
+        const tl = new TimelineLite();
+        const title = new SplitText("h3", {type: "words,chars"});
+        const chars = title.chars;
+
+        console.log(chars);
+
+        tl.staggerFromTo(chars, 0.5, {opacity: 0}, {opacity: 1}, 0.1);
+      }}
     );
   }
 
@@ -40,8 +56,10 @@ export default class Sphere extends React.Component {
     return(
       <div id="landingSphere">
         <div id="sphere" ref={(div) => this.sphereContainer = div}></div>
-        <h1>Marian Serna</h1>
-        <h3>Interactive Developer</h3>
+        <span className="name">
+          <h1>Marian Serna</h1>
+        </span>
+        <h3 className="title hidden">Interactive Developer</h3>
 
         <div className="social">
           <a className="github" href="https://github.com/marianserna?tab=repositories">
