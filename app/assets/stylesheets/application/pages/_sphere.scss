@@ -173,3 +173,11 @@ path.line {
 .hidden {
   opacity: 0;
 }
+
+.instructions {
+  position: absolute;
+  bottom: 25px;
+  color: #fff;
+  font-family: 'Nixie One', cursive;
+  font-size: 0.8rem;
+}

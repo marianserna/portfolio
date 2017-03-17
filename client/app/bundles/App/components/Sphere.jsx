@@ -30,9 +30,7 @@ export default class Sphere extends React.Component {
         const title = new SplitText("h3", {type: "words,chars"});
         const chars = title.chars;
 
-        console.log(chars);
-
-        tl.staggerFromTo(chars, 0.5, {opacity: 0}, {opacity: 1}, 0.1);
+        tl.staggerFromTo(chars, 0.3, {opacity: 0}, {opacity: 1}, 0.05);
       }}
     );
   }
@@ -115,6 +113,8 @@ export default class Sphere extends React.Component {
           </div>
 
         </div>
+
+        <p className="instructions"><i>Hover Icosahedron</i></p>
       </div>
 
     )

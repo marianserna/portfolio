@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import {TweenMax, TimelineLite} from 'gsap';
 
 export default class ContactForm extends React.Component {
   static propTypes = {};
@@ -22,23 +23,33 @@ export default class ContactForm extends React.Component {
       username: this.name.value
     });
 
-    fetch('/contacts', {
-      method: 'post',
-      headers: new Headers({
-        'Content-Type': 'application/json'
-      }),
-      body: JSON.stringify({
-        'contact': {
-          'name': this.name.value,
-          'email': this.email.value,
-          'message': this.message.value
-        }
-      })
-    }).then(response => response.json()).then((data) => {
-      this.setState({
-        status: 'sent'
-      });
-    });
+    new TimelineLite({onComplete: () => {
+
+      // Remove form and set up success div for animation
+      this.form.style.display = 'none';
+      this.successDiv.style.display = 'flex';
+
+      TweenMax.fromTo('.success-msg', 2, {scaleX: 0, scaleY: 0}, {scaleX: 1, scaleY: 1, ease: Elastic.easeOut.config(1, 0.3)});
+
+    }}).staggerFromTo('.input-row, .input-container', 0.5, {opacity: 1}, {opacity: 0}, 0.2);
+
+    // fetch('/contacts', {
+    //   method: 'post',
+    //   headers: new Headers({
+    //     'Content-Type': 'application/json'
+    //   }),
+    //   body: JSON.stringify({
+    //     'contact': {
+    //       'name': this.name.value,
+    //       'email': this.email.value,
+    //       'message': this.message.value
+    //     }
+    //   })
+    // }).then(response => response.json()).then((data) => {
+    //   this.setState({
+    //     status: 'sent'
+    //   });
+    // });
   }
 
   toggleLabel(e) {
@@ -53,7 +64,7 @@ export default class ContactForm extends React.Component {
   render() {
     return (
       <div id="contact">
-        <form onSubmit={(e) => {this.sendInfo(e)}} className="contact-form">
+        <form ref={(form) => this.form = form} onSubmit={(e) => {this.sendInfo(e)}} className="contact-form">
 
           <div className="input-row">
             <span className="input-wrapper">
@@ -80,6 +91,15 @@ export default class ContactForm extends React.Component {
             <button type="submit">SAY HOLA!</button>
           </div>
         </form>
+
+        <div ref={(div) => this.successDiv = div} className="success-msg">
+          <div className="message-content">
+            <p>Hola <span className="username">{this.state.username}</span>! ✌️</p>
+            <p>I hope you're having -or had- a great day.</p>
+            <p>Thanks for writing, I'll be in touch soon!</p>
+            <p className="myName">Marian 😜</p>
+          </div>
+        </div>
       </div>
     );
   }

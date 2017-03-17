@@ -114,7 +114,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  transform: translateX(-40px);
+  // transform: translateX(-40px);
 
   .linkButton {
     width: 32%;
@@ -205,12 +205,25 @@
 .dragonfly {
   width: 80px;
   position: absolute;
-  top: 25%;
-  left: 25%;
+  top: 23%;
+  left: 40%;
 }
 
 .carousel .itemShowcase .floatInfoLeft p.tools,
 .carousel .itemShowcase .floatInfoRight p.tools  {
   margin-top: 25px;
-  color: #CC0063;
+  color: #9068BE;
+}
+
+.instructions-container {
+  display: flex;
+  justify-content: center;
+  widht: 100vw;
+  height: 30px;
+  margin-top: 35px;
+}
+
+.grey {
+  color: #8C95AA;
+  text-align: center;
 }

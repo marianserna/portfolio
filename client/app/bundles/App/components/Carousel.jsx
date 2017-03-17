@@ -115,7 +115,7 @@ export default class Carousel extends React.Component {
                 <p>Initial approach to 3D and interactivity</p>
 
                 <p className="tools">
-                  TOOLS: HTML5, CSS, JavaScript, Cinema4D
+                  TECHNOLOGIES: HTML5, CSS, JavaScript, Cinema4D
                 </p>
               </div>
             </figure>
@@ -133,7 +133,7 @@ export default class Carousel extends React.Component {
                 <p>Create your own playlist and share it with the world</p>
 
                 <p className="tools">
-                  TOOLS: Ruby on Rails, React, Three.js, SoundCloud API
+                  TECHNOLOGIES: Ruby on Rails, React, Firebase, Three.js, SoundCloud API
                 </p>
               </div>
             </figure>
@@ -148,10 +148,7 @@ export default class Carousel extends React.Component {
               <img src="blueToPurple.svg" className="floatPhoneTopLeft" alt="circle"/>
 
               <div className="floatInfoLeft">
-                <p>React on Rails</p>
-                <p>Amazon Rekognition API</p>
-                <p>Speech Synthesis</p>
-                <p>Speech Recognition</p>
+                <p className="tools">TECHNOLOGIES: React on Rails, Amazon Rekognition API, Speech Synthesis, Speech Rekognition</p>
               </div>
 
               <div className="floatInfoRight">
@@ -168,12 +165,10 @@ export default class Carousel extends React.Component {
               <img src="blueToPurple.svg" className="circleToLeft" alt="circle"/>
 
               <div className="floatInfoLeft">
-                <p>An app concept for the visually impared</p>
+                <p>A simple Three.js game</p>
 
-                <p>TOOLS:</p>
-
+                <p className="tools">TECHNOLOGIES: Three.js, React, HTML5 Audio API</p>
               </div>
-
             </figure>
 
             <figure className="itemShowcase octocat" style={this.calcTransform(5)} onClick={(e) => this.transitionTo(5)}>
@@ -184,15 +179,9 @@ export default class Carousel extends React.Component {
               <img src="gitlog.svg" className="imacToLeft" alt="mackBook image"/>
               <img src="blueToPurple.svg" className="circleToRight" alt="circle"/>
 
-              <div className="floatInfoLeft">
-                <p>React on Rails</p>
-                <p>Amazon Rekognition API</p>
-                <p>Speech Synthesis</p>
-                <p>Speech Recognition</p>
-              </div>
-
               <div className="floatInfoRight">
-                <p>An app concept for the visually impared</p>
+                <p>Search GitHub repos by keyword or language</p>
+                <p className="tools">React, Firebase, GitHub API</p>
               </div>
             </figure>
           </div>
@@ -209,6 +198,11 @@ export default class Carousel extends React.Component {
             <a href={this.itemInfo[this.state.currentItem - 1].site}>SITE</a>
           </div>
         </div>
+
+        <div className="instructions-container">
+          <p className="instructions grey"><i>Navigate with directional arrows or by dragging projects</i></p>
+        </div>
+
       </div>
     );
   }

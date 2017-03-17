@@ -12,3 +12,40 @@
   width: 50%;
   text-align: center;
 }
+
+.success-msg {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+
+  .message-content {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: #183346;
+    line-height: 2em;
+    text-align: center;
+  }
+
+  p.myName {
+    margin-top: 35px;
+    padding-right: 20px;
+    text-align: right;
+  }
+
+  .username {
+    color: #9068BE;
+    text-decoration: underline;
+  }
+
+}
