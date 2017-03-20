@@ -60,7 +60,7 @@ export default class Sphere extends React.Component {
         <h3 className="title hidden">Interactive Developer</h3>
 
         <div className="social">
-          <a className="github" href="https://github.com/marianserna?tab=repositories">
+          <a className="github" href="https://github.com/marianserna?tab=repositories" target="_blank">
             <FontAwesome
               className='fa-icon'
               name='github'
@@ -68,7 +68,7 @@ export default class Sphere extends React.Component {
             />
             GITHUB
           </a>
-          <a className="linkedin" href="https://www.linkedin.com/in/marian-serna-1762337b/">
+          <a className="linkedin" href="https://www.linkedin.com/in/marian-serna-1762337b/" target="_blank">
             <FontAwesome
               className='fa-icon'
               name='linkedin'
@@ -105,7 +105,7 @@ export default class Sphere extends React.Component {
           </div>
 
           <div className="lineContainer bottomLeft">
-            <p>Do not approach if you're a sexist boss or co-worker</p>
+            <p>Very friendly but do not approach if you're a sexist boss or co-worker</p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.25 33.66">
               <title>bottomLeft</title>
               <path id="bottomLeft" className="line" d="M165,.28l-37,33H0"/>
