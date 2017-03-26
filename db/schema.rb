@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208004248) do
+ActiveRecord::Schema.define(version: 20170325234508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "case_studies", force: :cascade do |t|
+    t.string   "slug",                                        null: false
+    t.string   "title",                                       null: false
+    t.string   "video_url",                                   null: false
+    t.text     "description",                                 null: false
+    t.string   "description_image_file_name"
+    t.string   "description_image_content_type"
+    t.integer  "description_image_file_size"
+    t.datetime "description_image_updated_at"
+    t.text     "technologies",                                null: false
+    t.string   "technologies_image_file_name"
+    t.string   "technologies_image_content_type"
+    t.integer  "technologies_image_file_size"
+    t.datetime "technologies_image_updated_at"
+    t.text     "challenges",                                  null: false
+    t.string   "challenges_image_file_name"
+    t.string   "challenges_image_content_type"
+    t.integer  "challenges_image_file_size"
+    t.datetime "challenges_image_updated_at"
+    t.integer  "position",                        default: 0, null: false
+    t.datetime "published_at"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+  end
+
+  create_table "interactions", force: :cascade do |t|
+    t.string   "name",         null: false
+    t.string   "emoji",        null: false
+    t.string   "comment"
+    t.integer  "current_time", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "portfolio_items", force: :cascade do |t|
     t.string   "title"

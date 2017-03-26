@@ -1,7 +1,7 @@
 #carouselBg {
   width: 100vw;
   height: 100vh;
-  background-color: #e1eded;
+  background-color: #FAFAFA;
   position: absolute;
 }
 
@@ -24,7 +24,7 @@
     position: absolute;
     width: 650px;
     height: 50vh;
-    border: 1.2px dotted rgba(255, 255, 255, 0.8);
+    border: 1.2px dotted rgba(157,215,213, 0.8);
     // transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     transition: all 0.5s ease-in-out;
     user-select: none;

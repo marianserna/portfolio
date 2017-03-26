@@ -22,7 +22,7 @@ export default class Sphere extends React.Component {
     );
 
     TweenMax.fromTo('h1', 1,
-      {css: {y: 100}},
+      {css: {y: 125}},
       {css: {y: 0}, delay: 0.8, ease: Power4.easeOut, onComplete: () => {
         document.querySelector('h3').classList.remove('hidden');
 
@@ -81,7 +81,7 @@ export default class Sphere extends React.Component {
         <div className={['details', this.state.detailsClass].join(' ')}>
 
           <div className="lineContainer topLeft">
-            <p>Loves building creative stuff but brain dies at 10:00PM</p>
+            <p>Started in development as a way to challenge herself</p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.25 33.66">
               <title>topLeft</title>
               <path id="topLeft" className="line" d="M165,33.38l-37-33H0"/>
@@ -93,7 +93,7 @@ export default class Sphere extends React.Component {
               <title>topRight</title>
               <path id="topRight" className="line" d="M.25,33.38l37-33h128"/>
             </svg>
-            <p>Is cool with multitasking if there's food around</p>
+            <p>Gets a version of "The Little Prince" from every country she visits</p>
           </div>
 
           <div className="lineContainer bottomRight">
@@ -101,11 +101,11 @@ export default class Sphere extends React.Component {
               <title>bottomRight</title>
               <path id="bottomRight" className="line" d="M.25.28l37,33h128"/>
             </svg>
-            <p>Likes the best people with good sense of humor</p>
+            <p>Grew up on a coffee farm</p>
           </div>
 
           <div className="lineContainer bottomLeft">
-            <p>Very friendly but do not approach if you're a sexist boss or co-worker</p>
+            <p>Can't stop eating empanadas</p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.25 33.66">
               <title>bottomLeft</title>
               <path id="bottomLeft" className="line" d="M165,.28l-37,33H0"/>
