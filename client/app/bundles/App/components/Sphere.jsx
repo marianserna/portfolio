@@ -31,6 +31,7 @@ export default class Sphere extends React.Component {
         const chars = title.chars;
 
         tl.staggerFromTo(chars, 0.3, {opacity: 0}, {opacity: 1}, 0.05);
+        tl.staggerFromTo(chars, 0.3, {autoAlpha:0}, {autoAlpha:1}, 0.05);
       }}
     );
   }

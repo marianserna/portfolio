@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   # Resources gives you portfolio_items/show and index but overrides the path to 'work'
   # Resources is for a thing that has a lot/ it's gonna be in the db
-  resources :portfolio_items, only: [:show, :index], path: 'work'
+  resources :case_studies, only: [:show, :index], path: 'work', param: :slug
   # API route for video interactions
   resources :interactions, only: [:index, :create]
 
@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
 
   namespace :admin do
-    root 'portfolio_items#index'
-    resources :portfolio_items
+    root 'case_studies#index'
+    resources :case_studies, param: :slug do
+      resources :code_highlights
+    end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

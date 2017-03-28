@@ -9,13 +9,6 @@ export default class Carousel extends React.Component {
       offsetDeg: 0
     };
     this.isDragging = false;
-    this.itemInfo = [
-      {study: 'https://github.com/', github: 'https://github.com/', site: 'https://github.com/'},
-      {study: 'https://github.com/', github: 'https://github.com/', site: 'https://github.com/'},
-      {study: 'https://github.com/', github: 'https://github.com/', site: 'https://github.com/'},
-      {study: 'https://github.com/', github: 'https://github.com/', site: 'https://github.com/'},
-      {study: 'https://github.com/', github: 'https://github.com/', site: 'https://github.com/'}
-    ]
   }
 
   componentDidMount() {
@@ -101,101 +94,37 @@ export default class Carousel extends React.Component {
       <div>
         <div className="carousel-container">
           <div className="carousel" ref={(div) => this.carousel = div}>
+            {
+              this.props.case_studies.map((case_study, index) => {
+                return (
+                  <figure className="itemShowcase" key={case_study.id} style={this.calcTransform(index + 1)} onClick={(e) => this.transitionTo(index + 1)}>
 
-            <figure className="itemShowcase libelula" style={this.calcTransform(1)} onClick={(e) => this.transitionTo(1)}>
-              <div className="bigLetters">
-                <h3>Lego</h3>
-              </div>
+                    <div className="background" style={{backgroundImage: `url('${case_study.image_url}')`}}></div>
 
-              <img src="libelula.svg" className="imacToLeft" alt="mackBook image"/>
-              <img src="blueToPurple.svg" className="circleToLeft" alt="circle"/>
-              <img src="dragonfly.png" className="dragonfly" alt="mackBook image"/>
+                    <div className="bigLetters">
+                      <h3>{case_study.title}</h3>
+                      <hr/>
+                      <p className="tools">
+                        {case_study.technologies.split(",").slice(0,3).map(item => item.trim()).join(" · ")}
+                      </p>
+                    </div>
 
-              <div className="floatInfoLeft">
-                <p>Initial approach to 3D and interactivity</p>
-
-                <p className="tools">
-                  TECHNOLOGIES: HTML5, CSS, JavaScript, Cinema4D
-                </p>
-              </div>
-            </figure>
-
-            <figure className="itemShowcase music" style={this.calcTransform(2)} onClick={(e) => this.transitionTo(2)}>
-              <div className="bigLetters">
-                <h3>MusicMap</h3>
-              </div>
-
-              <img src="musica.svg" className="imacToRight" alt="mackBook image"/>
-              <img src="blueToPurple.svg" className="circleToRight" alt="circle"/>
-
-
-              <div className="floatInfoRight taller">
-                <p>Create your own playlist and share it with the world</p>
-
-                <p className="tools">
-                  TECHNOLOGIES: Ruby on Rails, React, Firebase, Three.js, SoundCloud API
-                </p>
-              </div>
-            </figure>
-
-
-            <figure className="itemShowcase particles" style={this.calcTransform(3)} onClick={(e) => this.transitionTo(3)}>
-              <div className="bigLetters">
-                <h3>inFront</h3>
-              </div>
-
-              <img src="inFront.svg" alt="iphone image"/>
-              <img src="blueToPurple.svg" className="floatPhoneTopLeft" alt="circle"/>
-
-              <div className="floatInfoLeft">
-                <p className="tools">TECHNOLOGIES: React on Rails, Amazon Rekognition API, Speech Synthesis, Speech Rekognition</p>
-              </div>
-
-              <div className="floatInfoRight">
-                <p>An app concept for the visually impared</p>
-              </div>
-            </figure>
-
-            <figure className="itemShowcase llama" style={this.calcTransform(4)} onClick={(e) => this.transitionTo(4)}>
-              <div className="bigLetters">
-                <h3>Llama Campus</h3>
-              </div>
-
-              <img src="llama.svg" className="imacToRight" alt="mackBook image"/>
-              <img src="blueToPurple.svg" className="circleToLeft" alt="circle"/>
-
-              <div className="floatInfoLeft">
-                <p>A simple Three.js game</p>
-
-                <p className="tools">TECHNOLOGIES: Three.js, React, HTML5 Audio API</p>
-              </div>
-            </figure>
-
-            <figure className="itemShowcase octocat" style={this.calcTransform(5)} onClick={(e) => this.transitionTo(5)}>
-              <div className="bigLetters">
-                <h3>GitLog</h3>
-              </div>
-
-              <img src="gitlog.svg" className="imacToLeft" alt="mackBook image"/>
-              <img src="blueToPurple.svg" className="circleToRight" alt="circle"/>
-
-              <div className="floatInfoRight">
-                <p>Search GitHub repos by keyword or language</p>
-                <p className="tools">React, Firebase, GitHub API</p>
-              </div>
-            </figure>
+                  </figure>
+                )
+              })
+            }
           </div>
         </div>
 
         <div className="itemOptions">
           <div className="linkButton">
-            <a href={this.itemInfo[this.state.currentItem - 1].study}>CASE STUDY</a>
+            <a href={`/work/${this.props.case_studies[this.state.currentItem - 1].slug}`} target="_blank">CASE STUDY</a>
           </div>
           <div className="linkButton">
-            <a href={this.itemInfo[this.state.currentItem - 1].github}>GITHUB</a>
+            <a href={this.props.case_studies[this.state.currentItem - 1].github_url} target="_blank">GITHUB</a>
           </div>
           <div className="linkButton">
-            <a href={this.itemInfo[this.state.currentItem - 1].site}>SITE</a>
+            <a href={this.props.case_studies[this.state.currentItem - 1].site_url} target="_blank">SITE</a>
           </div>
         </div>
 

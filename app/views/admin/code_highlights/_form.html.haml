@@ -1,0 +1,12 @@
+= simple_form_for(@code_highlight, url: [:admin, @case_study, @code_highlight]) do |f|
+  = f.input :position
+  = f.input :caption
+
+  - if @code_highlight.image.present?
+    = image_tag @code_highlight.image.url(:thumb)
+    = link_to 'Original', @code_highlight.image.url
+  = f.input :image, as: :file
+
+  .form-group
+    = f.submit class: "btn btn-primary"
+    = link_to "Cancel", admin_case_study_code_highlights_url(@case_study), class: "btn btn-secondary"

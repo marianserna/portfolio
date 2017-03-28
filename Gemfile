@@ -23,14 +23,14 @@ gem 'paperclip', '~> 4.3', '>= 4.3.5'
 # For generating html
 gem 'haml', '~> 4.0', '>= 4.0.7'
 # For generating forms
-gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'simple_form', '~> 3.4'
 # Bootstrap
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
 gem 'underscore-rails', '~> 1.8', '>= 1.8.3'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.1.0'
 gem 'mustache-js-rails', '~> 2.0', '>= 2.0.6'
-gem 'react_on_rails', '~> 6.5'
+gem 'react_on_rails', '6.5.0'
 gem 'dotenv', '~> 2.2'
 
 # Markdown processing

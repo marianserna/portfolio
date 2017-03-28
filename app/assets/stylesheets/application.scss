@@ -1,7 +1,10 @@
 @import "reset";
+
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
+
 @import "font-awesome";
 
 @import "application/pages/*";
