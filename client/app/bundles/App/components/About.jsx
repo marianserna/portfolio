@@ -13,24 +13,25 @@ export default class About extends React.Component {
       showEmojiForm: false,
       showMessageForm: false,
       displayedInteractions: [],
-      currentPreference: '',
+      currentPreference: null,
+      currentPreferenceSelection: null,
       preferences: {
         whoami: [
-          { title: 'Grandma', image_src: 'grandma.jpg', description: ''},
-          { title: 'Coffee Farm', image_src: 'farm.jpg', description: ''},
-          { title: 'Still Climbing', image_src: 'stillClimbing.jpg', description: ''}
+          { title: 'Farm', image_src: 'mountain.jpg', description: 'May your trails be crooked, winding, lonesome, dangerous, leading to the most amazing view... Edward Abbey'},
+          { title: 'Coffee', image_src: 'berries.jpg', description: 'Family tradition ☕'},
+          { title: 'Still Climbing', image_src: 'stillClimbing.jpg', description: 'Fam Jam time ❤️'}
         ],
 
         career: [
-          { title: 'Fav Dev: Karim Maaloul', image_src: 'fave-dev.jpg', description: ''},
-          { title: 'Fav App: Paper Planes', image_src: 'paperplanes.jpg', description: ''},
-          { title: 'Inspired by: Active Theory', image_src: 'inspired.jpg', description: ''}
+          { title: 'Fav Developer', image_src: 'fave-dev.jpg', description: "I love Karim Maaloul's work. Check it out at http://yakudoo.com/"},
+          { title: 'Fav App', image_src: 'paperplanes.jpg', description: 'I identify with the concept of Paper Planes by Active Theory. It comprises most of the stuff I would like to be able to do as a developer. https://paperplanes.world/'},
+          { title: 'Inspiration', image_src: 'inspired.jpg', description: 'Active Theory'}
         ],
 
         passions: [
-          { title: 'Fav Place: The Alps', image_src: 'alps.jpg', description: ''},
-          { title: 'Fav song: Agua', image_src: 'jdep.jpg', description: ''},
-          { title: 'Obsession: Lavender', image_src: 'lavender.jpg', description: ''}
+          { title: 'Fav Place', image_src: 'alps.jpg', description: 'The alps'},
+          { title: 'Fav Book', image_src: 'littlePrince.jpg', description: 'The Little Prince'},
+          { title: 'Obsession: Lavender', image_src: 'lavender.jpg', description: 'I love it badly'}
         ]
       }
     };
@@ -48,6 +49,7 @@ export default class About extends React.Component {
       } else if (e.code === 'Escape') {
         this.cancelEmojify(e);
         this.hideMessageForm(e);
+        this.onClosePreferenceSelection();
       }
     });
   }
@@ -217,16 +219,26 @@ export default class About extends React.Component {
     this.video.currentTime = percentClick * this.video.duration;
   }
 
+  onPreferenceSelection = (index) => {
+    this.setState({currentPreferenceSelection: index});
+    this.pause();
+  }
+
+  onClosePreferenceSelection = () => {
+    this.setState({currentPreferenceSelection: null});
+    this.play();
+  }
+
   renderInteractions() {
     return this.state.displayedInteractions.map((interaction) => {
       return (
         <div className="interaction" key={interaction.id} style={interaction.style}>
           <div className="interaction-emoji">
             <div className="interaction-name">
-              {interaction.name}
+              <p className="user-name">{interaction.name}</p>
               {
                 interaction.comment ?
-                  <p>{interaction.comment}</p>
+                  <p className="user-comment">{interaction.comment}</p>
                   : null
               }
             </div>
@@ -242,12 +254,15 @@ export default class About extends React.Component {
       <div className="player-container">
         { this.state.preferences[this.state.currentPreference] ?
           <div className="preferences-bar">
-            {this.state.preferences[this.state.currentPreference].map((preference) => {
+            {this.state.preferences[this.state.currentPreference].map((preference, index) => {
               return (
-                <div className="preference" key={preference.title}>
+                <div
+                  className="preference"
+                  key={preference.title}
+                  onClick={() => this.onPreferenceSelection(index)}
+                >
                   <h4>{preference.title}</h4>
                   <img src={preference.image_src} alt={preference.title}/>
-                  <p>{preference.description}</p>
                 </div>
               )
             })}
@@ -255,8 +270,19 @@ export default class About extends React.Component {
           : <div className="preferences-bar hidden"></div>
         }
 
-
         <div className="player">
+
+          {
+            this.state.currentPreferenceSelection !== null ?
+              <div
+                className="preferences-overlay"
+                style={{backgroundImage: `url('${this.state.preferences[this.state.currentPreference][this.state.currentPreferenceSelection].image_src}')`}}>
+                <span className="close-img" onClick={() => this.onClosePreferenceSelection()}>⊗</span>
+                <p>{this.state.preferences[this.state.currentPreference][this.state.currentPreferenceSelection].description}</p>
+              </div>
+            : null
+          }
+
           <div className="video-container">
             <video
               src="/about.mp4"
@@ -318,7 +344,7 @@ export default class About extends React.Component {
 
             <div className="marker me" onClick={(e) => this.markerClick(e, 8)}>
               <div className="tooltip">
-                <img src="me.jpg" alt=""/>
+                <img src="tobermory.jpg" alt=""/>
                 <h4>Who am I</h4>
               </div>
             </div>

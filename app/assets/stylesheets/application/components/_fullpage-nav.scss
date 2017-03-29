@@ -10,12 +10,12 @@
     border-radius: 100%;
     width: 10px;
     height: 10px;
-    border: 2px solid #E91E63;
+    border: 2px solid #FFF;
     margin: 10px;
     transition: background-color 0.2s ease;
 
     &.active {
-      background-color: #E91E63;
+      background-color: #FFF;
     }
   }
 

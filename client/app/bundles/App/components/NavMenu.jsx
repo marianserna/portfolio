@@ -4,7 +4,7 @@ import {Menu, MainButton, ChildButton} from 'react-mfb';
 export default class NavMenu extends React.Component {
   render() {
     return(
-      <Menu effect="slidein-spring" method="click" position="tr">
+      <Menu effect="zoomin" method="click" position="tr">
         <MainButton iconResting="ion-drag" iconActive="ion-close-round" />
 
         <ChildButton

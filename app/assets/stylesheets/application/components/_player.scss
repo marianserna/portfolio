@@ -50,6 +50,7 @@ h4 {
 
     h4 {
       color: #9068BE;
+      font-weight: bolder;
     }
 
     img {
@@ -83,6 +84,46 @@ h4 {
       padding: 15px;
       cursor: pointer;
     }
+  }
+}
+
+.preferences-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: slide-in 1s ease;
+  cursor: pointer;
+
+  @keyframes slide-in {
+    from {transform: translateX(-100vw)}
+    to {transform: translateX(0)}
+  }
+
+  .close-img {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 50px;
+    color: #E91E63;
+  }
+
+  p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #9068BE;
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    padding: 20px;
   }
 }
 
@@ -143,7 +184,7 @@ h4 {
   transform-style: preserve-3d;
   width: 30px;
   height: 30px;
-  background-image: url('/marker.svg');
+  background-image: url('/pin.svg');
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -189,6 +230,11 @@ h4 {
   .interaction-emoji {
     cursor: pointer;
 
+    .user-comment {
+      color: #8C95AA;
+      padding-top: 10px;
+    }
+
     .interaction-name {
       opacity: 0;
       position: relative;
@@ -196,6 +242,9 @@ h4 {
       border-radius: 2px;
       padding: 5px;
       background: #FFF;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bolder;
+      font-size: 0.8rem;
       transition: opacity 0.5s ease;
     }
 
@@ -214,7 +263,7 @@ h4 {
 
     &:hover .interaction-name {
       opacity: 1;
-      color: #FF5A09;
+      color: #600473;
     }
   }
 

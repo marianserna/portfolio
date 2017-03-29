@@ -139,7 +139,7 @@ export default class CaseStudy extends React.Component {
 
             <div className="img-background">
               <span className="case-study-name">
-                <h2 className="case-study-heading">{case_study.title}</h2>
+                <h1 className="case-study-heading">{case_study.title}</h1>
               </span>
 
               <div className="scroll-down">
