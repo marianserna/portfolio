@@ -98,7 +98,8 @@ export default class SphereScene {
 
   addSong() {
     this.song = new Howl({
-      src: ['dontLook.mp3']
+      src: ['dontLook.mp3'],
+      volume: 0.1
     });
   }
 

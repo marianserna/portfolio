@@ -61,7 +61,7 @@
 
 .lineContainer {
   position: absolute;
-  width: 15%;
+  width: 20%;
   display: flex;
   align-items: center;
 
@@ -108,15 +108,25 @@
 
 .lineContainer p {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
-  color: #183346;
+  font-size: 1rem;
+  color: #FFF;
+  font-weight: bolder;
+  width: 50%;
+  flex-grow: 1;
+}
+
+.lineContainer svg {
+  width: 50%;
+  flex-grow: 0;
+  display: block;
+  padding: 10px 20px;
 }
 
 path.line {
   fill: none;
-  stroke: #183346;
+  stroke: #FFF;
   stroke-miterlimit: 10;
-  stroke-width: 2px;
+  stroke-width: 1px;
 }
 
 .social {
@@ -171,7 +181,8 @@ path.line {
 .instructions {
   position: absolute;
   bottom: 25px;
-  color: #fff;
+  color: #FFF;
   font-family: 'Nixie One', cursive;
+  font-weight: bolder;
   font-size: 0.8rem;
 }

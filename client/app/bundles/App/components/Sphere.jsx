@@ -4,6 +4,7 @@ import {TweenMax, TimelineLite} from 'gsap';
 import './DrawSVGPlugin';
 import SplitText from './SplitText';
 import FontAwesome from 'react-fontawesome';
+import {Howl} from 'howler';
 
 export default class Sphere extends React.Component {
   constructor(props, _railsContext) {
@@ -11,6 +12,8 @@ export default class Sphere extends React.Component {
     this.state = {
       detailsClass: 'inactive'
     };
+
+    this.addSong();
   }
 
   componentDidMount() {
@@ -34,6 +37,8 @@ export default class Sphere extends React.Component {
         tl.staggerFromTo(chars, 0.3, {autoAlpha:0}, {autoAlpha:1}, 0.05);
       }}
     );
+
+    this.song.play();
   }
 
   activateInfo() {
@@ -49,6 +54,13 @@ export default class Sphere extends React.Component {
       detailsClass: 'inactive'
     });
     TweenMax.fromTo("path.line", 2, {drawSVG: true}, {drawSVG: "0"});
+  }
+
+  addSong() {
+    this.song = new Howl({
+      src: ['magic.wav'],
+      volume: 0.1
+    });
   }
 
   render() {
@@ -82,7 +94,7 @@ export default class Sphere extends React.Component {
         <div className={['details', this.state.detailsClass].join(' ')}>
 
           <div className="lineContainer topLeft">
-            <p>Started in development as a way to challenge herself</p>
+            <p>JavaScript ⥉ React</p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.25 33.66">
               <title>topLeft</title>
               <path id="topLeft" className="line" d="M165,33.38l-37-33H0"/>
@@ -94,7 +106,7 @@ export default class Sphere extends React.Component {
               <title>topRight</title>
               <path id="topRight" className="line" d="M.25,33.38l37-33h128"/>
             </svg>
-            <p>Gets a version of "The Little Prince" from every country she visits</p>
+            <p>Wireframing ⥉ Prototyping</p>
           </div>
 
           <div className="lineContainer bottomRight">
@@ -102,11 +114,11 @@ export default class Sphere extends React.Component {
               <title>bottomRight</title>
               <path id="bottomRight" className="line" d="M.25.28l37,33h128"/>
             </svg>
-            <p>Grew up on a coffee farm</p>
+            <p>Ruby on Rails</p>
           </div>
 
           <div className="lineContainer bottomLeft">
-            <p>Can't stop eating empanadas</p>
+            <p>SQL ⥉ Firebase</p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.25 33.66">
               <title>bottomLeft</title>
               <path id="bottomLeft" className="line" d="M165,.28l-37,33H0"/>
@@ -115,7 +127,7 @@ export default class Sphere extends React.Component {
 
         </div>
 
-        <p className="instructions"><i>Hover Icosahedron</i></p>
+        <p className="instructions"><i>Hover Figure</i></p>
       </div>
 
     )
