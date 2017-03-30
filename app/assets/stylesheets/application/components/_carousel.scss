@@ -39,14 +39,12 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .bigLetters, .tools {
-      width: 90%;
-      height: 90%;
-      z-index: 5000;
-      position: absolute;
       font-size: 3rem;
       color: #FFF;
       font-family: 'Abril Fatface', cursive;
@@ -65,14 +63,11 @@
     }
 
     .tools {
-      width: 70%;
-      height: 50px;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.8rem;
       font-weight: bolder;
-      color: #9068BE;
-      margin-top: 40px;
-      text-shadow: none;
+      color: #FFF;
+      text-shadow: 1px 1px 1px #333333;
       align-self: center;
     }
   }
@@ -87,48 +82,44 @@
 
   .linkButton {
     width: 32%;
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    border: 1px dotted #fff;
-    transition: all 0.5s cubic-bezier(.25,.8,.25,1) ease;
     margin-right: 10px;
 
-    a {
-      position: relative;
-      text-decoration: none;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1rem;
-      color: #9068BE;
-      display: inline-block;
+    .button {
+      margin-top: 0;
       width: 100%;
-      text-align: center;
-      padding: 10px;
-
-      &:hover {
-        color: #fff;
-        text-shadow: 1px 1px 1px #333333;
-        transition: text-shadow 0.5s ease-in-out;
-      }
+      font-size: 0.8rem;
+      padding-left: 30px;
+      padding-right: 30px;
     }
   }
+}
 
-  .linkButton:after {
-    content: '';
-    display: block;
-    position: absolute;
-    transition: all 0.5s;
-    width: 0%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.4);
-    z-index: -1;
+.instructions-container {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.technologies, p.instructions.grey, .scroll-text {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: #8C95AA;
+  font-weight: bolder;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 650px) {
+  .carousel-container, .itemOptions, .instructions-container {
+    display: none;
   }
+}
 
-  .linkButton:hover::after, .linkButton:active::after {
-    width: 100%;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    transition: all 0.5s ease-in-out;
+@media (min-width: 651px) {
+  .mobile-display {
+    display: none;
   }
 }

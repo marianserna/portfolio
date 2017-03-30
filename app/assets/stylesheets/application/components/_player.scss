@@ -4,7 +4,6 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
-  // background-color: #80DEEA;
   background-color: #FAFAFA;
 }
 
@@ -157,7 +156,6 @@ h4 {
   position: absolute;
   height: 100%;
   width: 2px;
-  color: black;
 }
 
 .empty-time-marker, .filled-time-marker {
@@ -330,7 +328,6 @@ h4 {
 
     &:focus {
       outline: none;
-      // background-color: #4ddce1;
       color: #fff;
     }
 
@@ -350,4 +347,22 @@ h4 {
     font-size: 1rem;
     margin: 5px;
   }
+}
+
+@media (max-width: 730px) {
+  .preferences-bar {
+    display: none;
+  }
+
+  .video-container video {
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .emoji-form-container,
+  .message-form,
+  .emojis {
+    display: none;
+  }
+
 }

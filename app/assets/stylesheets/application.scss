@@ -1,8 +1,10 @@
 @import "reset";
 
-* {
+html {
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 @import "font-awesome";

@@ -19,11 +19,10 @@ nav {
     width: 100px;
     text-decoration: none;
     font-family: 'Abril Fatface', cursive;
-    // text-shadow: 1px 1px 1px #333333;
     color:  #333333;
     font-size: 0.8rem;
-    -webkit-transition: color 2s; /* For Safari 3.0 to 6.0 */
-    transition: color 2s; /* For modern browsers */
+    -webkit-transition: color 2s;
+    transition: color 2s;
     text-align: right;
     height: 35px;
     padding-right: 15px;

@@ -42,25 +42,18 @@
       justify-content: center;
       align-items: center;
     }
+  }
+}
 
-    button {
-      line-height: 16px;
-      color: #FFF;
-      font-size: 1rem;
-      margin-top: 50px;
+@media (max-width: 650px) {
+  .itemShowcase-more {
+    flex-direction: column;
+    height: auto;
 
-      a {
-        text-decoration: none;
-        color: #FFF;
-        display: block;
-        width: 100%;
-        height: 100%;
-
-        &:hover {
-          color: #FFF;
-        }
-      }
+    .more-container {
+      border: 1px dotted rgba(157,215,213, 0.8);
+      height: 50vh;
+      width: 100vw;
     }
-
   }
 }

@@ -11,22 +11,30 @@
   padding: 10px;
   overflow: hidden;
   display: block;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 30;
 }
 
 .case-study-heading {
   font-family: 'Abril Fatface', cursive;
   font-size: 3.5rem;
   color: #FFF;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
   text-shadow: 2px 2px 4px #333333;
   text-align: center;
   margin-bottom: 25px;
-  z-index: 30;
 }
 
+.technologies, .scroll-text {
+  color: #FFF;
+  line-height: 1.8rem;
+}
+
+.scroll-text {
+  padding-top: 15px;
+}
 
 .scroll-down {
   position: absolute;
@@ -45,7 +53,6 @@
   border: 2px solid #FFF;
   border-radius: 25px;
   opacity: 0.75;
-
 }
 
 .scroller {
@@ -66,28 +73,28 @@
 }
 
 
-.border {
-  width: 90vw;
-  height: 90vh;
-  position: absolute;
-  top: 5vh;
-  left: 5vw;
-  transition: color 0.25s;
-  position: relative;
-  vertical-align: middle;
-  border: 0;
-  box-sizing: border-box;
-  box-shadow: inset 0 0 0 2px transparent; // Using inset box-shadow instead of border for sizing simplicity
-
-  &::before,
-  &::after {
-    box-sizing: border-box;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-}
+// .border {
+//   width: 90vw;
+//   height: 90vh;
+//   position: absolute;
+//   top: 5vh;
+//   left: 5vw;
+//   transition: color 0.25s;
+//   position: relative;
+//   vertical-align: middle;
+//   border: 0;
+//   box-sizing: border-box;
+//   box-shadow: inset 0 0 0 2px transparent; // Using inset box-shadow instead of border for sizing simplicity
+//
+//   &::before,
+//   &::after {
+//     box-sizing: border-box;
+//     content: '';
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//   }
+// }
 
 // .border {
 //   z-index: 30;

@@ -73,50 +73,6 @@
   transform: translate3d(0, 0, 0);
 }
 
-button {
-  margin-top: 60px;
-  padding: 10px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  color: #9068BE;
-  padding-left: 60px;
-  padding-right: 60px;
-  display: inline-block;
-  outline: none;
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  border: 1px dotted #fff;
-  transition: all 0.5s cubic-bezier(.25,.8,.25,1) ease;
-
-  &:hover {
-    color: #fff;
-    text-shadow: 1px 1px 1px #333333;
-    transition: all 0.5s ease-in-out;
-  }
-}
-
-button:after {
-  content: '';
-  display: block;
-  position: absolute;
-  transition: all 0.5s;
-  width: 0%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.4);
-  z-index: -1;
-}
-
-button:hover::after, button:active::after {
-  width: 100%;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  transition: all 0.5s ease-in-out;
-}
-
 textarea.input-field {
   height: 70px;
 }

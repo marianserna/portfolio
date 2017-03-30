@@ -130,18 +130,15 @@ path.line {
 }
 
 .social {
-  width: 30vw;
   height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   bottom: 0;
   left: 0;
   z-index: 500;
 
   .github, .linkedin {
-    width: 50%;
+    padding: 10px;
+    display: inline-block;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
@@ -178,11 +175,17 @@ path.line {
   opacity: 0;
 }
 
-.instructions {
-  position: absolute;
-  bottom: 25px;
-  color: #FFF;
-  font-family: 'Nixie One', cursive;
-  font-weight: bolder;
-  font-size: 0.8rem;
+
+@media (max-width: 650px) {
+  #landingSphere h1 {
+    font-size: 3rem;
+  }
+
+  #landingSphere h3 {
+    font-size: 1.3rem;
+  }
+
+  .details {
+    display: none;
+  }
 }

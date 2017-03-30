@@ -1,5 +1,6 @@
 import React from 'react';
 import Hammer from 'hammerjs';
+import ItemShowcaseMore from './ItemShowcaseMore';
 
 export default class Carousel extends React.Component {
   constructor(props, _railsContext) {
@@ -92,6 +93,11 @@ export default class Carousel extends React.Component {
   render() {
     return(
       <div>
+
+        <div className="mobile-display">
+          <ItemShowcaseMore case_studies={this.props.case_studies} />
+        </div>
+
         <div className="carousel-container">
           <div className="carousel" ref={(div) => this.carousel = div}>
             {
@@ -99,14 +105,14 @@ export default class Carousel extends React.Component {
                 return (
                   <figure className="itemShowcase" key={case_study.id} style={this.calcTransform(index + 1)} onClick={(e) => this.transitionTo(index + 1)}>
 
-                    <div className="background" style={{backgroundImage: `url('${case_study.image_url}')`}}></div>
-
-                    <div className="bigLetters">
-                      <h3>{case_study.title}</h3>
-                      <hr/>
-                      <p className="tools">
-                        {case_study.technologies.split(",").slice(0,3).map(item => item.trim()).join(" · ")}
-                      </p>
+                    <div className="background" style={{backgroundImage: `url('${case_study.image_url}')`}}>
+                      <div className="bigLetters">
+                        <h3>{case_study.title}</h3>
+                        <hr/>
+                        <p className="tools">
+                          {case_study.technologies.split(",").slice(0,3).map(item => item.trim()).join(" · ")}
+                        </p>
+                      </div>
                     </div>
 
                   </figure>
@@ -118,13 +124,13 @@ export default class Carousel extends React.Component {
 
         <div className="itemOptions">
           <div className="linkButton">
-            <a href={`/work/${this.props.case_studies[this.state.currentItem - 1].slug}`} target="_blank">CASE STUDY</a>
+            <a href={`/work/${this.props.case_studies[this.state.currentItem - 1].slug}`} className="button" target="_blank">CASE STUDY</a>
           </div>
           <div className="linkButton">
-            <a href={this.props.case_studies[this.state.currentItem - 1].github_url} target="_blank">GITHUB</a>
+            <a href={this.props.case_studies[this.state.currentItem - 1].github_url} className="button" target="_blank">GITHUB</a>
           </div>
           <div className="linkButton">
-            <a href={this.props.case_studies[this.state.currentItem - 1].site_url} target="_blank">SITE</a>
+            <a href={this.props.case_studies[this.state.currentItem - 1].site_url} className="button" target="_blank">SITE</a>
           </div>
         </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Fullpage, Slide, HorizontalSlider, changeFullpageSlide, changeHorizontalSlide} from 'fullpage-react';
 import {TweenMax} from 'gsap';
+import ItemShowcaseMore from './ItemShowcaseMore';
 
 export default class CaseStudy extends React.Component {
   constructor(props, _railsContext) {
@@ -32,7 +33,7 @@ export default class CaseStudy extends React.Component {
   }
 
   sliderLeaving = (info) => {
-    if (info.activeSlide === 1 || info.activeSlide === 3 || info.activeSlide === 4) {
+    if (info.activeSlide === 1 || info.activeSlide === 3) {
       TweenMax.fromTo(`.slide${info.activeSlide} .overlay`, 0.25,
         {backgroundColor: 'rgba(0, 0, 0, 0.6)'},
         {backgroundColor: 'rgba(0, 0, 0, 0.0)', delay: 0.2});
@@ -48,7 +49,7 @@ export default class CaseStudy extends React.Component {
       activeSlide: info.activeSlide
     });
 
-    if (info.activeSlide === 1 || info.activeSlide === 3 || info.activeSlide === 4) {
+    if (info.activeSlide === 1 || info.activeSlide === 3) {
       const afterOverlay = () => {
         // document.querySelector('.slide1 .border').classList.add('active');
         TweenMax.fromTo(`.slide${info.activeSlide} .info`, 0.5,
@@ -86,7 +87,7 @@ export default class CaseStudy extends React.Component {
     return (
       <div className="fullpage-nav">
         {
-          [0, 1, 2, 3, 4, 5].map((page) => {
+          [0, 1, 2, 3, 4].map((page) => {
             return (
               <div
                 key={page}
@@ -140,12 +141,18 @@ export default class CaseStudy extends React.Component {
             <div className="img-background">
               <span className="case-study-name">
                 <h1 className="case-study-heading">{case_study.title}</h1>
+                <div className="technologies">
+                  {
+                    case_study.technologies.split(',').map((tech) => tech.trim()).join(' · ')
+                  }
+                </div>
               </span>
 
               <div className="scroll-down">
                 <div className="mouse">
                   <div className="scroller"></div>
                 </div>
+                <p className="scroll-text">Scroll</p>
               </div>
             </div>
 
@@ -169,22 +176,6 @@ export default class CaseStudy extends React.Component {
 
           <Slide className='slide3'>
             <div
-              className="img-background"     style={{backgroundImage:`url('${case_study.technologies_image_url}')`}}>
-              <div className="overlay"></div>
-              <div className="info">
-                <ul className="module-content">
-                  {
-                    case_study.technologies.split(',').map((tech) => {
-                      return <li key={tech}>{tech}</li>
-                    })
-                  }
-                </ul>
-              </div>
-            </div>
-          </Slide>
-
-          <Slide className='slide4'>
-            <div
               className="img-background"
               style={{backgroundImage:`url('${case_study.challenges_image_url}')`}}>
               <div className="overlay"></div>
@@ -194,28 +185,8 @@ export default class CaseStudy extends React.Component {
             </div>
           </Slide>
 
-          <Slide className='slide5'>
-            <div className="itemShowcase-more">
-              {
-                more_case_studies.map((more) => {
-                  return (
-                    <div className="more-container" key={more.id}>
-                      <div
-                        className="background-more"
-                        style={{backgroundImage:`url('${more.image_url}')`}}>
-
-                        <div className="bigLetters">
-                          <h3>{more.title}</h3>
-                          <button>
-                            <a href={`/work/${more.slug}`}>View</a>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })
-              }
-            </div>
+          <Slide className='slide4'>
+            <ItemShowcaseMore case_studies={this.props.more_case_studies} />
           </Slide>
         </Fullpage>
       </div>

@@ -1,9 +1,6 @@
 #contact {
   background-color: rgba(255, 215, 0, 0.5);
   background-color: #FAFAFA;
-  // background: #FFF59D; /* fallback for old browsers */
-  // background: -webkit-linear-gradient(to left, #FFF59D , #FEF4BF); /* Chrome 10-25, Safari 5.1-6 */
-  // background: linear-gradient(to left, #FFF59D , #FEF4BF);
   width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -18,7 +15,6 @@
 }
 
 .success-msg {
-  position: absolute;
   width: 60%;
   height: 100%;
   display: none;

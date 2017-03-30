@@ -26,7 +26,7 @@ export default class Sphere extends React.Component {
 
     TweenMax.fromTo('h1', 1,
       {css: {y: 125}},
-      {css: {y: 0}, delay: 0.8, ease: Power4.easeOut, onComplete: () => {
+      {css: {y: 0}, delay: 0.4, ease: Power4.easeOut, onComplete: () => {
         document.querySelector('h3').classList.remove('hidden');
 
         const tl = new TimelineLite();
@@ -34,7 +34,6 @@ export default class Sphere extends React.Component {
         const chars = title.chars;
 
         tl.staggerFromTo(chars, 0.3, {opacity: 0}, {opacity: 1}, 0.05);
-        tl.staggerFromTo(chars, 0.3, {autoAlpha:0}, {autoAlpha:1}, 0.05);
       }}
     );
 
@@ -127,7 +126,7 @@ export default class Sphere extends React.Component {
 
         </div>
 
-        <p className="instructions"><i>Hover Figure</i></p>
+        {/* <p className="instructions"><i>Hover Figure</i></p> */}
       </div>
 
     )

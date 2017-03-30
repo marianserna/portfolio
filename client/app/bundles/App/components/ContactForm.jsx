@@ -18,6 +18,11 @@ export default class ContactForm extends React.Component {
 
   sendInfo(e) {
     e.preventDefault();
+
+    if (!this.form.checkValidity()) {
+      return;
+    }
+
     this.setState({
       status: 'sending',
       username: this.name.value
@@ -64,6 +69,16 @@ export default class ContactForm extends React.Component {
   render() {
     return (
       <div id="contact">
+
+        <div ref={(div) => this.successDiv = div} className="success-msg">
+          <div className="message-content">
+            <p>Hola <span className="username">{this.state.username}</span>! ✌️</p>
+            <p>I hope you're having -or had- a great day.</p>
+            <p>Thanks for writing, I'll be in touch soon!</p>
+            <p className="myName">Marian 😜</p>
+          </div>
+        </div>
+
         <form ref={(form) => this.form = form} onSubmit={(e) => {this.sendInfo(e)}} className="contact-form">
 
           <div className="input-row">
@@ -91,15 +106,6 @@ export default class ContactForm extends React.Component {
             <button type="submit">SAY HOLA!</button>
           </div>
         </form>
-
-        <div ref={(div) => this.successDiv = div} className="success-msg">
-          <div className="message-content">
-            <p>Hola <span className="username">{this.state.username}</span>! ✌️</p>
-            <p>I hope you're having -or had- a great day.</p>
-            <p>Thanks for writing, I'll be in touch soon!</p>
-            <p className="myName">Marian 😜</p>
-          </div>
-        </div>
       </div>
     );
   }
