@@ -11,7 +11,7 @@ gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 3.0', '>= 3.0.2'
+gem 'uglifier', '~> 3.1', '>= 3.1.11'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 
@@ -29,7 +29,6 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 
 gem 'underscore-rails', '~> 1.8', '>= 1.8.3'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.1.0'
-gem 'mustache-js-rails', '~> 2.0', '>= 2.0.6'
 gem 'react_on_rails', '~> 6.9'
 gem 'dotenv', '~> 2.2'
 
