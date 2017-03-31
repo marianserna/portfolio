@@ -1,0 +1,126 @@
+#carouselBg {
+  width: 100vw;
+  height: 100vh;
+  background-color: #FAFAFA;
+  position: absolute;
+}
+
+.carousel-container {
+  overflow-x: hidden;
+  width: 100%;
+  perspective: 1000px;
+}
+
+.carousel {
+  perspective: 1000px;
+  position: relative;
+  margin: 100px auto;
+  width: 50vw;
+  height: 55vh;
+  transform: translateX(-40px);
+  transform-style: preserve-3d;
+
+  .itemShowcase {
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    border: 1.2px dotted rgba(157,215,213, 0.8);
+    transition: all 0.5s ease-in-out;
+    user-select: none;
+    cursor: grab;
+    -webkit-user-drag: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .background {
+      width: 90%;
+      height: 90%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bigLetters, .tools {
+      font-size: 3rem;
+      color: #FFF;
+      font-family: 'Abril Fatface', cursive;
+      text-shadow: 2px 2px 4px #333333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    hr {
+      width: 200px;
+      height: 1px;
+      margin-top: 10px;
+      border: 1px dotted #FFF;
+    }
+
+    .tools {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: bolder;
+      color: #FFF;
+      text-shadow: 1px 1px 1px #333333;
+      align-self: center;
+    }
+  }
+}
+
+.itemOptions {
+  width: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  transform: translateY(-5vh);
+
+  .linkButton {
+    width: 32%;
+    margin-right: 10px;
+
+    .button {
+      margin-top: 0;
+      width: 100%;
+      font-size: 0.8rem;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+}
+
+.instructions-container {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.technologies, p.instructions.grey, .scroll-text {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: #8C95AA;
+  font-weight: bolder;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 650px) {
+  .carousel-container, .itemOptions, .instructions-container {
+    display: none;
+  }
+}
+
+@media (min-width: 651px) {
+  .mobile-display {
+    display: none;
+  }
+}

@@ -1,4 +1,4 @@
-ruby '2.3.0'
+ruby '2.4.0'
 source 'https://rubygems.org'
 
 
@@ -23,13 +23,15 @@ gem 'paperclip', '~> 4.3', '>= 4.3.5'
 # For generating html
 gem 'haml', '~> 4.0', '>= 4.0.7'
 # For generating forms
-gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'simple_form', '~> 3.4'
 # Bootstrap
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
 gem 'underscore-rails', '~> 1.8', '>= 1.8.3'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.1.0'
 gem 'mustache-js-rails', '~> 2.0', '>= 2.0.6'
+gem 'react_on_rails', '6.5.0'
+gem 'dotenv', '~> 2.2'
 
 # Markdown processing
 gem 'redcarpet', '~> 3.3', '>= 3.3.4'
@@ -50,6 +52,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "localtower"
 end
 
 group :production do
@@ -59,3 +62,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'mini_racer', platforms: :ruby

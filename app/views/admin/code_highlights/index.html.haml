@@ -1,0 +1,16 @@
+%h2 Code Highlights
+
+= link_to 'New Code Highlight', new_admin_case_study_code_highlight_url(@case_study), class: 'btn btn-primary'
+
+%table.table
+  %tr
+    %th Position
+    %th Caption
+
+  - @code_highlights.each do |code_highlight|
+    %tr
+      %td= code_highlight.position
+      %td= code_highlight.caption
+      %td
+        = link_to("Edit", edit_admin_case_study_code_highlight_url(@case_study, code_highlight), class: 'btn btn-secondary')
+        = link_to("Delete", admin_case_study_code_highlight_url(@case_study, code_highlight), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger')

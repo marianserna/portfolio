@@ -1,0 +1,78 @@
+.input-row {
+  padding-bottom: 40px;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  color: #8C95AA;
+}
+
+.input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 4px);
+  text-align: left;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+}
+
+.input-label::before, .input-label::after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.input-label::before {
+  border-bottom: 1px dotted #9068BE;
+}
+
+.input-label::after {
+  border-bottom: 3px solid #9068BE;
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.5s;
+}
+
+.input-field {
+  padding: 0 5px;
+  width: 100%;
+  border: none;
+  background: none;
+  color: #8C95AA;
+  height: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+
+  &:focus {
+    outline: none;
+    background-color: #4ddce1;
+    color: #fff;
+  }
+
+  &:invalid {
+    box-shadow: none;
+  }
+}
+
+// Label that follows input field on focus
+.input-field:focus + .input-label, .input-field.input-field--filled + .input-label {
+  color: transparent;
+}
+
+.input-field:focus + .input-label::after {
+  transform: translate3d(0, 0, 0);
+}
+
+textarea.input-field {
+  height: 70px;
+}

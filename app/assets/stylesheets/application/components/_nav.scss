@@ -1,0 +1,49 @@
+nav {
+  z-index: 100;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+
+  ul li {
+    list-style: none;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
+  }
+
+  ul li a {
+    display: block;
+    width: 100px;
+    text-decoration: none;
+    font-family: 'Abril Fatface', cursive;
+    color:  #333333;
+    font-size: 0.8rem;
+    -webkit-transition: color 2s;
+    transition: color 2s;
+    text-align: right;
+    height: 35px;
+    padding-right: 15px;
+    position: relative;
+
+    &:hover::after {
+      width: 30px;
+      height: 2px;
+      background-color: #9068BE;
+    }
+
+    &::after {
+      transition: 0.5s width linear, 0.5s background-color linear;
+      content: "";
+      display: block;
+      width: 15px;
+      height: 1px;
+      background-color:  #A2FAA3;
+      position: absolute;
+      left: 100%;
+      bottom: 18px;
+    }
+  }
+}

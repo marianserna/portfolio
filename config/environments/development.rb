@@ -63,5 +63,14 @@ Rails.application.configure do
   # Action Mailer settings
   config.action_mailer.default_url_options = { host: "www.marianserna.com" }
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :file
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "email-smtp.us-west-2.amazonaws.com",
+    port: 587,
+    domain: "www.marianserna.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV.fetch('SMTP_USERNAME'),
+    password: ENV.fetch('SMTP_PASSWORD')
+  }
 end

@@ -1,0 +1,17 @@
+%h2 Case Studies
+
+= link_to 'New Case Study', new_admin_case_study_url, class: 'btn btn-primary'
+
+%table.table
+  %tr
+    %th Position
+    %th Title
+    %th Actions
+  - @case_studies.each do |case_study|
+    %tr
+      %td= case_study.position
+      %td= case_study.title
+      %td
+        = link_to("Edit", edit_admin_case_study_url(case_study), class: 'btn btn-secondary')
+        = link_to("Code", admin_case_study_code_highlights_url(case_study), class: 'btn btn-secondary')
+        = link_to("Delete", admin_case_study_url(case_study), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger')

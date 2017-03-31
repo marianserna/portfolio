@@ -1,9 +1,13 @@
 @import "reset";
-* {
+
+html {
   box-sizing: border-box;
 }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 @import "font-awesome";
 
-@import "application/variables";
 @import "application/pages/*";
 @import "application/components/*";

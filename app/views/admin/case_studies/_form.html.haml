@@ -1,0 +1,18 @@
+= simple_form_for(@case_study, url: [:admin, @case_study]) do |f|
+  = f.input :position, required: true
+  = f.input :title
+  = f.input :github_url, as: :url
+  = f.input :site_url, as: :url  
+  = f.input :slug
+  = f.input :video_url, as: :url
+
+  - [:description, :technologies, :challenges].each do |field|
+    = f.input field
+    - if @case_study.send("#{field}_image").present?
+      = image_tag @case_study.send("#{field}_image").url(:thumb)
+      = link_to 'Original', @case_study.send("#{field}_image").url
+    = f.input "#{field}_image", as: :file
+
+  .form-group
+    = f.submit class: "btn btn-primary"
+    = link_to "Cancel", admin_case_studies_url, class: "btn btn-secondary"

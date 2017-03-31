@@ -1,0 +1,368 @@
+.player-container {
+  text-align: center;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAFAFA;
+}
+
+h4 {
+  color: #8C95AA;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  line-height: 24px;
+  padding-top: 10px;
+}
+
+.preferences-bar {
+  width: 30%;
+  height: 100vh;
+  padding: 15px;
+  transition: width 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &.hidden {
+    width: 0vw;
+  }
+
+  .preference {
+    width: 100%;
+    height: 33.33%;
+    background-color: #FFEBE7;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border: 1px dotted #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 1px 1px 1px #333333;
+      transition: all 0.5s ease-in-out;
+    }
+
+    h4 {
+      color: #9068BE;
+      font-weight: bolder;
+    }
+
+    img {
+      max-width: 85%;
+      max-height: 85%;
+      padding-top: 15px;
+    }
+  }
+}
+
+.player {
+  display: inline-block;
+}
+
+.video-container {
+  position: relative;
+  display: block;
+
+  video {
+    max-width: 80vw;
+  }
+
+  .emojis {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    bottom: 10px;
+    right: 10px;
+
+    .emoji {
+      padding: 15px;
+      cursor: pointer;
+    }
+  }
+}
+
+.preferences-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: slide-in 1s ease;
+  cursor: pointer;
+
+  @keyframes slide-in {
+    from {transform: translateX(-100vw)}
+    to {transform: translateX(0)}
+  }
+
+  .close-img {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 50px;
+    color: #E91E63;
+  }
+
+  p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #9068BE;
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 24px;
+    padding: 20px;
+  }
+}
+
+.timeline {
+  position: relative;
+  height: 50px;
+  padding-top: 0;
+  background-color: #E9DC85;
+}
+
+.play, .pause {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  color: #fff;
+
+  img {
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+  }
+}
+
+.pause {
+  display: none;
+}
+
+.time-marker {
+  position: absolute;
+  height: 100%;
+  width: 2px;
+}
+
+.empty-time-marker, .filled-time-marker {
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-style: preserve-3d;
+}
+
+.empty-time-marker {
+  width: 100%;
+}
+
+.filled-time-marker {
+  width: 0;
+  background-color: #fff;
+}
+
+.marker {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-style: preserve-3d;
+  width: 30px;
+  height: 30px;
+  background-image: url('/marker.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.me {
+  left: 5%;
+}
+
+.work {
+  left: 44%;
+}
+
+.passions {
+  left: 79%;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: auto;
+  background: #fff;
+  border-radius: 1px;
+  padding: 10px;
+  z-index: 10;
+  padding: 10px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.marker:hover .tooltip {
+  display: block;
+}
+
+.interaction {
+  position: absolute;
+
+  .interaction-emoji {
+    cursor: pointer;
+
+    .user-comment {
+      color: #8C95AA;
+      padding-top: 10px;
+    }
+
+    .interaction-name {
+      opacity: 0;
+      position: relative;
+      margin-bottom: 10px;
+      border-radius: 2px;
+      padding: 5px;
+      background: #FFF;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bolder;
+      font-size: 0.8rem;
+      transition: opacity 0.5s ease;
+    }
+
+    .interaction-name:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #FFFFFF transparent transparent transparent;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &:hover .interaction-name {
+      opacity: 1;
+      color: #600473;
+    }
+  }
+
+  .interaction-new {
+    display: inline;
+    border-radius: 50%;
+    box-shadow: 0 0 0 rgba(244, 0, 118, 0.6);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(244, 0, 118, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(204,169,44, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+  }
+}
+
+.message-form {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  background-color: #FFF;
+  padding: 30px;
+}
+
+.emoji-form-container {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  padding: 30px;
+  background-color: #FFF;
+}
+
+.player-container {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    align-self: flex-start;
+    font-family: 'Montserrat', sans-serif;
+    color: #8C95AA;
+    padding: 25px;
+    padding-left: 0;
+  }
+
+  input, textarea {
+    padding: 0 5px;
+    width: 100%;
+    border: none;
+    background: none;
+    color: #8C95AA;
+    height: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    background-color: #4ddce1;
+
+    &:focus {
+      outline: none;
+      color: #fff;
+    }
+
+    &:invalid {
+      box-shadow: none;
+    }
+  }
+
+  .buttons {
+    margin-top: 30px;
+  }
+
+  .buttons button {
+    line-height: 16px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 1rem;
+    margin: 5px;
+  }
+}
+
+@media (max-width: 730px) {
+  .preferences-bar {
+    display: none;
+  }
+
+  .video-container video {
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .emoji-form-container,
+  .message-form,
+  .emojis {
+    display: none;
+  }
+
+}
