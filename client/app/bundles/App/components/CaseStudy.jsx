@@ -174,9 +174,24 @@ export default class CaseStudy extends React.Component {
           </Slide>
 
           <HorizontalSlider className='slide2' name="code-highlights" infinite={false}>
-            {
-              this.renderCodeHighlights()
-            }
+            <Slide key={1}>
+              <div
+                className="img-background"
+                style={{backgroundImage:`url('http://cdn1-www.dogtime.com/assets/uploads/gallery/siberian-husky-dog-breed-pictures/siberian-husky-dog-breed-pictures-2.jpg')`}}>
+                <div className="info code-highlight">
+                  <p className="highlight-content">Caption, caption</p>
+                </div>
+              </div>
+            </Slide>
+            <Slide key={2}>
+              <div
+                className="img-background"
+                style={{backgroundImage:`url('http://cdn1-www.dogtime.com/assets/uploads/gallery/siberian-husky-dog-breed-pictures/siberian-husky-dog-breed-pictures-2.jpg')`}}>
+                <div className="info code-highlight">
+                  <p className="highlight-content">Caption, caption</p>
+                </div>
+              </div>
+            </Slide>
           </HorizontalSlider>
 
           <Slide className='slide3'>
