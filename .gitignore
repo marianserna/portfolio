@@ -32,3 +32,9 @@ node_modules
 /app/assets/webpack/*
 
 /public/about.mp4
+# React on Rails
+npm-debug.log*
+node_modules
+
+# Generated js bundles
+/app/assets/webpack/*
