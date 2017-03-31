@@ -15,14 +15,14 @@
   perspective: 1000px;
   position: relative;
   margin: 100px auto;
-  width: 650px;
-  height: 50vh;
+  width: 50vw;
+  height: 55vh;
   transform: translateX(-40px);
   transform-style: preserve-3d;
 
   .itemShowcase {
     position: absolute;
-    width: 650px;
+    width: 50vw;
     height: 50vh;
     border: 1.2px dotted rgba(157,215,213, 0.8);
     transition: all 0.5s ease-in-out;
@@ -79,6 +79,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  transform: translateY(-5vh);
 
   .linkButton {
     width: 32%;

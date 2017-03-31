@@ -27,6 +27,14 @@
   margin-bottom: 25px;
 }
 
+.itemOptions.case-study-button {
+  margin-top: 25px;
+
+  @media (max-width: 650px) {
+    display: flex;
+  }
+}
+
 .technologies, .scroll-text {
   color: #FFF;
   line-height: 1.8rem;

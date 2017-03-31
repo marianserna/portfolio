@@ -146,6 +146,11 @@ export default class CaseStudy extends React.Component {
                     case_study.technologies.split(',').map((tech) => tech.trim()).join(' · ')
                   }
                 </div>
+                <div className="itemOptions case-study-button">
+                  <div className="linkButton">
+                    <a href={case_study.site_url} className="button" target="_blank">SITE</a>
+                  </div>
+                </div>
               </span>
 
               <div className="scroll-down">

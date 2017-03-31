@@ -7,7 +7,8 @@ export default class Carousel extends React.Component {
     super(props);
     this.state = {
       currentItem: 3,
-      offsetDeg: 0
+      offsetDeg: 0,
+      width: window.innerWidth
     };
     this.isDragging = false;
   }
@@ -16,6 +17,11 @@ export default class Carousel extends React.Component {
     this.captureMouseWobble();
     this.captureKeys();
     this.captureDrag();
+    window.addEventListener('resize', () => {
+      this.setState({
+        width: window.innerWidth
+      });
+    });
   }
 
   captureMouseWobble() {
@@ -84,9 +90,10 @@ export default class Carousel extends React.Component {
 
   calcTransform(item) {
     const diff = this.state.currentItem - item;
-    const deg = (diff * 45) - 315 + this.state.offsetDeg;
+    const deg = (diff * 45) + this.state.offsetDeg;
+    const z = this.state.width * 0.62;
     return {
-      transform: `translateZ(840px) rotateY(315deg) rotateY(${deg}deg) translateZ(-840px)`
+      transform: `translateZ(${z}px) rotateY(${deg}deg) translateZ(-${z}px)`
     };
   }
 
@@ -124,7 +131,7 @@ export default class Carousel extends React.Component {
 
         <div className="itemOptions">
           <div className="linkButton">
-            <a href={`/work/${this.props.case_studies[this.state.currentItem - 1].slug}`} className="button" target="_blank">CASE STUDY</a>
+            <a href={`/work/${this.props.case_studies[this.state.currentItem - 1].slug}`} className="button">CASE STUDY</a>
           </div>
           <div className="linkButton">
             <a href={this.props.case_studies[this.state.currentItem - 1].github_url} className="button" target="_blank">GITHUB</a>

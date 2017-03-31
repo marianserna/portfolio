@@ -66,17 +66,17 @@ export default class About extends React.Component {
       this.pause();
     }
 
-    if (currentTime >= 237) {
+    if (currentTime >= 234) {
       this.setState({currentPreference: 'passions'})
-    } else if (currentTime >= 132) {
+    } else if (currentTime >= 130) {
       this.setState({currentPreference: 'career'})
-    } else if (currentTime >= 8) {
+    } else if (currentTime >= 4) {
       this.setState({currentPreference: 'whoami'})
     } else {
       this.setState({currentPreference: ''})
     }
 
-    if (currentTime >= 8) {
+    if (currentTime >= 4) {
       this.setState({
         showEmojiSet: true
       });
@@ -137,14 +137,16 @@ export default class About extends React.Component {
     this.setState({
       showMessageForm: true,
       emoji: '💌'
-    })
+    });
+    this.pause();
   }
 
   hideMessageForm = (e) => {
     e.preventDefault();
     this.setState({
       showMessageForm: false
-    })
+    });
+    this.play();
   }
 
   updateDisplayedInteractions() {
@@ -342,21 +344,21 @@ export default class About extends React.Component {
             <div className="empty-time-marker"></div>
             <div className="filled-time-marker" ref={(div) => this.filledTimeMarker = div}></div>
 
-            <div className="marker me" onClick={(e) => this.markerClick(e, 8)}>
+            <div className="marker me" onClick={(e) => this.markerClick(e, 4)}>
               <div className="tooltip">
                 <img src="tobermory.jpg" alt=""/>
                 <h4>Who am I</h4>
               </div>
             </div>
 
-            <div className="marker work" onClick={(e) => this.markerClick(e, 132)}>
+            <div className="marker work" onClick={(e) => this.markerClick(e, 130)}>
               <div className="tooltip">
                 <img src="career.jpg" alt="image"/>
                 <h4>Career stuff</h4>
               </div>
             </div>
 
-            <div className="marker passions" onClick={(e) => this.markerClick(e, 237)}>
+            <div className="marker passions" onClick={(e) => this.markerClick(e, 234)}>
               <div className="tooltip">
                 <img src="interests.jpg" alt="image"/>
                 <h4>Interests</h4>
