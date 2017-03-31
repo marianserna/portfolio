@@ -1349,6 +1349,14 @@ fullpage-react@^2.0.3:
     react-tappable "^0.8.4"
     scroll-swipe "0.0.4"
 
+"fullpage-react@https://github.com/marianserna/fullpage-react.git":
+  version "2.0.3"
+  resolved "https://github.com/marianserna/fullpage-react.git#774e2c024bba2ef3fc55fcfd7bbbb6e0c85fc3f9"
+  dependencies:
+    object-assign "^4.1.0"
+    react-tappable "^0.8.4"
+    scroll-swipe "0.0.4"
+
 gauge@~2.7.1:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/gauge/-/gauge-2.7.3.tgz#1c23855f962f17b3ad3d0dc7443f304542edfe09"
