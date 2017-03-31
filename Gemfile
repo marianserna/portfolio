@@ -30,7 +30,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'underscore-rails', '~> 1.8', '>= 1.8.3'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.1.0'
 gem 'mustache-js-rails', '~> 2.0', '>= 2.0.6'
-gem 'react_on_rails', '6.5.0'
+gem 'react_on_rails', '~> 6.9'
 gem 'dotenv', '~> 2.2'
 
 # Markdown processing
