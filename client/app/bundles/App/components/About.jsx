@@ -288,7 +288,7 @@ export default class About extends React.Component {
           <div className="video-container">
             <video
               src="https://s3.ca-central-1.amazonaws.com/marian-portfolio/about-video.mp4"
-              poster="inst.png"
+              poster="instr.jpg"
               onTimeUpdate={(e) => this.timeUpdate(e)}
               ref={(video) => this.video = video}
               onClick={(e) => this.showMessageForm(e)}>
