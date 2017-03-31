@@ -72,9 +72,13 @@ export default class CaseStudy extends React.Component {
   captureKeys() {
     document.addEventListener('keydown', (e) => {
       if(e.key === 'ArrowLeft') {
-        changeHorizontalSlide('code-highlights', 'PREV');
+        if (this.state.activeHorizontalSlide > 0) {
+          changeHorizontalSlide('code-highlights', 'PREV');
+        }
       } else if (e.key === 'ArrowRight') {
-        changeHorizontalSlide('code-highlights', 'NEXT');
+        if (this.state.activeHorizontalSlide < this.props.code_highlights.length - 1) {
+          changeHorizontalSlide('code-highlights', 'NEXT');
+        }
       } else if (e.key === 'ArrowUp') {
         changeFullpageSlide('PREV');
       } else if (e.key === 'ArrowDown') {
