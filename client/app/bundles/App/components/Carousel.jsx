@@ -100,7 +100,7 @@ export default class Carousel extends React.Component {
     if (this.isDragging) {
       return;
     }
-    
+
     if (this.state.currentItem === index + 1) {
       // change location using js
       window.location.assign(`/work/${this.props.case_studies[index].slug}`);
@@ -147,13 +147,13 @@ export default class Carousel extends React.Component {
 
         <div className="itemOptions">
           <div className="linkButton">
-            <a href={`/work/${this.props.case_studies[this.state.currentItem - 1].slug}`} className="button">CASE STUDY</a>
+            <a href={`/work/${this.props.case_studies[this.state.currentItem - 1].slug}`} className="button">{this.props.case_studies[this.state.currentItem - 1].title.toUpperCase()} CASE STUDY</a>
           </div>
           <div className="linkButton">
             <a href={this.props.case_studies[this.state.currentItem - 1].github_url} className="button" target="_blank">GITHUB</a>
           </div>
           <div className="linkButton">
-            <a href={this.props.case_studies[this.state.currentItem - 1].site_url} className="button" target="_blank">GO TO SITE</a>
+            <a href={this.props.case_studies[this.state.currentItem - 1].site_url} className="button" target="_blank">VISIT WEBSITE</a>
           </div>
         </div>
 

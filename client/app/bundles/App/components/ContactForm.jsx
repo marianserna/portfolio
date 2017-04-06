@@ -38,32 +38,47 @@ export default class ContactForm extends React.Component {
 
     }}).staggerFromTo('.input-row, .input-container', 0.5, {opacity: 1}, {opacity: 0}, 0.2);
 
-    fetch('/contacts', {
-      method: 'post',
-      headers: new Headers({
-        'Content-Type': 'application/json'
-      }),
-      body: JSON.stringify({
-        'contact': {
-          'name': this.name.value,
-          'email': this.email.value,
-          'message': this.message.value
-        }
-      })
-    }).then(response => response.json()).then((data) => {
-      this.setState({
-        status: 'sent'
-      });
-    });
+  //   fetch('/contacts', {
+  //     method: 'post',
+  //     headers: new Headers({
+  //       'Content-Type': 'application/json'
+  //     }),
+  //     body: JSON.stringify({
+  //       'contact': {
+  //         'name': this.name.value,
+  //         'email': this.email.value,
+  //         'message': this.message.value
+  //       }
+  //     })
+  //   }).then(response => response.json()).then((data) => {
+  //     this.setState({
+  //       status: 'sent'
+  //     });
+  //   });
   }
 
-  toggleLabel(e) {
-    const targetValue = e.target.value;
-    if (targetValue) {
-      e.target.classList.add('input-field--filled');
+  onToggleLabel(e) {
+    this.toggleLabel(e.target);
+  }
+
+  toggleLabel(input) {
+    if (input.value) {
+      input.classList.add('input-field--filled');
     } else {
-      e.target.classList.remove('input-field--filled');
+      input.classList.remove('input-field--filled');
     }
+  }
+
+  closeMessage(e) {
+    e.preventDefault();
+    this.form.reset();
+    this.toggleLabel(this.name);
+    this.toggleLabel(this.email);
+    this.toggleLabel(this.message);
+    this.form.style.display = 'block';
+    this.successDiv.style.display = 'none';
+
+    new TimelineLite().staggerFromTo('.input-row, .input-container', 0.5, {opacity: 0}, {opacity: 1}, 0.2);
   }
 
   render() {
@@ -76,6 +91,9 @@ export default class ContactForm extends React.Component {
             <p>I hope you're having -or had- a great day.</p>
             <p>Thanks for writing, I'll be in touch soon!</p>
             <p className="myName">Marian 😜</p>
+            <p>
+              <button className="close-success" onClick={(e) => this.closeMessage(e)}>HASTA LA VISTA!</button>
+            </p>
           </div>
         </div>
 
@@ -83,21 +101,21 @@ export default class ContactForm extends React.Component {
 
           <div className="input-row">
             <span className="input-wrapper">
-              <input className="input-field" type="text" id="name" name="name" required ref = {(input) => this.name = input} onChange={(e) => this.toggleLabel(e)} />
+              <input className="input-field" type="text" id="name" name="name" required ref = {(input) => this.name = input} onChange={(e) => this.onToggleLabel(e)} />
               <label className="input-label" htmlFor="name">Name</label>
             </span>
           </div>
 
           <div className="input-row">
             <span className="input-wrapper">
-              <input className="input-field" type="email" id="email" name="email" required ref = {(input) => this.email = input} onChange={(e) => this.toggleLabel(e)} />
+              <input className="input-field" type="email" id="email" name="email" required ref = {(input) => this.email = input} onChange={(e) => this.onToggleLabel(e)} />
               <label className="input-label" htmlFor="email">Email</label>
             </span>
           </div>
 
           <div className="input-row">
             <span className="input-wrapper">
-              <textarea className="input-field" name="message" id="message" required ref = {(input) => this.message = input} onChange={(e) => this.toggleLabel(e)}></textarea>
+              <textarea className="input-field" name="message" id="message" required ref = {(input) => this.message = input} onChange={(e) => this.onToggleLabel(e)}></textarea>
               <label className="input-label" htmlFor="message">Message</label>
             </span>
           </div>
