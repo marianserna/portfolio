@@ -38,23 +38,23 @@ export default class ContactForm extends React.Component {
 
     }}).staggerFromTo('.input-row, .input-container', 0.5, {opacity: 1}, {opacity: 0}, 0.2);
 
-  //   fetch('/contacts', {
-  //     method: 'post',
-  //     headers: new Headers({
-  //       'Content-Type': 'application/json'
-  //     }),
-  //     body: JSON.stringify({
-  //       'contact': {
-  //         'name': this.name.value,
-  //         'email': this.email.value,
-  //         'message': this.message.value
-  //       }
-  //     })
-  //   }).then(response => response.json()).then((data) => {
-  //     this.setState({
-  //       status: 'sent'
-  //     });
-  //   });
+    fetch('/contacts', {
+      method: 'post',
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      }),
+      body: JSON.stringify({
+        'contact': {
+          'name': this.name.value,
+          'email': this.email.value,
+          'message': this.message.value
+        }
+      })
+    }).then(response => response.json()).then((data) => {
+      this.setState({
+        status: 'sent'
+      });
+    });
   }
 
   onToggleLabel(e) {
