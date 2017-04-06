@@ -37,98 +37,6 @@
   z-index: -1;
 }
 
-.details {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transition: opacity 1s ease;
-  display: flex;
-  justify-content: center;
-
-  svg {
-    width: 150px;
-    display: block;
-  }
-}
-
-.details.inactive {
-  opacity: 0;
-}
-
-.details.active {
-  opacity: 1;
-}
-
-.lineContainer {
-  position: absolute;
-  width: 20%;
-  display: flex;
-  align-items: center;
-
-  &.topRight {
-    top: 25%;
-    right: 20%;
-
-    p {
-      padding-left: 20px;
-      line-height: 1.5rem;
-    }
-  }
-
-  &.bottomRight {
-    bottom: 25%;
-    right: 20%;
-
-    p {
-      padding-left: 20px;
-      line-height: 1.5rem;
-    }
-  }
-
-  &.topLeft {
-    top: 25%;
-    left: 25%;
-
-    p {
-      padding-right: 20px;
-      line-height: 1.5rem;
-    }
-  }
-
-  &.bottomLeft {
-    bottom: 25%;
-    left: 25%;
-
-    p {
-      padding-right: 20px;
-      line-height: 1.5rem;
-    }
-  }
-}
-
-.lineContainer p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  color: #FFF;
-  font-weight: bolder;
-  width: 50%;
-  flex-grow: 1;
-}
-
-.lineContainer svg {
-  width: 50%;
-  flex-grow: 0;
-  display: block;
-  padding: 10px 20px;
-}
-
-path.line {
-  fill: none;
-  stroke: #FFF;
-  stroke-miterlimit: 10;
-  stroke-width: 1px;
-}
-
 .social {
   height: 70px;
   position: absolute;
@@ -183,9 +91,5 @@ path.line {
 
   #landingSphere h3 {
     font-size: 1.3rem;
-  }
-
-  .details {
-    display: none;
   }
 }

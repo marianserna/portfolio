@@ -33,7 +33,6 @@ export default class Carousel extends React.Component {
       const mousePosY = e.clientY - halfHeight;
 
       this.carousel.style.transform = `rotateY(${mousePosX * 0.01}deg) rotateX(${mousePosY * 0.02}deg)`;
-
     });
   }
 
@@ -97,6 +96,19 @@ export default class Carousel extends React.Component {
     };
   }
 
+  onItemClick(e, index) {
+    if (this.isDragging) {
+      return;
+    }
+    
+    if (this.state.currentItem === index + 1) {
+      // change location using js
+      window.location.assign(`/work/${this.props.case_studies[index].slug}`);
+    } else {
+      this.transitionTo(index + 1);
+    }
+  }
+
   render() {
     return(
       <div>
@@ -110,7 +122,11 @@ export default class Carousel extends React.Component {
             {
               this.props.case_studies.map((case_study, index) => {
                 return (
-                  <figure className="itemShowcase" key={case_study.id} style={this.calcTransform(index + 1)} onClick={(e) => this.transitionTo(index + 1)}>
+                  <figure
+                    className="itemShowcase"
+                    key={case_study.id} style={this.calcTransform(index + 1)}
+                    onClick={(e) => this.onItemClick(e, index)}
+                  >
 
                     <div className="background" style={{backgroundImage: `url('${case_study.image_url}')`}}>
                       <div className="bigLetters">
@@ -137,7 +153,7 @@ export default class Carousel extends React.Component {
             <a href={this.props.case_studies[this.state.currentItem - 1].github_url} className="button" target="_blank">GITHUB</a>
           </div>
           <div className="linkButton">
-            <a href={this.props.case_studies[this.state.currentItem - 1].site_url} className="button" target="_blank">SITE</a>
+            <a href={this.props.case_studies[this.state.currentItem - 1].site_url} className="button" target="_blank">GO TO SITE</a>
           </div>
         </div>
 

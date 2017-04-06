@@ -6,10 +6,8 @@ window.THREE = THREE;
 require('three/examples/js/controls/OrbitControls.js');
 
 export default class SphereScene {
-  constructor(container, activateInfo, deactivateInfo) {
+  constructor(container) {
     this.container = container;
-    this.activateInfo = activateInfo;
-    this.deactivateInfo = deactivateInfo;
 
     // currently touching the Icosahedron
     this.active = false;
@@ -53,7 +51,6 @@ export default class SphereScene {
   activate() {
     if (!this.active) {
       this.song.play();
-      this.activateInfo();
       this.activeDate = new Date();
       TweenLite.fromTo(this, 0.5, {activeRate: 0}, {activeRate: 1});
     }
@@ -63,7 +60,6 @@ export default class SphereScene {
   deactivate() {
     if (this.active) {
       this.song.pause();
-      this.deactivateInfo();
       this.activeDate = null;
       this.prevActivated = true;
       TweenLite.fromTo(this, 0.5, {activeRate: 1}, {activeRate: 0});

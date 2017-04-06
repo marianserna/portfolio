@@ -9,19 +9,13 @@ import {Howl} from 'howler';
 export default class Sphere extends React.Component {
   constructor(props, _railsContext) {
     super(props);
-    this.state = {
-      detailsClass: 'inactive'
-    };
-
+    this.state = {};
     this.addSong();
   }
 
   componentDidMount() {
     this.sphere = new SphereScene(
-      this.sphereContainer,
-      // this.particles = new Particles(this.particlesContainer).bind(this),
-      this.activateInfo.bind(this),
-      this.deactivateInfo.bind(this)
+      this.sphereContainer
     );
 
     TweenMax.fromTo('h1', 1,
@@ -38,21 +32,6 @@ export default class Sphere extends React.Component {
     );
 
     this.song.play();
-  }
-
-  activateInfo() {
-    this.setState({
-      detailsClass: 'active'
-    });
-    TweenMax.staggerFromTo("path.line", 2, {drawSVG: "0"}, {drawSVG: true}, 0.6);
-    TweenMax.staggerFromTo(".lineContainer p", 2, {opacity: "0"}, {opacity: "1", delay: 1.2}, 0.6);
-  }
-
-  deactivateInfo() {
-    this.setState({
-      detailsClass: 'inactive'
-    });
-    TweenMax.fromTo("path.line", 2, {drawSVG: true}, {drawSVG: "0"});
   }
 
   addSong() {
@@ -89,44 +68,6 @@ export default class Sphere extends React.Component {
             LINKEDIN
           </a>
         </div>
-
-        <div className={['details', this.state.detailsClass].join(' ')}>
-
-          <div className="lineContainer topLeft">
-            <p>JavaScript ⥉ React</p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.25 33.66">
-              <title>topLeft</title>
-              <path id="topLeft" className="line" d="M165,33.38l-37-33H0"/>
-            </svg>
-          </div>
-
-          <div className="lineContainer topRight">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.25 33.66">
-              <title>topRight</title>
-              <path id="topRight" className="line" d="M.25,33.38l37-33h128"/>
-            </svg>
-            <p>Wireframing ⥉ Prototyping</p>
-          </div>
-
-          <div className="lineContainer bottomRight">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.25 33.66">
-              <title>bottomRight</title>
-              <path id="bottomRight" className="line" d="M.25.28l37,33h128"/>
-            </svg>
-            <p>Ruby on Rails</p>
-          </div>
-
-          <div className="lineContainer bottomLeft">
-            <p>SQL ⥉ Firebase</p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.25 33.66">
-              <title>bottomLeft</title>
-              <path id="bottomLeft" className="line" d="M165,.28l-37,33H0"/>
-            </svg>
-          </div>
-
-        </div>
-
-        {/* <p className="instructions"><i>Hover Figure</i></p> */}
       </div>
 
     )
