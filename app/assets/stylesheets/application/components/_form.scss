@@ -82,3 +82,9 @@ textarea.input-field {
 textarea + .input-label {
   height: calc(100% + 1px);
 }
+
+@media (max-width: 730px) {
+  .contact-form {
+    width: 85%;
+  }
+}

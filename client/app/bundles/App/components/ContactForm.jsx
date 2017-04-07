@@ -91,7 +91,7 @@ export default class ContactForm extends React.Component {
             <p>I hope you're having -or had- a great day.</p>
             <p>Thanks for writing, I'll be in touch soon!</p>
             <p className="myName">Marian 😜</p>
-            <p>
+            <p className="success-button">
               <button className="close-success" onClick={(e) => this.closeMessage(e)}>HASTA LA VISTA!</button>
             </p>
           </div>

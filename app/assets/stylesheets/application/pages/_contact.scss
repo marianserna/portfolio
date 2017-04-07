@@ -47,5 +47,19 @@
     color: #9068BE;
     text-decoration: underline;
   }
+}
 
+@media (max-width: 730px) {
+  .success-msg {
+    width: 85%;
+
+    p, p.myName {
+      font-size: 1em;
+      text-align: left;
+    }
+
+    p.success-button {
+      text-align: center;
+    }
+  }
 }

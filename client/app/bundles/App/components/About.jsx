@@ -52,6 +52,8 @@ export default class About extends React.Component {
         this.onClosePreferenceSelection();
       }
     });
+
+    new TimelineLite({delay: 1}).staggerFromTo('.intro-slide', 1, {y: 500}, {y: 0}, 0.2);
   }
 
   timeUpdate(e) {
@@ -66,11 +68,11 @@ export default class About extends React.Component {
       this.pause();
     }
 
-    if (currentTime >= 234) {
+    if (currentTime >= 234 && currentTime <= 249) {
       this.setState({currentPreference: 'passions'})
-    } else if (currentTime >= 130) {
+    } else if (currentTime >= 130 && currentTime <= 145) {
       this.setState({currentPreference: 'career'})
-    } else if (currentTime >= 4) {
+    } else if (currentTime >= 14 && currentTime <= 29) {
       this.setState({currentPreference: 'whoami'})
     } else {
       this.setState({currentPreference: ''})
@@ -169,14 +171,11 @@ export default class About extends React.Component {
 
   play = () => {
     this.video.play();
-    this.playButton.style.display = 'none';
-    this.pauseButton.style.display = 'block';
+    this.introContainer.style.display = 'none';
   }
 
   pause = () => {
     this.video.pause();
-    this.pauseButton.style.display = 'none';
-    this.playButton.style.display = 'block';
   }
 
   postInteraction = (name, comment) => {
@@ -251,26 +250,43 @@ export default class About extends React.Component {
     })
   }
 
+  renderPreferences() {
+    if (this.state.preferences[this.state.currentPreference]) {
+      return (
+        <div className="preferences-bar">
+          {this.state.preferences[this.state.currentPreference].map((preference, index) => {
+            return (
+              <div
+                className="preference"
+                key={preference.title}
+                onClick={() => this.onPreferenceSelection(index)}
+              >
+                <img src={preference.image_src} alt={preference.title}/>
+              </div>
+            )
+          })}
+        </div>
+      )
+    } else {
+      return <div className="preferences-bar hidden"></div>
+    }
+  }
+
   render() {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120.99 120.99"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:0.99px;}.cls-2{font-size:34px;fill:#fff;font-family:NEOTERIC, NEOTERIC;}.cls-3{letter-spacing:0.04em;}.cls-4{letter-spacing:0.05em;}</style></defs><title>playButton</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="60.5" cy="60.5" r="60"/><text class="cls-2" transform="translate(23.34 70.81)"><tspan class="cls-3">P</tspan><tspan class="cls-4" x="16.56" y="0">L</tspan><tspan x="35.22" y="0">AY</tspan></text></g></g></svg>`;
+
     return(
       <div className="player-container">
-        { this.state.preferences[this.state.currentPreference] ?
-          <div className="preferences-bar">
-            {this.state.preferences[this.state.currentPreference].map((preference, index) => {
-              return (
-                <div
-                  className="preference"
-                  key={preference.title}
-                  onClick={() => this.onPreferenceSelection(index)}
-                >
-                  <h4>{preference.title}</h4>
-                  <img src={preference.image_src} alt={preference.title}/>
-                </div>
-              )
-            })}
-          </div>
-          : <div className="preferences-bar hidden"></div>
-        }
+
+        <div className="mobile-about">
+          <p>Hi! I'm Marian.✌🏼</p>
+
+          <p>I am a Colombian lawyer switching careers to tech. Interactivity is one of my passions.</p>
+
+          <p>As a person, I have no mask. I am transparent, direct, and care very deeply for others. I would rather hear what I need and not what I want.</p>
+
+          <p>As a developer, what I enjoy the most is thinking about and creating functionality that will communicate ideas effectively while making the user's interaction with the application more enjoyable and memorable. I love working with creative people who have no knowledge boundaries when it comes to making their ideas come to life.</p>
+        </div>
 
         <div className="player">
 
@@ -288,11 +304,47 @@ export default class About extends React.Component {
           <div className="video-container">
             <video
               src="https://s3.ca-central-1.amazonaws.com/marian-portfolio/about-video.mp4"
-              poster="instr.jpg"
               onTimeUpdate={(e) => this.timeUpdate(e)}
               ref={(video) => this.video = video}
               onClick={(e) => this.showMessageForm(e)}>
             </video>
+
+            <div className="intro-container" ref={(div) => this.introContainer = div}>
+              <div className="play"
+                ref={(div) => this.playButton = div}
+                onClick={(e) => {e.stopPropagation(); this.play()}}
+                dangerouslySetInnerHTML={{__html: svg}}
+              >
+              </div>
+
+              <div className="intro">
+                <div className="intro-slide">
+                  <p>Hi there! I'm Marian</p>
+                </div>
+
+                <div className="intro-slide">
+                  <p>Click on the markers to jump between sections.</p>
+                </div>
+
+                <div className="intro-slide">
+                  <p>Add an emoji by clicking on the options at the bottom right.</p>
+                </div>
+
+                <div className="intro-slide">
+                  <p>Click on the mini-images for random facts.</p>
+                </div>
+
+                <div className="intro-slide">
+                  <p>Click anywhere on the video to add a comment.</p>
+                </div>
+
+                <div className="intro-slide">
+                  <p>USE THE SPACE BAR TO PLAY AND PAUSE THE VIDEO</p>
+                </div>
+              </div>
+            </div>
+
+            {this.renderPreferences()}
 
             {this.renderInteractions()}
 
@@ -333,13 +385,6 @@ export default class About extends React.Component {
           </div>
 
           <div className="timeline" ref={(div) => this.timeline = div} onClick={(e) => this.timelineClick(e)}>
-            <div className="play" ref={(div) => this.playButton = div} onClick={(e) => {e.stopPropagation(); this.play()}}>
-              <img src="play.png" alt="play-icon"/>
-            </div>
-            <div className="pause" ref={(div) => this.pauseButton = div} onClick={(e) => {e.stopPropagation(); this.pause()}}>
-              <img src="pause.png" alt="pause-icon"/>
-            </div>
-
             <div className="time-marker" ref={(div) => this.timeMarker = div}></div>
             <div className="empty-time-marker"></div>
             <div className="filled-time-marker" ref={(div) => this.filledTimeMarker = div}></div>
