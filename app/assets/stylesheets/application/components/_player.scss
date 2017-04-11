@@ -28,6 +28,7 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #FFEBE7;
 
   &.hidden {
     width: 0vw;
@@ -36,7 +37,6 @@ h4 {
   .preference {
     width: 33.3%;
     height: 33.33%;
-    background-color: #FFEBE7;
     border: 1px dotted #fff;
     display: flex;
     align-items: center;
