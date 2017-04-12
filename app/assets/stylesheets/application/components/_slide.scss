@@ -228,8 +228,11 @@
 .arrow {
   z-index: 30;
   position: fixed;
-  font-size: 60px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
   color: #FFF;
+  font-weight: bolder;
+  text-shadow: 1px 1px 2px #333333;
   bottom: 5vh;
   right: 5vh;
   cursor: pointer;

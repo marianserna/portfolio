@@ -106,7 +106,7 @@ export default class CaseStudy extends React.Component {
   renderNextCode() {
     if (this.state.activeHorizontalSlide < this.props.code_highlights.length - 1) {
       return (
-        <span className="arrow" alt="next arrow" onClick={() => changeHorizontalSlide('code-highlights', 'NEXT')}>⋙</span>
+        <span className="arrow" alt="next arrow" onClick={() => changeHorizontalSlide('code-highlights', 'NEXT')}>NEXT</span>
       )
     }
   }
