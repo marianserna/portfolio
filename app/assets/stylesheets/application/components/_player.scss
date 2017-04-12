@@ -11,6 +11,22 @@
   display: none;
 }
 
+.side-emoji {
+  font-size: 1.5rem;
+  padding-right: 10px;
+}
+
+.side-image {
+  width: 40px;
+  height: 40px;
+  padding-right: 10px;
+}
+
+.colour-text {
+  color: #E91E63;
+  font-weight: bolder;
+}
+
 h4 {
   color: #8C95AA;
   font-family: 'Montserrat', sans-serif;
@@ -57,7 +73,6 @@ h4 {
     img {
       max-width: 100%;
       max-height: 100%;
-      // padding-top: 15px;
     }
   }
 }
@@ -149,11 +164,12 @@ h4 {
 .play {
   width: 50%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
   z-index: 40;
-  color: #fff;
+  color: #E91E63;
   cursor: pointer;
   display: flex;
+  background: (255, 255, 255, 0);
+
   align-items: center;
   justify-content: center;
 
@@ -163,19 +179,23 @@ h4 {
     transition: transform 1s ease;
 
     .cls-1 {
-      opacity: 0;
       stroke-dasharray: 1000px;
     }
 
     &:hover {
-      stroke: #F2C640;
+      stroke: #E91E63;
       transform: scale(1.2);
 
       .cls-1 {
-        stroke: #F2C640;
+        stroke: #E91E63;
         opacity: 1;
         animation: draw;
         animation-duration: 2s;
+      }
+
+      .cls-2 {
+        stroke: #E91E63;
+        fill: #E91E63;
       }
 
       @keyframes draw {
@@ -184,7 +204,7 @@ h4 {
       }
 
       .cls-2 {
-        fill: #F2C640;
+        fill: #E91E63;
       }
     }
   }
@@ -206,6 +226,7 @@ h4 {
     line-height: 1.5em;
     text-align: left;
     padding-bottom: 25px;
+    display: flex;
   }
 }
 
@@ -380,16 +401,17 @@ h4 {
     padding: 0 5px;
     width: 100%;
     border: none;
+    border-bottom: 1px dotted #9068BE;
     background: none;
     color: #8C95AA;
     height: 40px;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    background-color: #4ddce1;
+    // background-color: #4ddce1;
 
     &:focus {
       outline: none;
-      color: #fff;
+      color: #8C95AA;
     }
 
     &:invalid {
@@ -410,7 +432,7 @@ h4 {
   }
 }
 
-@media (max-width: 730px) {
+@media (max-width: 930px) {
   .player {
     display: none;
   }

@@ -151,7 +151,7 @@ export default class CaseStudy extends React.Component {
                   }
                 </div>
                 <div className="itemOptions case-study-button">
-                  <div className="linkButton">
+                  <div className="linkButton caseStudy">
                     <a href={case_study.site_url} className="button" target="_blank">SITE</a>
                   </div>
                 </div>
@@ -169,7 +169,9 @@ export default class CaseStudy extends React.Component {
 
           <Slide className='slide1'>
             <div
-              className="img-background"     style={{backgroundImage:`url('${case_study.description_image_url}')`}}>
+              className="img-background"
+              style={{backgroundImage:`url('${case_study.description_image_url}')`}}
+            >
               <div className="overlay"></div>
               <div className="info">
                 <p className="module-content">{case_study.description}</p>

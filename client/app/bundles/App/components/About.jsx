@@ -53,7 +53,7 @@ export default class About extends React.Component {
       }
     });
 
-    new TimelineLite({delay: 1}).staggerFromTo('.intro-slide', 1, {y: 500}, {y: 0}, 0.2);
+    new TimelineLite({delay: 1}).staggerFromTo('.intro-slide', 1, {y: 1000}, {y: 0}, 0.2);
   }
 
   timeUpdate(e) {
@@ -68,11 +68,11 @@ export default class About extends React.Component {
       this.pause();
     }
 
-    if (currentTime >= 234 && currentTime <= 249) {
+    if (currentTime >= 245 && currentTime <= 255) {
       this.setState({currentPreference: 'passions'})
-    } else if (currentTime >= 130 && currentTime <= 145) {
+    } else if (currentTime >= 145 && currentTime <= 155) {
       this.setState({currentPreference: 'career'})
-    } else if (currentTime >= 14 && currentTime <= 29) {
+    } else if (currentTime >= 24 && currentTime <= 34) {
       this.setState({currentPreference: 'whoami'})
     } else {
       this.setState({currentPreference: ''})
@@ -303,7 +303,7 @@ export default class About extends React.Component {
 
           <div className="video-container">
             <video
-              src="https://s3.ca-central-1.amazonaws.com/marian-portfolio/about-video.mp4"
+              src="https://s3.ca-central-1.amazonaws.com/marian-portfolio/final-video.mp4"
               onTimeUpdate={(e) => this.timeUpdate(e)}
               ref={(video) => this.video = video}
               onClick={(e) => this.showMessageForm(e)}>
@@ -319,27 +319,34 @@ export default class About extends React.Component {
 
               <div className="intro">
                 <div className="intro-slide">
-                  <p>Hi there! I'm Marian</p>
+                  <p>Hi there! I'm <span className="colour-text">MARIAN</span></p>
                 </div>
 
                 <div className="intro-slide">
-                  <p>Click on the markers to jump between sections.</p>
+                  <img src="/marker.svg" alt="marker" className="side-image" />
+                  <p>
+                    Click on the markers to jump between sections.
+                  </p>
                 </div>
 
                 <div className="intro-slide">
-                  <p>Add an emoji by clicking on the options at the bottom right.</p>
+                  <p>
+                    <span className="side-emoji">😜</span> <span className="colour-text">Add an emoji</span> by clicking on the options at the <span className="colour-text">bottom right</span>.
+                  </p>
                 </div>
 
                 <div className="intro-slide">
-                  <p>Click on the mini-images for random facts.</p>
+                  <p><span className="side-emoji">🖼</span> Click on the mini-images for <span className="colour-text">random facts</span>.</p>
                 </div>
 
                 <div className="intro-slide">
-                  <p>Click anywhere on the video to add a comment.</p>
+                  <p>
+                    <span className="side-emoji">📬</span> Click anywhere on the video to <span className="colour-text">add a comment</span>.
+                  </p>
                 </div>
 
                 <div className="intro-slide">
-                  <p>USE THE SPACE BAR TO PLAY AND PAUSE THE VIDEO</p>
+                  <p>USE THE <span className="colour-text">SPACE BAR</span> TO PLAY AND PAUSE THE VIDEO</p>
                 </div>
               </div>
             </div>

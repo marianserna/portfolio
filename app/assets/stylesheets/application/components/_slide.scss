@@ -44,6 +44,11 @@
   line-height: 1.8rem;
 }
 
+.technologies {
+  color: #FFD700;
+  text-shadow: 0.5px 0.5px 0px #333333;
+}
+
 .scroll-text {
   padding-top: 15px;
 }
@@ -202,7 +207,11 @@
   bottom: 0;
   left: 0;
   padding: 20px;
-  background-color: #333333;
+  border-radius: 2px;
+  background-color: #E91E63;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .overlay {
@@ -228,4 +237,8 @@
 
 .Slide {
   position: relative;
+}
+
+.linkButton.caseStudy {
+  margin: 50px;
 }
