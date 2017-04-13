@@ -83,11 +83,16 @@ h4 {
 
 .video-container {
   position: relative;
+  background-color: #000;
   display: block;
+  width: 80vw;
+  height: 45vw;
+  overflow: hidden;
 
   video {
     max-width: 80vw;
     margin-bottom: -3px;
+    object-fit: inherit;
   }
 
   .emojis {
