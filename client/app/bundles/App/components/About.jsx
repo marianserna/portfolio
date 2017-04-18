@@ -52,8 +52,6 @@ export default class About extends React.Component {
         this.onClosePreferenceSelection();
       }
     });
-
-    new TimelineLite({delay: 1}).staggerFromTo('.intro-slide', 1, {y: 1000}, {y: 0}, 0.2);
   }
 
   timeUpdate(e) {
@@ -171,11 +169,14 @@ export default class About extends React.Component {
 
   play = () => {
     this.video.play();
-    this.introContainer.style.display = 'none';
+    this.playVideo.style.display = 'none';
+    this.pauseVideo.style.display = 'block';
   }
 
   pause = () => {
     this.video.pause();
+    this.playVideo.style.display = 'block';
+    this.pauseVideo.style.display = 'none';
   }
 
   postInteraction = (name, comment) => {
@@ -301,6 +302,26 @@ export default class About extends React.Component {
             : null
           }
 
+          <div className="player-instructions-container">
+            <p className="instructions grey">
+              or...
+              READ A QUICK BIO
+              😆
+            </p>
+          </div>
+
+          <div className="info-icon">
+            <div className="tooltip">
+              <h4>
+                <span className="side-emoji">😜</span> <span className="colour-text">Add an emoji</span> by clicking on the options at the <span className="colour-text">bottom right</span>.
+              </h4>
+              <h4>
+                <span className="side-emoji">📬</span> Click anywhere on the video to <span className="colour-text">add a comment</span>.
+              </h4>
+            </div>
+            <img src="/info.png" alt="info"/>
+          </div>
+
           <div className="video-container">
             <video
               src="https://s3.ca-central-1.amazonaws.com/marian-portfolio/final-video.mp4"
@@ -308,48 +329,6 @@ export default class About extends React.Component {
               ref={(video) => this.video = video}
               onClick={(e) => this.showMessageForm(e)}>
             </video>
-
-            <div className="intro-container" ref={(div) => this.introContainer = div}>
-              <div className="play"
-                ref={(div) => this.playButton = div}
-                onClick={(e) => {e.stopPropagation(); this.play()}}
-                dangerouslySetInnerHTML={{__html: svg}}
-              >
-              </div>
-
-              <div className="intro">
-                <div className="intro-slide">
-                  <p>Hi there! I'm <span className="colour-text">MARIAN</span></p>
-                </div>
-
-                <div className="intro-slide">
-                  <img src="/marker.svg" alt="marker" className="side-image" />
-                  <p>
-                    Click on the markers to jump between sections.
-                  </p>
-                </div>
-
-                <div className="intro-slide">
-                  <p>
-                    <span className="side-emoji">😜</span> <span className="colour-text">Add an emoji</span> by clicking on the options at the <span className="colour-text">bottom right</span>.
-                  </p>
-                </div>
-
-                <div className="intro-slide">
-                  <p><span className="side-emoji">🖼</span> Click on the mini-images for <span className="colour-text">random facts</span>.</p>
-                </div>
-
-                <div className="intro-slide">
-                  <p>
-                    <span className="side-emoji">📬</span> Click anywhere on the video to <span className="colour-text">add a comment</span>.
-                  </p>
-                </div>
-
-                <div className="intro-slide">
-                  <p>USE THE <span className="colour-text">SPACE BAR</span> TO PLAY AND PAUSE THE VIDEO</p>
-                </div>
-              </div>
-            </div>
 
             {this.renderPreferences()}
 
@@ -391,32 +370,50 @@ export default class About extends React.Component {
             }
           </div>
 
-          <div className="timeline" ref={(div) => this.timeline = div} onClick={(e) => this.timelineClick(e)}>
-            <div className="time-marker" ref={(div) => this.timeMarker = div}></div>
-            <div className="empty-time-marker"></div>
-            <div className="filled-time-marker" ref={(div) => this.filledTimeMarker = div}></div>
-
-            <div className="marker me" onClick={(e) => this.markerClick(e, 4)}>
-              <div className="tooltip">
-                <img src="tobermory.jpg" alt=""/>
-                <h4>Who am I</h4>
-              </div>
+          <div className="timeline-wrapper">
+            <div className="timeline-button">
+              <h3 className="play-video"
+                ref={(h3) => this.playVideo = h3}
+                onClick={(e) => {e.preventDefault(); this.play()}}
+              >
+                PLAY
+              </h3>
+              <h3 className="pause-video"
+                ref={(h3) => this.pauseVideo = h3}
+                onClick={(e) => {e.preventDefault(); this.pause()}}
+              >
+                PAUSE
+              </h3>
             </div>
 
-            <div className="marker work" onClick={(e) => this.markerClick(e, 130)}>
-              <div className="tooltip">
-                <img src="career.jpg" alt="image"/>
-                <h4>Career stuff</h4>
-              </div>
-            </div>
+            <div className="timeline" ref={(div) => this.timeline = div} onClick={(e) => this.timelineClick(e)}>
+              <div className="time-marker" ref={(div) => this.timeMarker = div}></div>
+              <div className="empty-time-marker"></div>
+              <div className="filled-time-marker" ref={(div) => this.filledTimeMarker = div}></div>
 
-            <div className="marker passions" onClick={(e) => this.markerClick(e, 234)}>
-              <div className="tooltip">
-                <img src="interests.jpg" alt="image"/>
-                <h4>Interests</h4>
+              <div className="marker me" onClick={(e) => this.markerClick(e, 4)}>
+                <div className="tooltip">
+                  <img src="tobermory.jpg" alt=""/>
+                  <h4>Who am I</h4>
+                </div>
+              </div>
+
+              <div className="marker work" onClick={(e) => this.markerClick(e, 130)}>
+                <div className="tooltip">
+                  <img src="career.jpg" alt="image"/>
+                  <h4>Career stuff</h4>
+                </div>
+              </div>
+
+              <div className="marker passions" onClick={(e) => this.markerClick(e, 234)}>
+                <div className="tooltip">
+                  <img src="interests.jpg" alt="image"/>
+                  <h4>Interests</h4>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     )

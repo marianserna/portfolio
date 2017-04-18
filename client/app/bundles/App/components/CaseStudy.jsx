@@ -30,6 +30,10 @@ export default class CaseStudy extends React.Component {
 
   componentDidMount() {
     this.captureKeys();
+    this.props.code_highlights.forEach((highlight) => {
+      const image = new Image();
+      image.src = highlight.image_url;
+    });
   }
 
   sliderLeaving = (info) => {
