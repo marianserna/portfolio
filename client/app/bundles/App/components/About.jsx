@@ -231,6 +231,18 @@ export default class About extends React.Component {
     this.play();
   }
 
+  forceShowAbout = () => {
+    this.setState({
+      forceShowAbout: true
+    });
+  }
+
+  stopForceShowAbout = () => {
+    this.setState({
+      forceShowAbout: false
+    });
+  }
+
   renderInteractions() {
     return this.state.displayedInteractions.map((interaction) => {
       return (
@@ -274,23 +286,22 @@ export default class About extends React.Component {
   }
 
   render() {
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120.99 120.99"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:0.99px;}.cls-2{font-size:34px;fill:#fff;font-family:NEOTERIC, NEOTERIC;}.cls-3{letter-spacing:0.04em;}.cls-4{letter-spacing:0.05em;}</style></defs><title>playButton</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="60.5" cy="60.5" r="60"/><text class="cls-2" transform="translate(23.34 70.81)"><tspan class="cls-3">P</tspan><tspan class="cls-4" x="16.56" y="0">L</tspan><tspan x="35.22" y="0">AY</tspan></text></g></g></svg>`;
-
     return(
       <div className="player-container">
 
-        <div className="mobile-about">
+        <div className={`mobile-about ${this.state.forceShowAbout ? 'force-show' : ''}`}>
           <p>Hi! I'm Marian.✌🏼</p>
 
           <p>I am a Colombian lawyer switching careers to tech. Interactivity is one of my passions.</p>
 
           <p>As a person, I have no mask. I am transparent, direct, and care very deeply for others. I would rather hear what I need and not what I want.</p>
 
-          <p>As a developer, what I enjoy the most is thinking about and creating functionality that will communicate ideas effectively while making the user's interaction with the application more enjoyable and memorable. I love working with creative people who have no knowledge boundaries when it comes to making their ideas come to life.</p>
+          <p>As a developer, what I enjoy the most is thinking about and creating functionality that will communicate ideas effectively while making the user's interaction with the application more enjoyable and memorable. I love working with creative people who have no knowledge boundaries when it comes to bringing their ideas to life.</p>
+
+          <button className="button-to-video" onClick={(e) => this.stopForceShowAbout(e)}>Okidoki!</button>
         </div>
 
-        <div className="player">
-
+        <div className={`player ${this.state.forceShowAbout ? 'force-hide' : ''}`}>
           {
             this.state.currentPreferenceSelection !== null ?
               <div
@@ -303,7 +314,7 @@ export default class About extends React.Component {
           }
 
           <div className="player-instructions-container">
-            <p className="instructions grey">
+            <p className="instructions grey" ref={(p) => this.instructions = p} onClick={(e) => this.forceShowAbout()}>
               or...
               READ A QUICK BIO
               😆
