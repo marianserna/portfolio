@@ -133,7 +133,7 @@ export default class Carousel extends React.Component {
                         <h3>{case_study.title}</h3>
                         <hr/>
                         <p className="tools">
-                          {case_study.technologies.split(",").slice(0,3).map(item => item.trim()).join(" · ")}
+                          {case_study.one_liner}
                         </p>
                       </div>
                     </div>

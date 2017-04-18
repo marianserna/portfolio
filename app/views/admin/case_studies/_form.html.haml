@@ -2,9 +2,10 @@
   = f.input :position, required: true
   = f.input :title
   = f.input :github_url, as: :url
-  = f.input :site_url, as: :url  
+  = f.input :site_url, as: :url
   = f.input :slug
   = f.input :video_url, as: :url
+  = f.input :one_liner
 
   - [:description, :technologies, :challenges].each do |field|
     = f.input field

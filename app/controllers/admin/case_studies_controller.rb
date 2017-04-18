@@ -40,7 +40,7 @@ class Admin::CaseStudiesController < Admin::BaseController
 
   def case_study_params
     params.require(:case_study).permit(:slug, :title, :video_url, :github_url,
-      :site_url, :description, :description_image, :technologies,
+      :site_url, :description, :description_image, :one_liner, :technologies,
       :technologies_image, :challenges, :challenges_image, :position
     )
   end
