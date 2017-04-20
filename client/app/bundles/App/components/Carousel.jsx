@@ -129,12 +129,14 @@ export default class Carousel extends React.Component {
                   >
 
                     <div className="background" style={{backgroundImage: `url('${case_study.image_url}')`}}>
-                      <div className="bigLetters">
-                        <h3>{case_study.title}</h3>
-                        <hr/>
-                        <p className="tools">
-                          {case_study.one_liner}
-                        </p>
+                      <div className="background-overlay">
+                        <div className="bigLetters">
+                          <h3>{case_study.title}</h3>
+                          <hr/>
+                          <p className="tools">
+                            {case_study.one_liner}
+                          </p>
+                        </div>
                       </div>
                     </div>
 

@@ -200,7 +200,8 @@ h4 {
     text-align: center;
     cursor: pointer;
     color: #FFF;
-    background: #000;
+    border-right: 1px solid #FFF;
+    background: #f2c640;
   }
 
   .pause-video {
@@ -312,6 +313,7 @@ h4 {
   bottom: 0;
   margin: 25px;
   margin-bottom: 10px;
+  cursor: pointer;
 
   .tooltip {
     width: 200px;
