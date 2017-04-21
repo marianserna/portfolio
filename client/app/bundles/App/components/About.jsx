@@ -235,14 +235,14 @@ export default class About extends React.Component {
     this.setState({
       forceShowAbout: true
     });
-    this.pausePlay();
+    this.pause();
   }
 
   stopForceShowAbout = () => {
     this.setState({
       forceShowAbout: false
     });
-    this.pausePlay();
+    this.play();
   }
 
   renderInteractions() {
