@@ -33,7 +33,7 @@
     .bigLetters {
       width: 90%;
       height: 90%;
-      font-size: 3rem;
+      font-size: 2rem;
       color: #FFF;
       font-family: 'Abril Fatface', cursive;
       text-shadow: 2px 2px 4px #333333;
@@ -43,7 +43,7 @@
       align-items: center;
 
       @media (max-width: 650px) {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
     }
   }
