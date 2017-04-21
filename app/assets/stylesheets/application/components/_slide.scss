@@ -185,9 +185,11 @@
   }
 
   .module-content {
-    max-width: 35vw;
-    text-align: right;
-    line-height: 2.4rem;
+    max-width: 40vw;
+    font-size: 1rem;
+    text-align: justify;
+    // text-align: right;
+    line-height: 2rem;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
