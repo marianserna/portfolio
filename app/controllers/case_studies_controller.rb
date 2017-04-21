@@ -16,7 +16,7 @@ class CaseStudiesController < ApplicationController
       challenges_image_url: case_study.challenges_image.url(:hero)
     )
 
-    @code_highlights_props = case_study.code_highlights.map do |code_highlight|
+    @code_highlights_props = case_study.code_highlights.order(:position).map do |code_highlight|
       code_highlight.attributes.merge(
         image_url: code_highlight.image.url(:hero)
       )
