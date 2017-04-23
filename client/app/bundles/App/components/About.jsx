@@ -24,14 +24,14 @@ export default class About extends React.Component {
 
         career: [
           { title: 'Fav Developer', image_src: 'fave-dev.jpg', description: "I love Karim Maaloul's work. Check it out at http://yakudoo.com/"},
-          { title: 'Fav App', image_src: 'paperplanes.jpg', description: 'I identify with the concept of Paper Planes by Active Theory. It comprises most of the stuff I would like to be able to do as a developer. https://paperplanes.world/'},
-          { title: 'Inspiration', image_src: 'inspired.jpg', description: 'Active Theory'}
+          { title: 'Fav App', image_src: 'paperplanes.jpg', description: 'My favourite App: https://paperplanes.world/'},
+          { title: 'Inspiration', image_src: 'inspired.jpg', description: 'Ideal type of work: Active Theory'}
         ],
 
         passions: [
-          { title: 'Fav Place', image_src: 'alps.jpg', description: 'The alps'},
-          { title: 'Fav Book', image_src: 'littlePrince.jpg', description: 'The Little Prince'},
-          { title: 'Obsession: Lavender', image_src: 'lavender.jpg', description: 'I love it badly'}
+          { title: 'Fav Place', image_src: 'alps.jpg', description: 'My favourite place: The alps'},
+          { title: 'Fav Book', image_src: 'littlePrince.jpg', description: 'My favourite book: The Little Prince'},
+          { title: 'Obsession: Lavender', image_src: 'lavender.jpg', description: 'My obsession: Lavender. I love it badly'}
         ]
       }
     };
@@ -44,7 +44,7 @@ export default class About extends React.Component {
 
     document.addEventListener('keydown', (e) => {
       console.log(e.code);
-      if (e.code === 'Space') {
+      if (e.code === 'Space' && this.state.showMessageForm === false) {
         this.pausePlay();
       } else if (e.code === 'Escape') {
         this.cancelEmojify(e);
