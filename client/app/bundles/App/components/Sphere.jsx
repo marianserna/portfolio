@@ -48,7 +48,7 @@ export default class Sphere extends React.Component {
         <span className="name">
           <h1>Marian Serna</h1>
         </span>
-        <h3 className="title hidden">Interactive Developer</h3>
+        <h3 className="title hidden">full stack - interactive developer</h3>
 
         <div className="social">
           <a className="github" href="https://github.com/marianserna?tab=repositories" target="_blank">
