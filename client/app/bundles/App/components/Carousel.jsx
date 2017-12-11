@@ -103,7 +103,7 @@ export default class Carousel extends React.Component {
 
     if (this.state.currentItem === index + 1) {
       // change location using js
-      window.location.assign(`/work/${this.props.case_studies[index].slug}`);
+      window.location.assign(this.props.case_studies[index].site_url);
     } else {
       this.transitionTo(index + 1);
     }

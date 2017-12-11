@@ -14,7 +14,7 @@ export default class ItemShowcaseMore extends React.Component {
 
                   <div className="bigLetters">
                     <h3>{more.title}</h3>
-                    {/* <a href={`/work/${more.slug}`} className="button">View</a> */}
+                    <a href={more.site_url} className="button">View</a>
                   </div>
                 </div>
               </div>

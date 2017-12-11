@@ -24,7 +24,7 @@ export default class Landing extends React.Component {
       <div id="landing">
         <div className="name">
           <h1>Marian Serna</h1>
-          <h3>interactive developer</h3>
+          <h3>full stack developer</h3>
         </div>
         <div className="navigate-voice">
 
