@@ -94,76 +94,6 @@
 }
 
 
-// .border {
-//   width: 90vw;
-//   height: 90vh;
-//   position: absolute;
-//   top: 5vh;
-//   left: 5vw;
-//   transition: color 0.25s;
-//   position: relative;
-//   vertical-align: middle;
-//   border: 0;
-//   box-sizing: border-box;
-//   box-shadow: inset 0 0 0 2px transparent; // Using inset box-shadow instead of border for sizing simplicity
-//
-//   &::before,
-//   &::after {
-//     box-sizing: border-box;
-//     content: '';
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-//   }
-// }
-
-// .border {
-//   z-index: 30;
-//   &::before,
-//   &::after {
-//     border: 2px solid transparent; // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
-//     width: 0;
-//     height: 0;
-//   }
-//
-//   // This covers the top & right borders (expands right, then down)
-//   &::before {
-//     top: 0;
-//     left: 0;
-//   }
-//
-//   // And this the bottom & left borders (expands left, then up)
-//   &::after {
-//     bottom: 0;
-//     right: 0;
-//   }
-//
-//   // Hover styles
-//   &.active::before,
-//   &.active::after {
-//     width: 100%;
-//     height: 100%;
-//   }
-//
-//   &.active::before {
-//     border-top-color: #E91E63; // Make borders visible
-//     border-right-color: #E91E63;
-//     transition:
-//       width 0.25s ease-out, // Width expands first
-//       height 0.25s ease-out 0.25s; // And then height
-//   }
-//
-//   &.active::after {
-//     border-bottom-color: #E91E63; // Make borders visible
-//     border-left-color: #E91E63;
-//     transition:
-//       border-color 0s ease-out 0.5s, // Wait for ::before to finish before showing border
-//       width 0.25s ease-out 0.5s, // And then exanding width
-//       height 0.25s ease-out 0.75s; // And finally height
-//   }
-// }
-
-
 .info {
   position: absolute;
   top: 0;
@@ -176,19 +106,16 @@
   font-weight: bolder;
   text-shadow: 1px 1px 2px #333333;
   z-index: 0;
-  transform: translateX(100vw);
   display: flex;
 
   &.code-highlight {
     transform: translateX(0);
-
   }
 
   .module-content {
     max-width: 40vw;
     font-size: 1rem;
     text-align: justify;
-    // text-align: right;
     line-height: 2rem;
     position: absolute;
     top: 50%;
@@ -242,8 +169,8 @@
   cursor: pointer;
 }
 
-.Slide {
-  position: relative;
+.slide {
+  height: 100vh;
 }
 
 .linkButton.caseStudy {
