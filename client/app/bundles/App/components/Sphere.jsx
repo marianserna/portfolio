@@ -53,7 +53,7 @@ export default class Sphere extends React.Component {
         <span className="name">
           <h1>Marian Serna</h1>
         </span>
-        <h3 className="title hidden">Developer</h3>
+        <h3 className="title hidden">Web Developer</h3>
 
         <div className="social">
           <a
